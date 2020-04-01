@@ -4,7 +4,7 @@ import styles from './menu.module.css';
 export const Menu = ({ menuList }) => (
     menuList.map(singleButton => (
         <div className={styles.menuItem}>
-            {singleButton}
+            {(singleButton.toUpperCase())}
         </div>
     ))
 );
