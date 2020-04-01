@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/header/Header';
 import styles from './app.module.css';
 
 const App = () => {
   return (
     <div className={styles.mainWrapper}>
-      main
+      <Header />
     </div>
   );
 }
