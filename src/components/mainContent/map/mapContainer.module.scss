@@ -1,0 +1,18 @@
+@import '../../../shared/variables';
+
+.testWrapper {
+    display: flex;
+    flex-direction: row
+}
+.wrapper {
+    width: 600px;
+    height: 600px;
+    margin-top: $space--25;
+    border: 1px solid $base--dark;
+}
+.pointersWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
