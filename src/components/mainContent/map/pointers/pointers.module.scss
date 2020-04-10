@@ -1,8 +1,11 @@
-@import '../../../../shared/variables';
+@import '../../../../styles/index';
 
 .infoBox {
     width: 400px;
     height: 400px;
     border: 1px solid red;
     margin: 49px;
+    @include respond-to($desktop) {
+        border: 1px solid green;
+    }
 }
