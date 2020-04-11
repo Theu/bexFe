@@ -89,7 +89,12 @@ var libri = [
 
 const Pointers = () => {
     return (
-        <div>
+        <div className={styles.pointersWrapper}>
+            <div className={styles.infoBox}>box</div>
+            <div className={styles.infoBox}>box</div>
+            <div className={styles.infoBox}>box</div>
+            <div className={styles.infoBox}>box</div>
+            <div className={styles.infoBox}>box</div>
             <div className={styles.infoBox}>box</div>
         </div>
     )

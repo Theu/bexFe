@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './mainContent.module.scss';
 import Tour from './tour/Tour';
-import MapContainer from './map/MapContainer';
+import MapContainer from './mapContainer/MapContainer';
 
 const mockTourContent = {
     titleTest: 'Letteratour',
@@ -11,7 +11,6 @@ const mockTourContent = {
 export const MainContent = () => {
     return (
         <div className={styles.wrapper}>
-            this is the main content
             <Tour
                 title={mockTourContent.titleTest}
                 introText={mockTourContent.introText}

@@ -1,0 +1,22 @@
+@import '../../../../styles/index';
+
+.pointersWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include respond-to($tablet) {
+        width: 25%;
+        margin-left: 50px;
+    }
+}
+
+.infoBox {
+    width: 100%;
+    // height: auto; // definire
+    height: 300px; // definire
+    background-color: red;
+    margin-bottom: $space--25;
+    @include respond-to($tablet) {
+        background-color: green;
+    }
+}

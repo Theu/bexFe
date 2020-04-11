@@ -6,8 +6,10 @@ import styles from './app.module.scss';
 const App = () => {
   return (
     <div className={styles.mainWrapper}>
-      <Header />
-      <MainContent />
+      <div className={styles.content}>
+        {/* <Header /> */}
+        <MainContent />
+      </div>
     </div>
   );
 }
