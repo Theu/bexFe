@@ -1,6 +1,9 @@
+@import './styles/index';
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Oswald', sans-serif;
+  background-color: $base--bg-color;
 }

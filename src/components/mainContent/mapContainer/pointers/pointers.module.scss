@@ -13,10 +13,15 @@
 .infoBox {
     width: 100%;
     // height: auto; // definire
-    height: 300px; // definire
-    background-color: red;
-    margin-bottom: $space--25;
-    @include respond-to($tablet) {
-        background-color: green;
-    }
+    // height: 300px; // definire
+    margin-bottom: $space--35;
+}
+
+.title, .text {
+    margin: 5px;
+}
+
+.title {
+    font-weight: bold;
+    border-bottom: 1px solid $base--ocra;
 }

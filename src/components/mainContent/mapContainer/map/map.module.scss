@@ -3,7 +3,7 @@
 .wrapper {
     width: 100%;
     // height: auto; // definire con il contenuto
-    height: 900px; // definire con il contenuto
+    height: 675px; // definire con il contenuto
     background-color: rebeccapurple;
     margin-bottom: $space--50;
     @include respond-to($tablet) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../../assets/berlinoexplorer.png';
-
 import Menu from './menu/Menu'
 import styles from './header.module.scss'
 

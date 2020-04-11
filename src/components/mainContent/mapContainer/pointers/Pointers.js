@@ -87,15 +87,50 @@ var libri = [
     },
 ];
 
+const mock = [
+    {
+        img: 'http://placekitten.com/g/300/300',
+        title: 'I am Kitty',
+        text: 'Sono un gatto molto coraggioso, saltello e corro mangio quasi solo carta igienica e amuchina.<br /> Sono un gatto molto coraggioso, saltello e corro mangio quasi solo carta igienica e amuchina.<br/> [more...]'
+    },
+    {
+        title: 'I am Blacky',
+        text: 'Sono un gatto pigro, mi metto le dita nel naso e mangio piccioni. Prediligo le patatine [more...]'
+    },
+    {
+        img: 'https://picsum.photos/seed/picsum/300/300',
+        title: 'Random im',
+        text: 'Sono un gatto rognoso, molto rognoso.<br /> Il mio alito sa di cibo per gatti.<br/> [more...]'
+    }
+]
+
 const Pointers = () => {
+    const pointOfInterest = mock.map((interest) => {
+        if (interest.hasOwnProperty('img')) {
+            return (
+                <div className={styles.infoBox}>
+                    <img src={interest.img} alt='kitty' />
+                    <div className={styles.title}>{interest.title}</div>
+                    <div className={styles.text}>
+                        {interest.text}
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className={styles.infoBox} >
+                    <div className={styles.title} > {interest.title}</div>
+                    <div className={styles.text}>
+                        {interest.text}
+                    </div>
+                </div >
+            )
+        }
+    });
+
     return (
         <div className={styles.pointersWrapper}>
-            <div className={styles.infoBox}>box</div>
-            <div className={styles.infoBox}>box</div>
-            <div className={styles.infoBox}>box</div>
-            <div className={styles.infoBox}>box</div>
-            <div className={styles.infoBox}>box</div>
-            <div className={styles.infoBox}>box</div>
+            {pointOfInterest}
         </div>
     )
 }
