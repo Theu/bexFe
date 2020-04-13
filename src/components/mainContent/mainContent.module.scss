@@ -2,7 +2,10 @@
 
 .wrapper {
     width: 100%;
-    margin-top: 114px;
     padding-top: $space--5;
+    margin-top: 137px;
     flex: 1;
+    @include respond-to($tablet) {
+        margin-top: 114px;
+    }
 }
