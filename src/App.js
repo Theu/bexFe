@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from './components/header/Header';
-import styles from './app.module.css';
+import MainContent from './components/mainContent/MainContent';
+import styles from './app.module.scss';
 
 const App = () => {
   return (
     <div className={styles.mainWrapper}>
-      <Header />
+      <div className={styles.content}>
+        <Header />
+        <MainContent />
+      </div>
     </div>
   );
 }

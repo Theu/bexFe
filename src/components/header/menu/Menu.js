@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './menu.module.css';
+import styles from './menu.module.scss';
 
 export const Menu = ({ menuList }) => (
     menuList.map(singleButton => (
