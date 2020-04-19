@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/header/Header";
-import TourExplanation from "./components/tourExplanation/TourExplanation";
+import Header from "./client/components/header/Header";
+import TourExplanation from "./client/components/tourExplanation/TourExplanation";
 import styles from "./app.module.scss";
 
 const App = () => {
