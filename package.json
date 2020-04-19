@@ -19,7 +19,14 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "shared-config"
+    ],
+    "rules": {
+      "additional-rule": "warn",
+      "use_spaces": "false"
+    }
   },
   "browserslist": {
     "production": [
