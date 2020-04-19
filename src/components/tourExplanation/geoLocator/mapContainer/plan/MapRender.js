@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import L from "leaflet";
-import bex from "../../../../assets/berlinoexplorer.png";
+import bex from "../../../../../assets/berlinoexplorer.png";
 import { createMapContainer, createPointers } from "./helpers";
 import styles from "./mapRender.module.scss";
 

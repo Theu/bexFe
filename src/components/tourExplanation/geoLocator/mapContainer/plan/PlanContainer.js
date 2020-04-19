@@ -6,7 +6,7 @@ const mapMock = {
   center: [52.519409, 13.38],
   zoom: 13,
 };
-const Map = (props) => {
+const PlanContainer = (props) => {
   return (
     <MapRender
       lat={mapMock.center[0]}
@@ -16,10 +16,10 @@ const Map = (props) => {
   );
 };
 
-Map.propTypes = {
+PlanContainer.propTypes = {
   lat: PropTypes.number.isRequired,
   long: PropTypes.number.isRequired,
   zoom: PropTypes.number.isRequired,
 };
 
-export default Map;
+export default PlanContainer;
