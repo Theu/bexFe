@@ -123,7 +123,7 @@ const Pointers = () => {
                     <div className={styles.text}>
                         {interest.text}
                     </div>
-                </div >
+                </div>
             )
         }
     });
