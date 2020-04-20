@@ -1,13 +1,11 @@
 import React from "react";
 import Tour from "./tour/Tour";
+import { tourMock } from "./../../../server/tourMock";
+
 import MapContainer from "./geoLocator/MapContainer";
 import styles from "./tourExplanation.module.scss";
 
-const mockTourContent = {
-  titleTest: "Letteratour",
-  introText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-};
+const mockTourContent = tourMock.mockTourContent;
 
 export const TourExplanation = () => {
   return (
