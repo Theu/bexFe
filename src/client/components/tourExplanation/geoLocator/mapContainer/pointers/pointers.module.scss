@@ -1,14 +1,14 @@
 @import "../../../../../styles/index";
 
-.pointersWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  @include respond-to($tablet) {
-    width: 25%;
-    margin-left: 50px;
-  }
-}
+// .pointersWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   @include respond-to($tablet) {
+//     width: 25%;
+//     margin-left: 50px;
+//   }
+// }
 
 .infoBox {
   width: 100%;

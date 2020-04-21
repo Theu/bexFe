@@ -30,6 +30,10 @@ export const createPointers = (
         mapInstance
             .marker({ lat: singlePoint.lat, lng: singlePoint.lon }, markerIcon)
             .addTo(containerObject)
-            .bindPopup(ReactDOMServer.renderToString(<Pointers />)),
+            .bindPopup(
+                ReactDOMServer.renderToString(
+                    <Pointers interest={singlePoint} />,
+                ),
+            ),
     );
 };
