@@ -1,0 +1,33 @@
+@import "../../../../../styles/index";
+
+// .pointersWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   @include respond-to($tablet) {
+//     width: 25%;
+//     margin-left: 50px;
+//   }
+// }
+
+.infoBox {
+  width: 100%;
+  // height: auto; // definire
+  // height: 300px; // definire
+  margin-bottom: $space--35;
+}
+
+.title,
+.text {
+  margin: 5px;
+}
+
+.title {
+  font-weight: bold;
+  border-bottom: 1px solid $base--ocra;
+}
+
+.imageWrapper {
+  width: 300px;
+  height: 300px;
+}
