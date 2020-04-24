@@ -1,25 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
-import MapRender from "./MapRender";
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import MapRender from './MapRender';
 
 const mapMock = {
-  center: [52.519409, 13.38],
-  zoom: 13,
+    center: [52.519409, 13.38],
+    zoom: 13,
 };
-const PlanContainer = (props) => {
-  return (
-    <MapRender
-      lat={mapMock.center[0]}
-      long={mapMock.center[1]}
-      zoom={mapMock.zoom}
-    />
-  );
+const PlanContainer = ({ map }) => {
+    return (
+        <MapRender lat={map.center[0]} long={map.center[1]} zoom={map.zoom} />
+    );
 };
 
 PlanContainer.propTypes = {
-  lat: PropTypes.number.isRequired,
-  long: PropTypes.number.isRequired,
-  zoom: PropTypes.number.isRequired,
+    map: PropTypes.object.isRequired,
 };
 
 export default PlanContainer;

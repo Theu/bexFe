@@ -5,18 +5,21 @@ import PlanContainer from './mapContainer/plan/PlanContainer';
 import Pointers from './mapContainer/pointers/Pointers';
 import styles from './mapContainer.module.scss';
 
-const pof = tourMock.pointOfInterest;
-const MapContainer = () => {
-    const pointers = pof.map((singlePof) => {
-        console.log('pof', pof);
-        console.log('singlePof', singlePof);
+const { pointOfInterest, mapMock } = tourMock;
 
-        return <Pointers interest={singlePof} />;
+const MapContainer = () => {
+    const pointers = pointOfInterest.map((singlePoi) => {
+        return (
+            <Pointers
+                interest={singlePoi}
+                key={`${singlePoi.lat}${singlePoi.lon}`}
+            />
+        );
     });
 
     return (
         <div className={styles.wrapper}>
-            <PlanContainer />
+            <PlanContainer map={mapMock} />
             <div className={styles.pointersWrapper}>{pointers}</div>
         </div>
     );
