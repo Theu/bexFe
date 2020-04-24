@@ -22,10 +22,11 @@ const MapRender = ({ lat, long, zoom }) => {
     const initializeMap = () => {
         mapContainer = L.map('map', createMapContainer(lat, long, zoom, L));
     };
+
     const addPointersToMap = () =>
         createPointers(pointOfInterest, null, mapContainer, L);
 
-    useEffect(initializeMap);
+    const map = useEffect(initializeMap);
     useEffect(addPointersToMap);
 
     return <div id="map" className={styles.mapWrapper} />;

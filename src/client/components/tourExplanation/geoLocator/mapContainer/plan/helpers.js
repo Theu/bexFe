@@ -20,15 +20,20 @@ export const createPointers = (
     containerObject,
     mapInstance,
 ) => {
-    const markerIcon = !!customIcon
-        ? {
-              icon: customIcon,
-          }
-        : null;
+    const markerOption = (title) => ({
+        alt: title,
+        title: title,
+    });
     // TODO: create componet for popup (is popup the correct one)
-    return pointOfInterest.map((singlePoint) =>
+    const generatedPoI = pointOfInterest.map((singlePoint) =>
         mapInstance
-            .marker({ lat: singlePoint.lat, lng: singlePoint.lon }, markerIcon)
+            .marker(
+                {
+                    lat: singlePoint.lat,
+                    lng: singlePoint.lon,
+                },
+                markerOption(singlePoint.title),
+            )
             .addTo(containerObject)
             .bindPopup(
                 ReactDOMServer.renderToString(
@@ -36,4 +41,11 @@ export const createPointers = (
                 ),
             ),
     );
+
+    generatedPoI.forEach((single) => {
+        const _latlngObject = single._latlng;
+        single._icon.id = `${_latlngObject.lat}_${_latlngObject.lng}`;
+    });
+
+    return generatedPoI;
 };
