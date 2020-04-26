@@ -29,7 +29,9 @@ const MapRender = ({ lat, long, zoom }) => {
     useEffect(initializeMap);
 
     // this is working but trows an error, chek it out
-    useEffect(addPointersToMap);
+    useEffect(() => {
+        addPointersToMap();
+    });
 
     return <div id="map" className={styles.mapWrapper} />;
 };
