@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './pointers.module.scss';
 
-const Pointers = ({ interest }) => {
+const Pointers = ({ interest, getTarget }) => {
     if (interest.img) {
         return (
-            <div className={styles.infoBox}>
+            <div onClick={getTarget} className={styles.infoBox}>
                 <img
                     src={interest.img}
                     alt={interest.title}
@@ -16,7 +16,7 @@ const Pointers = ({ interest }) => {
         );
     } else {
         return (
-            <div className={styles.infoBox}>
+            <div onClick={getTarget} className={styles.infoBox}>
                 <div className={styles.title}> {interest.title}</div>
                 <div className={styles.text}>{interest.text}</div>
             </div>
