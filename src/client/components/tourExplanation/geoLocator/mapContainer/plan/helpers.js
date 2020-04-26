@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 import Pointers from '../pointers/Pointers';
 
@@ -16,7 +15,6 @@ export const createMapContainer = (lat, long, zoom, mapInstance) => ({
 
 export const createPointers = (
     pointOfInterest,
-    customIcon,
     containerObject,
     mapInstance,
 ) => {
