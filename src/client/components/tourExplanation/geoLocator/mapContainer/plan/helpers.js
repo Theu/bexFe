@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Pointers from '../pointers/Pointers';
 
@@ -17,6 +17,7 @@ export const createPointers = (
     pointOfInterest,
     containerObject,
     mapInstance,
+    target,
 ) => {
     const markerOption = (title) => ({
         alt: title,
@@ -43,6 +44,12 @@ export const createPointers = (
     generatedPoI.forEach((single) => {
         const _latlngObject = single._latlng;
         single._icon.id = `${_latlngObject.lat}_${_latlngObject.lng}`;
+    });
+
+    generatedPoI.forEach((single) => {
+        if (single._icon.id === target) {
+            single.openPopup();
+        }
     });
 
     return generatedPoI;

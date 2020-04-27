@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MapRender from './MapRender';
 
 const PlanContainer = ({ map }) => {
+    console.log('map', map);
     return (
         <MapRender lat={map.center[0]} long={map.center[1]} zoom={map.zoom} />
     );

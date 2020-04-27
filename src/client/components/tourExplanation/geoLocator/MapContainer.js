@@ -1,27 +1,22 @@
 import React from 'react';
-import { tourMock } from '../../../../server/tourMock';
+import PropTypes from 'prop-types';
+
 import PlanContainer from './mapContainer/plan/PlanContainer';
 import Pointers from './mapContainer/pointers/Pointers';
 import styles from './mapContainer.module.scss';
 
-const { pointOfInterest, mapMock } = tourMock;
-
-const MapContainer = () => {
-    const addTarget = (object) => ({
-        ...object,
-        get target() {
-            return `${this.lat}_${this.lon}`;
-        },
-    });
-    const getTarget = (object) => object.target;
+const MapContainer = ({ tour, clickTarget }) => {
+    const { pointOfInterest, mapMock } = tour;
     const pointers = pointOfInterest.map((singlePoi) => {
-        const enrichedPoi = addTarget(singlePoi);
-        const getTargetOnClick = () => getTarget(enrichedPoi);
+        const getTargetOnClick = () => {
+            clickTarget(`${singlePoi.lat}_${singlePoi.lon}`);
+        };
         return (
             <Pointers
-                interest={enrichedPoi}
+                interest={singlePoi}
                 getTarget={getTargetOnClick}
-                key={`${enrichedPoi.lat}${enrichedPoi.lon}`}
+                clickTarget={clickTarget}
+                key={`${singlePoi.lat}${singlePoi.lon}`}
             />
         );
     });
@@ -34,6 +29,8 @@ const MapContainer = () => {
     );
 };
 
-MapContainer.propTypes = {};
+MapContainer.propTypes = {
+    tour: PropTypes.object.isRequired,
+};
 
 export default MapContainer;
