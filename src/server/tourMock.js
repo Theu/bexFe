@@ -7,6 +7,10 @@ import {
 } from './imgMock';
 
 export const tourMock = {
+    mapMock: {
+        center: [52.519409, 13.38],
+        zoom: 13,
+    },
     mockTourContent: {
         titleTest: 'Letteratour',
         introText:

@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useReducer } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Pointers from '../pointers/Pointers';
 
@@ -16,19 +15,24 @@ export const createMapContainer = (lat, long, zoom, mapInstance) => ({
 
 export const createPointers = (
     pointOfInterest,
-    customIcon,
     containerObject,
     mapInstance,
+    target,
 ) => {
-    const markerIcon = !!customIcon
-        ? {
-              icon: customIcon,
-          }
-        : null;
+    const markerOption = (title) => ({
+        alt: title,
+        title: title,
+    });
     // TODO: create componet for popup (is popup the correct one)
-    return pointOfInterest.map((singlePoint) =>
+    const generatedPoI = pointOfInterest.map((singlePoint) =>
         mapInstance
-            .marker({ lat: singlePoint.lat, lng: singlePoint.lon }, markerIcon)
+            .marker(
+                {
+                    lat: singlePoint.lat,
+                    lng: singlePoint.lon,
+                },
+                markerOption(singlePoint.title),
+            )
             .addTo(containerObject)
             .bindPopup(
                 ReactDOMServer.renderToString(
@@ -36,4 +40,17 @@ export const createPointers = (
                 ),
             ),
     );
+
+    generatedPoI.forEach((single) => {
+        const _latlngObject = single._latlng;
+        single._icon.id = `${_latlngObject.lat}_${_latlngObject.lng}`;
+    });
+
+    generatedPoI.forEach((single) => {
+        if (single._icon.id === target) {
+            single.openPopup();
+        }
+    });
+
+    return generatedPoI;
 };
