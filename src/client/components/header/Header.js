@@ -12,13 +12,13 @@ const BEX_MENU = [
     'CONTATTI',
 ];
 const Header = () => (
-    <header className={styles.headerWrapper}>
-        <img src={logo} alt="Berlino Explorer" />
+    <div className={styles.headerWrapper}>
+        <img src={logo} alt="Berlino Explorer" className={styles.logo} />
         <div className={styles.navigationWrapper}>
             <Menu menuList={BEX_MENU} />
             <div className={styles.search} />
         </div>
-    </header>
+    </div>
 );
 
 export default Header;

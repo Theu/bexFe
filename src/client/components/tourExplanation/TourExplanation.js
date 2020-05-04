@@ -1,16 +1,15 @@
 import React from 'react';
-import { useStateValue } from './../../stateManager/stateProvider';
-import Tour from './tour/Tour';
 import { tourMock } from './../../../server/tourMock';
-import MapContainer from './geoLocator/MapContainer';
+import PlanContainer from './geoLocator/mapContainer/plan/PlanContainer';
 import styles from './tourExplanation.module.scss';
 
 const mockTourContent = tourMock.mockTourContent;
 
 export const TourExplanation = () => {
+    const { mapMock } = tourMock;
     return (
         <div className={styles.wrapper}>
-            <MapContainer tour={tourMock} />
+            <PlanContainer map={mapMock} />
         </div>
     );
 };
