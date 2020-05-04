@@ -11,12 +11,18 @@ export const reducer = (state, action) => {
                 ...state,
                 target: {
                     isClicked: true,
-                    value: action.payload,
+                    value: action.value,
                 },
             };
         default:
             return state;
     }
+};
+export const initialState = {
+    target: {
+        isClicked: false,
+        value: null,
+    },
 };
 
 export const StateProvider = ({ reducer, initialState, children }) => (
