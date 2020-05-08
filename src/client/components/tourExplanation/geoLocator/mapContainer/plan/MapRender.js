@@ -1,43 +1,27 @@
-import React, { useEffect, useReducer } from 'react';
-import L from 'leaflet';
+import React, { useEffect } from 'react';
 import { tourMock } from '../../../../../../server/tourMock';
-import { useStateValue } from './../../../../../stateManager/stateProvider';
-import { createMapContainer, createPointers } from './helpers';
+import { createMapContainer, extractBound } from './helpers/mapHelpers';
+import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
 const { pointOfInterest } = tourMock;
-// move this outside
-const extractBound = (array) => array.map((single) => [single.lat, single.lon]);
-const myBounds = extractBound(pointOfInterest);
-const MapRender = ({ lat, long, zoom }) => {
-    const [{ target }, dispatch] = useStateValue();
 
-    const mapBuilder = {
-        mapHolder: null,
-        pointerHolder: null,
-    };
+const mapBounds = extractBound(pointOfInterest);
 
-    let mapContainer = mapBuilder.mapHolder;
+const MapRender = ({ targetMap, lat, long, zoom }) => {
+    const mapFromLeaflet = createMapContainer(lat, long, zoom, targetMap);
+    const containerInit = targetMap.DomUtil.get('map');
+    const MARKERS = createMarkers(targetMap, mapBounds);
 
-    const initializeMap = () => {
-        const container = L.DomUtil.get('map');
+    const initializeMap = (container, markers) => {
         if (container != null) {
             container._leaflet_id = null;
         }
-        mapContainer = L.map(
-            'map',
-            createMapContainer(lat, long, zoom, L),
-        ).fitBounds(myBounds);
+        container = targetMap.map('map', mapFromLeaflet).fitBounds(mapBounds);
+        targetMap.featureGroup(markers).addTo(container);
     };
 
-    const addPointersToMap = () =>
-        createPointers(pointOfInterest, mapContainer, L, target.value);
-
-    useEffect(initializeMap);
-
-    useEffect(() => {
-        addPointersToMap();
-    });
+    useEffect(() => initializeMap(containerInit, MARKERS));
 
     return <div id="map" className={styles.mapWrapper} />;
 };

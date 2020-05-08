@@ -1,10 +1,17 @@
 import React from 'react';
+import L from 'leaflet';
 import PropTypes from 'prop-types';
 import MapRender from './MapRender';
 
 const PlanContainer = ({ map }) => {
+    const targetMap = L;
     return (
-        <MapRender lat={map.center[0]} long={map.center[1]} zoom={map.zoom} />
+        <MapRender
+            targetMap={targetMap}
+            lat={map.center[0]}
+            long={map.center[1]}
+            zoom={map.zoom}
+        />
     );
 };
 

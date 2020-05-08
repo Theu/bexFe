@@ -3,8 +3,6 @@ import { tourMock } from './../../../server/tourMock';
 import PlanContainer from './geoLocator/mapContainer/plan/PlanContainer';
 import styles from './tourExplanation.module.scss';
 
-const mockTourContent = tourMock.mockTourContent;
-
 export const TourExplanation = () => {
     const { mapMock } = tourMock;
     return (
