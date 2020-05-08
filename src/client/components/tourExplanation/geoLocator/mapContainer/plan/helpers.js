@@ -5,6 +5,7 @@ import Pointers from '../pointers/Pointers';
 export const createMapContainer = (lat, long, zoom, mapInstance) => ({
     center: [lat, long],
     zoom: zoom,
+    zoomOffset: -1,
     layers: [
         mapInstance.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution:

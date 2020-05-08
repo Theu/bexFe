@@ -11,11 +11,9 @@ import styles from './app.module.scss';
 const App = () => {
     return (
         <StateProvider initialState={initialState} reducer={reducer}>
-            <div className={styles.mainWrapper}>
-                <div className={styles.content}>
-                    {/* <Header /> */}
-                    <TourExplanation />
-                </div>
+            <div>
+                <Header />
+                <TourExplanation />
             </div>
         </StateProvider>
     );
