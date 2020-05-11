@@ -15,9 +15,10 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
     const MARKERS = createMarkers(targetMap, mapBounds);
 
     const [isPanelOpen, setIsPanelOpen] = useState(true);
+    const [hasCoord, setCoord] = useState({});
     const onClickToggle = () => {
-        console.log('click');
         setIsPanelOpen(!isPanelOpen);
+        setCoord({});
     };
     const initializeMap = (container, markers) => {
         if (container != null) {
@@ -30,7 +31,7 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
                     onClickToggle();
-                    console.log('EEEE', ev);
+                    setCoord({ lat: ev.latlng.lat, lng: ev.latlng.lng });
                 });
             })
             .addTo(container);
@@ -40,7 +41,11 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
 
     return (
         <div id="map" className={styles.mapWrapper}>
-            <Message onClickToggle={onClickToggle} show={isPanelOpen} />
+            <Message
+                onClickToggle={onClickToggle}
+                show={isPanelOpen}
+                coord={hasCoord}
+            />
         </div>
     );
 };
