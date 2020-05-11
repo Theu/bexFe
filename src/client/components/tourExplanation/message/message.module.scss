@@ -1,0 +1,27 @@
+@import '../../../styles/index.scss';
+
+.messageWrapper {
+    width: calc(95% - 20px);
+    height: fill-available;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: white;
+    position: relative;
+    z-index: 10000;
+    border-radius: 5px;
+}
+
+.info {
+    width: 25px;
+    height: 25px;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: white;
+    position: relative;
+    z-index: 10000;
+    border-radius: 5px;
+}
+
+.hide {
+    display: none;
+}
