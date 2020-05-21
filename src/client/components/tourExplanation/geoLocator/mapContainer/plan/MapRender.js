@@ -14,13 +14,8 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 
-    const [isPanelOpen, setIsPanelOpen] = useState(true);
-    const [hasCoord, setCoord] = useState({});
-    const onClickToggle = () => {
-        setIsPanelOpen(!isPanelOpen);
-        setCoord({});
-    };
-    // const getCoord = (lat, lng) => {}
+
+
     const initializeMap = (container, markers) => {
         if (container != null) {
             container._leaflet_id = null;
@@ -31,8 +26,7 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
             .featureGroup(markers)
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
-                    onClickToggle();
-                    // setCoord({ lat: ev.latlng.lat, lng: ev.latlng.lng });
+                    console.log('CLICK CLICK');
                 });
             })
             .addTo(container);
@@ -41,13 +35,14 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
     useEffect(() => initializeMap(containerInit, MARKERS), []);
 
     return (
-        <div id="map" className={styles.mapWrapper}>
-            <Message
+        <>
+        <div id="map" className={styles.mapWrapper} />
+            {/* <Message
                 onClickToggle={onClickToggle}
                 show={isPanelOpen}
                 coord={hasCoord}
-            />
-        </div>
+            /> */}
+        </>
     );
 };
 
