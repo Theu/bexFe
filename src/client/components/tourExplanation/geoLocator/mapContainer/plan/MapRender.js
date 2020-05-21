@@ -20,6 +20,7 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
         setIsPanelOpen(!isPanelOpen);
         setCoord({});
     };
+    // const getCoord = (lat, lng) => {}
     const initializeMap = (container, markers) => {
         if (container != null) {
             container._leaflet_id = null;
@@ -31,13 +32,13 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
                     onClickToggle();
-                    setCoord({ lat: ev.latlng.lat, lng: ev.latlng.lng });
+                    // setCoord({ lat: ev.latlng.lat, lng: ev.latlng.lng });
                 });
             })
             .addTo(container);
     };
 
-    useEffect(() => initializeMap(containerInit, MARKERS));
+    useEffect(() => initializeMap(containerInit, MARKERS), []);
 
     return (
         <div id="map" className={styles.mapWrapper}>
