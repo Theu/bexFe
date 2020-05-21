@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './pointers.module.scss';
+import styles from './infoPoint.module.scss';
 
-const Pointers = ({ interest, getTarget }) => {
+const InfoPoint = ({ interest, getTarget }) => {
     if (interest.img) {
         return (
-            <div onClick={getTarget} className={styles.infoBox}>
+            <div className={styles.infoBox}>
                 <img
                     src={interest.img}
                     alt={interest.title}
@@ -24,4 +24,4 @@ const Pointers = ({ interest, getTarget }) => {
     }
 };
 
-export default Pointers;
+export default InfoPoint;
