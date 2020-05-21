@@ -2,13 +2,19 @@
 
 .messageWrapper {
     width: calc(95% - 20px);
-    height: fill-available;
+    display: flex;
+    flex-direction: column;
+    // check if doable dinamically TODO
+    height: 77.5vh;
     margin: 5px auto;
     padding: 5px;
     background-color: white;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     z-index: 10000;
     border-radius: 5px;
+    border: 1px solid red;;
 }
 
 .info {
@@ -17,7 +23,9 @@
     margin: 5px auto;
     padding: 5px;
     background-color: white;
-    position: relative;
+    position: absolute;
+    left: 18px;
+    top: 200px;
     z-index: 10000;
     border-radius: 5px;
 }

@@ -1,6 +1,7 @@
 @import '../../styles/index.scss';
 
 .wrapper {
+    display: flex;
     width: calc(100% - 10px);
     height: 80vh;
     padding: 5px;
