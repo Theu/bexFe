@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Message from '../../../message/Message';
+import { connect } from 'react-redux';
+
+import {getCoords} from '../../../../../redux/modules/coords/actions'
 import { tourMock } from '../../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
@@ -27,6 +29,7 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
                     console.log('CLICK CLICK');
+                    getCoords()
                 });
             })
             .addTo(container);
@@ -46,4 +49,8 @@ const MapRender = ({ targetMap, lat, long, zoom }) => {
     );
 };
 
-export default MapRender;
+const mapDispatchToProps = (state) => ({
+    getCoords
+})
+
+export default connect(null, mapDispatchToProps)(MapRender);
