@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { getCoords } from '../../../../../redux/modules/coords/actions';
+import { openPanel } from '../../../../../redux/modules/panel/actions';
 import { tourMock } from '../../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
@@ -12,7 +13,7 @@ const { pointOfInterest } = tourMock;
 const mapBounds = extractBound(pointOfInterest);
 
 const MapRender = (props) => {
-    const { targetMap, lat, long, zoom, getCoords } = props;
+    const { targetMap, lat, long, zoom, getCoords, openPanel } = props;
     const mapFromLeaflet = createMapContainer(lat, long, zoom, targetMap);
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
@@ -27,6 +28,7 @@ const MapRender = (props) => {
             .featureGroup(markers)
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
+                    openPanel(true);
                     getCoords(ev.latlng);
                 });
             })
@@ -38,6 +40,6 @@ const MapRender = (props) => {
     return <div id="map" className={styles.mapWrapper} />;
 };
 
-const mapDispatchToProps = { getCoords };
+const mapDispatchToProps = { getCoords, openPanel };
 
 export default connect(null, mapDispatchToProps)(MapRender);
