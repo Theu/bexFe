@@ -9,34 +9,32 @@ import Message from './message/Message';
 import styles from './tourExplanation.module.scss';
 
 export const TourExplanation = (props) => {
-    // const dispatch = useDispatch();
     const panel = useSelector(state => state.panel.isPanelOpen);
     const coord = useSelector(state => state.coords.coords);
-    console.log('coord :>> ', coord);
+
     const { mapMock } = tourMock;
 
-    console.log('panel :>> ', panel);
-    const [isPanelOpen, setIsPanelOpen] = useState(true);
-    // const [hasCoord, setCoord] = useState({});
-    const onClickToggle = () => {
-        console.log('CLICK');
-        setIsPanelOpen(!isPanelOpen)
+    const [isInfoPanel, setInfoPanel] = useState(true);
+    const onClickClose = () => {
         props.tooglePanel(false)
-        // dispatch(tooglePanel(false))
+        setInfoPanel(false)
     };
 
-    console.log('panel :>> DOWN', panel);
-    console.log('isPanelOpen :>> ', isPanelOpen);
+    const onClickOpenInfo = () => {
+        console.log('CLICK');
+        setInfoPanel(true)
+    };
 
     return (
         <div className={styles.wrapper}>
-            <PlanContainer map={mapMock} />
             <Message
-                onClickToggle={onClickToggle}
-                show={isPanelOpen}
+                onClickClose={onClickClose}
+                onClickOpenInfo={onClickOpenInfo}
+                showInfo={isInfoPanel}
                 panel={panel}
-                coord={false}
+                coord={coord}
             />
+            <PlanContainer map={mapMock} />
         </div>
     );
 };
