@@ -1,5 +1,4 @@
-import types from './types';
-
-export const getCoords = () => ({
-    types: types.GET_COORDINATES
-})
+export const getCoords = (coord) => ({
+    type: 'GET_COORDINATES',
+    coords: coord
+});

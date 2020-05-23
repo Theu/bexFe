@@ -1,19 +1,16 @@
-import { createReducer } from '../../utils';
-import types from './types';
-
 export const initialState = {
     coords: {}
 }
 
-const SYNC_ACTION_HANDLERS = {
-    [types.GET_COORDINATES]: (state, action) => ({
-        ...state,
-        coords: action.payload
-    })
-};
+const rootReducer = (state = initialState, action) => {
+    if (action.type === 'GET_COORDINATES') {
+        return {
+            ...state,
+            coords: action.coords
+        }
+    }
 
-const ACTION_HANDLERS = {
-    ...SYNC_ACTION_HANDLERS
+    return state;
 }
 
-export default createReducer(ACTION_HANDLERS, initialState);
+export default rootReducer;
