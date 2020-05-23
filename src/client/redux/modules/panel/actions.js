@@ -1,4 +1,4 @@
-export const openPanel = (payload) => ({
-    type: 'OPEN_PANEL',
-    isOpen: payload
+export const tooglePanel = (payload) => ({
+    type: 'TOGGLE_PANEL',
+    isPanelOpen: payload
 });

@@ -3,10 +3,10 @@ export const initialState = {
 }
 
 const panelReducer = (state = initialState, action) => {
-    if (action.type === 'OPEN_PANEL') {
+    if (action.type === 'TOGGLE_PANEL') {
         return {
             ...state,
-            isPanelOpen: action.isOpen
+            isPanelOpen: action.isPanelOpen
         }
     }
 

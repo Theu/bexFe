@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 
 import { getCoords } from '../../../../../redux/modules/coords/actions';
-import { openPanel } from '../../../../../redux/modules/panel/actions';
+import { tooglePanel } from '../../../../../redux/modules/panel/actions';
 import { tourMock } from '../../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
@@ -12,13 +12,12 @@ const { pointOfInterest } = tourMock;
 
 const mapBounds = extractBound(pointOfInterest);
 
-const MapRender = (props) => {
-    const { targetMap, lat, long, zoom, getCoords, openPanel } = props;
+const MapRender = ({ targetMap, lat, long, zoom, getCoords, tooglePanel }) => {
     const mapFromLeaflet = createMapContainer(lat, long, zoom, targetMap);
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 
-    const initializeMap = (container, markers) => {
+    const initializeMap = useCallback((container, markers) => {
         if (container != null) {
             container._leaflet_id = null;
         }
@@ -28,18 +27,18 @@ const MapRender = (props) => {
             .featureGroup(markers)
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
-                    openPanel(true);
+                    tooglePanel(true);
                     getCoords(ev.latlng);
                 });
             })
             .addTo(container);
-    };
+    }, [getCoords, mapFromLeaflet, targetMap, tooglePanel]);
 
-    useEffect(() => initializeMap(containerInit, MARKERS), []);
+    useEffect(() => initializeMap(containerInit, MARKERS), [MARKERS, containerInit, initializeMap]);
 
     return <div id="map" className={styles.mapWrapper} />;
 };
 
-const mapDispatchToProps = { getCoords, openPanel };
+const mapDispatchToProps = { getCoords, tooglePanel };
 
 export default connect(null, mapDispatchToProps)(MapRender);
