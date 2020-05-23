@@ -12,11 +12,6 @@ const Message = ({ onClickClose, onClickOpenInfo, showInfo, panel, coord }) => {
         (o) => o.lat === coord.lat && o.lon === coord.lng,
     );
 
-    // const tour = 'ma che bel castello'
-    console.log('------------------------------------');
-    console.log('showInfo :>> ', showInfo);
-    console.log('------------------------------------');
-    console.log('tour', tour);
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;

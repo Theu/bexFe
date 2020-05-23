@@ -21,7 +21,6 @@ export const TourExplanation = (props) => {
     };
 
     const onClickOpenInfo = () => {
-        console.log('CLICK');
         setInfoPanel(true)
     };
 
