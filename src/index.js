@@ -7,10 +7,14 @@ import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
 
+import { tourMock } from '../src/server/tourMock';
+
 import App from './App';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
 import './index.scss';
+
+const tourList = Object.keys(tourMock);
 
 render(
     <React.StrictMode>
@@ -20,7 +24,11 @@ render(
                     <App />
                     <Switch>
                         <Route exact path="/" component={TourHomePage} />
-                        <Route exact path="/tour" component={TourExplanation} />
+                        {
+                            tourList.map((path) => (
+                                <Route key={path} path={`/${path}`} component={TourExplanation} />
+                            ))
+                        }
                     </Switch>
                 </>
             </Router>

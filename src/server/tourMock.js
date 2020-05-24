@@ -8,7 +8,7 @@ import {
 } from './imgMock';
 
 export const tourMock = {
-    firstTourMock: {
+    libri: {
         mockTourContent: {
             titleTest: 'Letteratour',
             introText:
@@ -62,7 +62,7 @@ export const tourMock = {
             },
         ],
     },
-    secondTourMock: {
+    gattini: {
         mockTourContent: {
             titleTest: 'Letteratour',
             introText:

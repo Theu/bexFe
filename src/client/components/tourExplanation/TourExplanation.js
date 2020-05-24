@@ -21,6 +21,8 @@ export const TourExplanation = (props) => {
         setInfoPanel(true)
     };
 
+    const tour = props.location.pathname.substr(1)
+
     return (
         <div className={styles.wrapper}>
             <Message
@@ -29,8 +31,9 @@ export const TourExplanation = (props) => {
                 showInfo={isInfoPanel}
                 panel={panel}
                 coord={coord}
+                tour={tour}
             />
-            <PlanContainer />
+            <PlanContainer tour={tour} />
         </div>
     );
 };

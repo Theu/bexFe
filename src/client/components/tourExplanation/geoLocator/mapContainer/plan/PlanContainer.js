@@ -3,11 +3,12 @@ import L from 'leaflet';
 import PropTypes from 'prop-types';
 import MapRender from './MapRender';
 
-const PlanContainer = () => {
+const PlanContainer = ({tour}) => {
     const targetMap = L;
     return (
         <MapRender
             targetMap={targetMap}
+            tour={tour}
         />
     );
 };
