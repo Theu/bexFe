@@ -1,0 +1,1 @@
+const getIsPanelOpen = state => state.panel.isPanelOpen;

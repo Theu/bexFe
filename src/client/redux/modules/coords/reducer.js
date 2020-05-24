@@ -2,7 +2,7 @@ export const initialState = {
     coords: {}
 }
 
-const rootReducer = (state = initialState, action) => {
+const coordReducer = (state = initialState, action) => {
     if (action.type === 'GET_COORDINATES') {
         return {
             ...state,
@@ -13,4 +13,4 @@ const rootReducer = (state = initialState, action) => {
     return state;
 }
 
-export default rootReducer;
+export default coordReducer;

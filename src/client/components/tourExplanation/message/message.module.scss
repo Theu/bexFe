@@ -14,7 +14,12 @@
     right: 0;
     z-index: 10000;
     border-radius: 5px;
-    border: 1px solid red;;
+    overflow: scroll;
+    @include respond-to($tablet) {
+        position: relative;
+        width: calc(33% - 20px);
+        margin: 5px;
+      }
 }
 
 .info {
