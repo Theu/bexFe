@@ -15,10 +15,12 @@
     z-index: 10000;
     border-radius: 5px;
     overflow: scroll;
+    border: 1px solid red;
     @include respond-to($tablet) {
         position: relative;
-        width: calc(33% - 20px);
+        width: 420px;
         margin: 5px;
+        border: 1px solid red;
       }
 }
 

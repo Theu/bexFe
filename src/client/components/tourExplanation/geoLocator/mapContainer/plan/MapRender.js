@@ -8,12 +8,15 @@ import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-const { pointOfInterest } = tourMock;
+// const { pointOfInterest } = tourMock;
 
-const mapBounds = extractBound(pointOfInterest);
 
-const MapRender = ({ targetMap, lat, long, zoom, getCoords, tooglePanel }) => {
-    const mapFromLeaflet = createMapContainer(lat, long, zoom, targetMap);
+
+
+const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
+    const { pointOfInterest } = tourMock[tour];
+    const mapBounds = extractBound(pointOfInterest);
+    const mapFromLeaflet = createMapContainer(targetMap);
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 
