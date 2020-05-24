@@ -10,7 +10,6 @@ const Message = ({ onClickClose, onClickOpenInfo, showInfo, panel, coord, tour }
     const tourDisplay = pointOfInterest.find(
         (o) => o.lat === coord.lat && o.lon === coord.lng,
     );
-
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
@@ -18,7 +17,7 @@ const Message = ({ onClickClose, onClickOpenInfo, showInfo, panel, coord, tour }
         <>
             <div className={wrapperStyle}>
                 <div onClick={onClickClose}>close</div>
-                {!!coord.lat ? (
+                {!!coord.lat && !!tourDisplay ? (
                     <InfoPoint interest={tourDisplay} />
                 ) : (
                     <div>introduction</div>

@@ -15,10 +15,6 @@ import styles from './mapRender.module.scss';
 
 const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const { pointOfInterest } = tourMock[tour];
-    console.log('------------------------------------');
-    console.log('pointOfInterest :>> ', pointOfInterest);
-    console.log('------------------------------------');
-
     const mapBounds = extractBound(pointOfInterest);
     const mapFromLeaflet = createMapContainer(targetMap);
     const containerInit = targetMap.DomUtil.get('map');
