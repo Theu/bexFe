@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import { getCoords } from '../../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../../redux/modules/panel/actions';
-import { tourMock, secondTourMock } from '../../../../../../server/tourMock';
+import { tourMock } from '../../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
 // const { pointOfInterest } = tourMock;
-const { pointOfInterest } = secondTourMock;
+const { pointOfInterest } = tourMock.secondTourMock;
 
 const mapBounds = extractBound(pointOfInterest);
 
