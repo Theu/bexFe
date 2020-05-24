@@ -1,10 +1,11 @@
 import React from 'react';
-import { tourMock } from '../../../../server/tourMock';
+import { tourMock, secondTourMock } from '../../../../server/tourMock';
 
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
 
-const { pointOfInterest } = tourMock;
+// const { pointOfInterest } = tourMock;
+const { pointOfInterest } = secondTourMock;
 
 // TODO info should stay in a controller container?
 const Message = ({ onClickClose, onClickOpenInfo, showInfo, panel, coord }) => {

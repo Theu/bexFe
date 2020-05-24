@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 
 import { getCoords } from '../../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../../redux/modules/panel/actions';
-import { tourMock } from '../../../../../../server/tourMock';
+import { tourMock, secondTourMock } from '../../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-const { pointOfInterest } = tourMock;
+// const { pointOfInterest } = tourMock;
+const { pointOfInterest } = secondTourMock;
 
 const mapBounds = extractBound(pointOfInterest);
 
-const MapRender = ({ targetMap, lat, long, zoom, getCoords, tooglePanel }) => {
-    const mapFromLeaflet = createMapContainer(lat, long, zoom, targetMap);
+console.log('mapBounds :>> ', mapBounds);
+
+
+const MapRender = ({ targetMap, getCoords, tooglePanel }) => {
+    const mapFromLeaflet = createMapContainer(targetMap);
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 

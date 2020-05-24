@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 import { connect, useSelector } from 'react-redux';
 import { tooglePanel } from '../../redux/modules/panel/actions';
-import { tourMock } from './../../../server/tourMock';
+import { tourMock, secondTourMock } from './../../../server/tourMock';
 
 import PlanContainer from './geoLocator/mapContainer/plan/PlanContainer';
 import Message from './message/Message';
@@ -12,7 +12,8 @@ export const TourExplanation = (props) => {
     const panel = useSelector(state => state.panel.isPanelOpen);
     const coord = useSelector(state => state.coords.coords);
 
-    const { mapMock } = tourMock;
+    // const { mapMock } = tourMock;
+    const { mapMock } = secondTourMock;
 
     const [isInfoPanel, setInfoPanel] = useState(true);
     const onClickClose = () => {
@@ -33,7 +34,7 @@ export const TourExplanation = (props) => {
                 panel={panel}
                 coord={coord}
             />
-            <PlanContainer map={mapMock} />
+            <PlanContainer />
         </div>
     );
 };
