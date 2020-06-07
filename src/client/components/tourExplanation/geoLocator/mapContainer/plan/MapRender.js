@@ -8,10 +8,6 @@ import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-// const { pointOfInterest } = tourMock;
-
-
-
 
 const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const { pointOfInterest } = tourMock[tour];
@@ -24,7 +20,7 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
         if (container != null) {
             container._leaflet_id = null;
         }
-        container = targetMap.map('map', mapFromLeaflet).fitBounds(mapBounds);
+        container = targetMap.map('map', mapFromLeaflet).fitBounds(mapBounds, {padding: [25, 25]});
 
         targetMap
             .featureGroup(markers)

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { tourMock } from '../../../../server/tourMock';
+import styles from './masonryContayner.module.scss';
 import './styles.css';
 
 // Jesse Korzan
@@ -7,39 +10,58 @@ import './styles.css';
 // special thx to NickB
 //
 // kick ass out there, ppl 1:1
-
-const Card = (props) =>
-    <div className={(props.card === props.active) ? "card active" : "card"} onClick={()=>props.handleClickCard(props.card)}>
-        <div className="media"></div>
-        <div>
-            <h1>{ props.card.id }</h1>
-            <h2>{ props.card.title }</h2>
-            <p><strong>{ props.card.title }</strong>{ props.card.body }</p>
+{
+    /* <Link key={`${tourTitle}`} to={`${tourTitle}`}>
+                    {tourTitle}
+                </Link> */
+}
+const Card = (props) => (
+    <Link key={`${props.card.mockTourContent.tourUrl}`} to={`${props.card.mockTourContent.tourUrl}`}>
+        <div className={styles.card}>
+            {/* <div className="media"></div> */}
+            <img
+                src={props.card.mockTourContent.img}
+                className={styles.image}
+            />
+            <div className={styles.cardText}>
+                <h1>{props.card.mockTourContent.titleTest}</h1>
+                <p>{props.card.mockTourContent.tourCard}</p>
+            </div>
         </div>
-    </div>
+    </Link>
+);
 
-const Layout = (props) =>
+const Layout = (props) => (
     // Masonry layout of cards
     // column-count : X
-    <div className={`layout` + `${props.style}`} style={{"columnCount" : props.columns}}>
-        {props.cards.map( (card, index) =>
-            <Card key={index} card={card} active={props.active} handleClickCard={props.handleClickCard}/>
-        )}
+    <div
+        className={`layout` + `${props.style}`}
+        style={{ columnCount: props.columns }}
+    >
+        {props.cards.map((card, index) => (
+            <Card
+                key={index}
+                card={card}
+                active={props.active}
+                handleClickCard={props.handleClickCard}
+            />
+        ))}
     </div>
+);
 
 class MasonryContainer extends Component {
     constructor() {
         super();
         this.state = {
-            layout: "masonry",
+            layout: 'masonry',
             columns: 5,
-            maxCards: 20
+            maxCards: 20,
         };
     }
     componentDidMount() {
         this.fetchEr();
 
-/*
+        /*
         // cheap responsive approach -- if you want
         window.addEventListener("resize", () => {
             let winWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -53,13 +75,18 @@ class MasonryContainer extends Component {
     }
     fetchEr = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts`)
-        .then(response => response.json())
-        .then(result => {
-            this.reorder(result.slice(0,this.state.maxCards), this.state.columns);
-            this.setState({ cardsOG: result.slice(0,this.state.maxCards) });
-        })
-        .catch(e => e);
-    }
+            .then((response) => response.json())
+            .then((result) => {
+                this.reorder(
+                    result.slice(0, this.state.maxCards),
+                    this.state.columns,
+                );
+                this.setState({
+                    cardsOG: result.slice(0, this.state.maxCards),
+                });
+            })
+            .catch((e) => e);
+    };
     reorder = (arr, columns) => {
         // READ HERE
         // this is the magic
@@ -69,51 +96,46 @@ class MasonryContainer extends Component {
         const cols = columns;
         const out = [];
         let col = 0;
-        while(col < cols) {
-            for(let i = 0; i < arr.length; i += cols) {
+        while (col < cols) {
+            for (let i = 0; i < arr.length; i += cols) {
                 let _val = arr[i + col];
-                if (_val !== undefined)
-                    out.push(_val);
+                if (_val !== undefined) out.push(_val);
             }
             col++;
         }
-        this.setState({ cards: out, columns: columns });
-
-        // yes, I know Nick... you had another slicker ES6-y implementation
-        // but this one I could understand :)
-    }
+        const toursForCard = Object.values(tourMock);
+        console.log('out :>> ', out);
+        console.log('toursForCard :>> ', toursForCard);
+        this.setState({ cards: toursForCard, columns: columns });
+    };
     handleButtonClick = (layout, columns) => {
         this.setState({
             layout: layout,
-            columns: columns
+            columns: columns,
         });
         this.reorder(this.state.cardsOG, columns);
-
-    }
+    };
     handleClickCard = (card) => {
         this.setState({
-            cardActive: (this.state.cardActive !== card) ? card : false
-        })
-    }
+            cardActive: this.state.cardActive !== card ? card : false,
+        });
+    };
     render() {
         let CARDS = this.state.cards;
+        // const tours =
+        console.log('CARDS :>> ', CARDS);
         return (
             <div>
-                <nav>
-                    <a href="#1" id="1" onClick={()=>this.setState({ layout: "masonry", columns: 5, cards: this.state.cardsOG })}>5-col (no reorder)</a>
-                    <a href="#2" id="2" onClick={()=>this.handleButtonClick("masonry", 5)}>5-col</a>
-                    <a href="#3" id="3" onClick={()=>this.handleButtonClick("two-column", 2)}>2-col</a>
-                    <a href="#5" id="5" onClick={()=>this.handleButtonClick("flex", 3)}>3-col</a>
-                    <a href="#4" id="4" onClick={()=>this.handleButtonClick("single-column", 1)}>1-col</a>
-                </nav>
                 <div className="layout--wrapper">
-                    <div className="info">
-                        <div>
-                            <h2>Card Array: { CARDS && CARDS.map( card => <span>{card.id}</span>) }</h2>
-                            <p>Layout using CSS <i>column-count</i> only &mdash; <a href="https://github.com/jessekorzan/masonry-css-js">GitHub</a></p>
-                        </div>
-                    </div>
-                    { CARDS && <Layout style={this.state.layout} columns={this.state.columns} cards={CARDS} active={this.state.cardActive} handleClickCard={this.handleClickCard} /> }
+                    {CARDS && (
+                        <Layout
+                            style={this.state.layout}
+                            columns={this.state.columns}
+                            cards={CARDS}
+                            active={this.state.cardActive}
+                            handleClickCard={this.handleClickCard}
+                        />
+                    )}
                 </div>
             </div>
         );
