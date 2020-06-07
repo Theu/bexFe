@@ -1,0 +1,7 @@
+{
+    // This is a dirty workaround for that eslint forces
+    // all scoped npm modules to have `eslint-config-` prefix
+    // https://github.com/eslint/eslint/blob/master/lib/util/naming.js#L36
+    "extends": "./.eslintrc.js",
+    "parser": "babel-eslint"
+  }
