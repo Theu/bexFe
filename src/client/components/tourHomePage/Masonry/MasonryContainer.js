@@ -10,22 +10,17 @@ import './styles.css';
 // special thx to NickB
 //
 // kick ass out there, ppl 1:1
-{
-    /* <Link key={`${tourTitle}`} to={`${tourTitle}`}>
-                    {tourTitle}
-                </Link> */
-}
+
 const Card = (props) => (
-    <Link key={`${props.card.mockTourContent.tourUrl}`} to={`${props.card.mockTourContent.tourUrl}`}>
+    <Link key={`${props.card.tourCover.tourUrl}`} to={`${props.card.tourCover.tourUrl}`}>
         <div className={styles.card}>
-            {/* <div className="media"></div> */}
             <img
-                src={props.card.mockTourContent.img}
+                src={props.card.tourCover.coverImg}
                 className={styles.image}
             />
             <div className={styles.cardText}>
-                <h1>{props.card.mockTourContent.titleTest}</h1>
-                <p>{props.card.mockTourContent.tourCard}</p>
+                <h1>{props.card.tourCover.titleTest}</h1>
+                <p>{props.card.tourCover.tourCard}</p>
             </div>
         </div>
     </Link>

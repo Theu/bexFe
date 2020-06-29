@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './infoPoint.module.scss';
 
 const InfoPoint = ({ interest, getTarget }) => {
-    if (interest.img) {
+    if (interest.pointOfInterestCoverImg) {
         return (
             <div className={styles.infoBox}>
                 <img
-                    src={interest.img}
+                    src={interest.pointOfInterestCoverImg}
                     alt={interest.title}
                     className={styles.imageWrapper}
                 />

@@ -9,13 +9,13 @@ import {
 
 export const tourMock = {
     libri: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'libri',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            img: alexanderPlatz,
+            coverImg: alexanderPlatz,
             tourUrl: 'libri',
         },
         pointOfInterest: [
@@ -26,7 +26,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: alexanderPlatz,
+                pointOfInterestCoverImg: alexanderPlatz,
             },
             {
                 lat: 52.512177,
@@ -35,7 +35,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: rogoBerlino,
+                pointOfInterestCoverImg: rogoBerlino,
             },
             {
                 lat: 52.507523,
@@ -44,7 +44,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cieloDiviso,
+                pointOfInterestCoverImg: cieloDiviso,
             },
             {
                 lat: 52.499503,
@@ -53,7 +53,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: addioABerlino,
+                pointOfInterestCoverImg: addioABerlino,
             },
             {
                 lat: 52.512694,
@@ -62,18 +62,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: wiederDa,
+                pointOfInterestCoverImg: wiederDa,
             },
-        ]
+        ],
     },
     gattini: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'gattini',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: addioABerlino,
+            coverImg: addioABerlino,
             tourUrl: 'gattini',
         },
         pointOfInterest: [
@@ -84,7 +84,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.537,
@@ -93,7 +93,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -102,7 +102,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -111,7 +111,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -120,7 +120,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -129,18 +129,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     chitarre: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'chitarre',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: wiederDa,
+            coverImg: wiederDa,
             tourUrl: 'chitarre',
         },
         pointOfInterest: [
@@ -151,7 +151,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -160,7 +160,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -169,7 +169,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -178,7 +178,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -187,18 +187,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     pizze: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'pizze',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: cieloDiviso,
+            coverImg: cieloDiviso,
             tourUrl: 'pizze',
         },
         pointOfInterest: [
@@ -209,7 +209,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -218,7 +218,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -227,7 +227,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -236,7 +236,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -245,18 +245,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     biciclette: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'biciclette',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: rogoBerlino,
+            coverImg: rogoBerlino,
             tourUrl: 'biciclette',
         },
         pointOfInterest: [
@@ -267,7 +267,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -276,7 +276,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -285,7 +285,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -294,7 +294,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -303,18 +303,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     foreste: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'foreste',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            img: alexanderPlatz,
+            coverImg: alexanderPlatz,
             tourUrl: 'foreste',
         },
         pointOfInterest: [
@@ -325,7 +325,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: alexanderPlatz,
+                pointOfInterestCoverImg: alexanderPlatz,
             },
             {
                 lat: 52.512177,
@@ -334,7 +334,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: rogoBerlino,
+                pointOfInterestCoverImg: rogoBerlino,
             },
             {
                 lat: 52.507523,
@@ -343,7 +343,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cieloDiviso,
+                pointOfInterestCoverImg: cieloDiviso,
             },
             {
                 lat: 52.499503,
@@ -352,7 +352,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: addioABerlino,
+                pointOfInterestCoverImg: addioABerlino,
             },
             {
                 lat: 52.512694,
@@ -361,18 +361,18 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: wiederDa,
+                pointOfInterestCoverImg: wiederDa,
             },
         ],
     },
     tracceDelMuro: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'tracce del muro',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: addioABerlino,
+            coverImg: addioABerlino,
             tourUrl: 'tracceDelMuro',
         },
         pointOfInterest: [
@@ -383,7 +383,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -392,7 +392,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -401,7 +401,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -410,7 +410,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -419,19 +419,19 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     karlshorst: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'karlshorst',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: wiederDa,
-            tourUrl: 'karlshorst'
+            coverImg: wiederDa,
+            tourUrl: 'karlshorst',
         },
         pointOfInterest: [
             {
@@ -441,7 +441,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -450,7 +450,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -459,7 +459,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -468,7 +468,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -477,19 +477,19 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     schöneweide: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'Schöneweide',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: cieloDiviso,
-            tourUrl: 'schöneweide'
+            coverImg: cieloDiviso,
+            tourUrl: 'schöneweide',
         },
         pointOfInterest: [
             {
@@ -499,7 +499,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -508,7 +508,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -517,7 +517,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -526,7 +526,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -535,19 +535,19 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
     lichtmberg: {
-        mockTourContent: {
+        tourCover: {
             titleTest: 'Lichtmberg',
             introText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            img: rogoBerlino,
-            tourUrl: 'lichtmberg'
+            coverImg: rogoBerlino,
+            tourUrl: 'lichtmberg',
         },
         pointOfInterest: [
             {
@@ -557,7 +557,7 @@ export const tourMock = {
                 title: 'Berlin Alexander Platz, 1928',
                 text:
                     'Il decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieriIl decreto sugli affitti è uno straccio di carta. I fitti salgono continuamente. Il ceto medio lavoratore è messo sul lastrico, strozzato, si prepara molto lavoro per gli uscieri',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.51555,
@@ -566,7 +566,7 @@ export const tourMock = {
                 title: 'Il rogo di Berlino, 1995',
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.50555,
@@ -575,7 +575,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.499555,
@@ -584,7 +584,7 @@ export const tourMock = {
                 title: 'Addio a berlino, 1939',
                 text:
                     'C’era una gran folla davanti alla filiale della banca all’angolo di Nollendorfplatz, una moltitudine di uomini con le cartelle di cuoio e di donne con le borse di rete',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
             {
                 lat: 52.512555,
@@ -593,7 +593,7 @@ export const tourMock = {
                 title: 'Er ist wieder da',
                 text:
                     'Lei si è mai chiesto perché il popolo mi segue? Perché in fondo siete tutti come me…abbiamo gli stessi valori…',
-                img: cat,
+                pointOfInterestCoverImg: cat,
             },
         ],
     },
