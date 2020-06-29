@@ -11,7 +11,7 @@ const InfoPoint = ({ interest, getTarget }) => {
                     alt={interest.title}
                     className={styles.imageWrapper}
                 /> */}
-                <Slider />
+                <Slider images={interest.pointOfInterestGallery}/>
                 <div className={styles.title}>{interest.title}</div>
                 <div className={styles.text}>{interest.text}</div>
             </div>
