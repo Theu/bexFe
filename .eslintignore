@@ -1,0 +1,8 @@
+coverage/
+node_modules/
+legacy-php/
+gulp/
+promises.js
+spec/
+gulpfile.js
+newrelic.js
