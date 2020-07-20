@@ -56,17 +56,19 @@ class MasonryContainer extends Component {
     componentDidMount() {
         this.fetchEr();
 
-        /*
         // cheap responsive approach -- if you want
         window.addEventListener("resize", () => {
             let winWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-            if (winWidth <= 900) {
+            if (winWidth <= 414) {
+                this.reorder(this.state.cardsOG, 1);
+            }
+            else if (winWidth > 414 && winWidth <= 980 ) {
                 this.reorder(this.state.cardsOG, 2);
             } else {
                 this.reorder(this.state.cardsOG, 5);
             }
         })
-*/
+
     }
     fetchEr = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts`)
@@ -99,8 +101,6 @@ class MasonryContainer extends Component {
             col++;
         }
         const toursForCard = Object.values(tourMock);
-        console.log('out :>> ', out);
-        console.log('toursForCard :>> ', toursForCard);
         this.setState({ cards: toursForCard, columns: columns });
     };
     handleButtonClick = (layout, columns) => {
@@ -117,8 +117,7 @@ class MasonryContainer extends Component {
     };
     render() {
         let CARDS = this.state.cards;
-        // const tours =
-        console.log('CARDS :>> ', CARDS);
+
         return (
             <div>
                 <div className="layout--wrapper">
