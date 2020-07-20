@@ -1,9 +1,19 @@
-@import "./client/styles/index";
+@import './client/styles/index';
+
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald'), url(./client/assets/fonts/Oswald/Oswald-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NewCycle';
+    src: local('NewCycle'), url(./client/assets/fonts/NewsCycle/NewsCycle-Regular.ttf) format('truetype');
+}
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Oswald", sans-serif;
-  background-color: $base--bg-color;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Oswald', sans-serif;
+    background-color: $base--bg-color;
 }

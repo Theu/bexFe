@@ -19,8 +19,8 @@ const Card = (props) => (
                 className={styles.image}
             />
             <div className={styles.cardText}>
-                <h1>{props.card.tourCover.titleTest}</h1>
-                <p>{props.card.tourCover.tourCard}</p>
+                <p className={styles.cardTitle}>{props.card.tourCover.titleTest}</p>
+                <p className={styles.cardIntroText}>{props.card.tourCover.tourCard}</p>
             </div>
         </div>
     </Link>

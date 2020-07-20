@@ -12,6 +12,8 @@ export const TourExplanation = (props) => {
     const coord = useSelector(state => state.coords.coords);
 
     const [isInfoPanel, setInfoPanel] = useState(true);
+    const [showInstruction, setShowInstruction] = useState(false);
+
     const onClickClose = () => {
         props.tooglePanel(false)
         setInfoPanel(false)
@@ -21,6 +23,10 @@ export const TourExplanation = (props) => {
         setInfoPanel(true)
     };
 
+    const onClickShowInstruction = () => {
+        setShowInstruction(!showInstruction)
+    }
+
     const tour = props.location.pathname.substr(1)
 
     return (
@@ -29,6 +35,8 @@ export const TourExplanation = (props) => {
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
+                onClickShowInstruction={onClickShowInstruction}
+                showInstruction={showInstruction}
                 panel={panel}
                 coord={coord}
                 tour={tour}
