@@ -6,8 +6,6 @@ export const SliderWrapper = styled.div`
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-
-    border: 1px solid green;
 `;
 
 export const SliderContent = styled.div`
