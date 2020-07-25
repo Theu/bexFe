@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback } from 'react';
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
-import { getCoords } from '../../../../../redux/modules/coords/actions';
-import { tooglePanel } from '../../../../../redux/modules/panel/actions';
-import { tourMock } from '../../../../../../server/tourMock';
+import { getCoords } from '../../../../redux/modules/coords/actions';
+import { tooglePanel } from '../../../../redux/modules/panel/actions';
+import { tourMock } from '../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
@@ -37,6 +38,11 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
 
     return <div id="map" className={styles.mapWrapper} />;
 };
+
+MapRender.propTypes = {
+    targetMap: PropTypes.object,
+    tour: PropTypes.string
+}
 
 const mapDispatchToProps = { getCoords, tooglePanel };
 

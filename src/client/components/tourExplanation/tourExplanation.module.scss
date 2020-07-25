@@ -2,7 +2,8 @@
 
 .wrapper {
     display: flex;
-    width: calc(100% - 10px);
+    max-width: $max--desktop;
+    margin: 0 auto;
     height: 80vh;
     padding: 5px;
 }
