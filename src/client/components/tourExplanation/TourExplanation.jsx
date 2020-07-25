@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { tooglePanel } from '../../redux/modules/panel/actions';
 
-import PlanContainer from './geoLocator/mapContainer/plan/PlanContainer';
+import PlanContainer from './mapContainer/plan/PlanContainer';
 import Message from './message/Message';
 import styles from './tourExplanation.module.scss';
 
