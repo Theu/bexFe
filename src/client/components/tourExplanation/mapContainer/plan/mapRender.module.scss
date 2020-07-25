@@ -1,9 +1,9 @@
 @import '../../../../styles/index.scss';
 
-.mapWrapper {
-    width: calc(100% - 20px);
-    @include respond-to($desktop) {
-        width: 1000px;
-        height: $height--map-desktop;
-    }
+.mapWrapperDesk {
+    width: 1000px;
+}
+
+.mapWrapperMobile {
+    width: 100%;
 }

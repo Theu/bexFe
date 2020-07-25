@@ -2,6 +2,9 @@ import React, { useEffect, useCallback } from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
+import { isMobile } from '../../../../helpers/isMobile';
+import { useWindowSize } from '../../../../hooks/detectWindowSizes';
+
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
 import { tourMock } from '../../../../../server/tourMock';
@@ -36,7 +39,12 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
 
     useEffect(() => initializeMap(containerInit, MARKERS), [MARKERS, containerInit, initializeMap]);
 
-    return <div id="map" className={styles.mapWrapper} />;
+    const [detectedWidth, detectedHeight] = useWindowSize();
+    const width = isMobile(detectedWidth) ? detectedWidth : 1000;
+    const height = isMobile(detectedWidth) ? detectedHeight : 756;
+    const styleToUse = isMobile(detectedWidth) ? 'mapWrapperMobile' : 'mapWrapperDesk';
+    console.log('width :>> ', width);
+    return isMobile(detectedWidth) ? <div id="map" width={width} height={height} className={styles.mapWrapperMobile} /> : <div id="map" width={width} height={height} className={styles.mapWrapperDesk} />;
 };
 
 MapRender.propTypes = {
