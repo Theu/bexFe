@@ -7,11 +7,17 @@
 
 .title,
 .text {
+    font-family: 'NewCycle';
+    color: $base--text81;
+    font-size: 17px;
+    font-weight: 300;
     margin: 5px;
 }
 
 .title {
-    font-weight: bold;
+    color: $base--title49;
+    font-size: 19px;
+    font-weight: 300;
     border-bottom: 1px solid $base--ocra;
 }
 
