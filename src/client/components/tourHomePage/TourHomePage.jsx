@@ -6,13 +6,8 @@ import { tourMock } from '../../../server/tourMock';
 
 export const TourHomePage = () => {
     const cards = Object.values(tourMock);
-    const [width, height] = useWindowSize();
+    const [width] = useWindowSize();
     const columns = isMobile(width) ? 1 : 5;
-
-    console.log('///////////////')
-    console.log('width :>> ', width);
-    console.log('height :>> ', height);
-    console.log('///////////////')
 
     return (
         <div>
