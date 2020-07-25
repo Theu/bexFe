@@ -1,25 +1,25 @@
 @import '../../../styles/index.scss';
 
 .messageWrapper {
-    width: 405px;
+    position: absolute;
+    width: calc(100% - 20px);
     display: flex;
     flex-direction: column;
     // check if doable dinamically TODO
-    height: $height--map-desktop;
+
     margin-right: 5px;
     padding: 5px;
     background-color: white;
-    // position: absolute;
-    // left: 0;
-    // right: 0;
     z-index: 10000;
     border-radius: 5px;
     overflow: scroll;
-    // @include respond-to($tablet) {
-    //     position: relative;
-    //     width: 420px;
-    //     margin: 5px;
-    // }
+
+    @include respond-to($desktop) {
+        position: relative;
+        width: 405px;
+        margin-right: 5px;
+        height: $height--map-desktop;
+    }
 }
 
 .info {

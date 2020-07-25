@@ -1,6 +1,8 @@
-@import "../../../../styles/index.scss";
+@import '../../../../styles/index.scss';
 
 .mapWrapper {
-    width: 1000px;
-    height: $height--map-desktop;
+    @include respond-to($desktop) {
+        width: 1000px;
+        height: $height--map-desktop;
+    }
 }
