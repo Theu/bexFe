@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { tourMock } from '../src/server/tourMock';
 
-import App from './App';
+import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
 import './index.scss';
@@ -21,14 +21,16 @@ render(
         <Provider store={store}>
             <Router>
                 <>
-                    <App />
+                    <Header />
                     <Switch>
                         <Route exact path="/" component={TourHomePage} />
-                        {
-                            tourList.map((path) => (
-                                <Route key={path} path={`/${path}`} component={TourExplanation} />
-                            ))
-                        }
+                        {tourList.map((path) => (
+                            <Route
+                                key={path}
+                                path={`/${path}`}
+                                component={TourExplanation}
+                            />
+                        ))}
                     </Switch>
                 </>
             </Router>

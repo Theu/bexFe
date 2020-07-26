@@ -14,22 +14,23 @@ import styles from './mapRender.module.scss';
 
 const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const { pointOfInterest } = tourMock[tour];
-    const mapBounds = extractBound(pointOfInterest);
-    const mapFromLeaflet = createMapContainer(targetMap);
     const containerInit = targetMap.DomUtil.get('map');
-    const MARKERS = createMarkers(targetMap, mapBounds);
 
     const initializeMap = useCallback(
-        (container, markers) => {
+        (container) => {
             if (container != null) {
                 container._leaflet_id = null;
             }
             container = targetMap
-                .map('map', mapFromLeaflet)
-                .fitBounds(mapBounds, { padding: [25, 25] });
+                .map('map', createMapContainer(targetMap))
+                .fitBounds(extractBound(pointOfInterest), {
+                    padding: [25, 25],
+                });
 
             targetMap
-                .featureGroup(markers)
+                .featureGroup(
+                    createMarkers(targetMap, extractBound(pointOfInterest)),
+                )
                 .eachLayer(function (layer) {
                     layer.on('click', function (ev) {
                         tooglePanel(true);
@@ -38,48 +39,25 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
                 })
                 .addTo(container);
         },
-        [getCoords, mapFromLeaflet, targetMap, tooglePanel],
+        [getCoords, createMapContainer(targetMap), targetMap, tooglePanel],
     );
 
-    const removeMap = useCallback(
-        (container) => {
-            if (container != null) {
-                containerInit.remove();
-            }
-        },
-        [containerInit],
-    );
-
-    useEffect(() => initializeMap(containerInit, MARKERS), [
-        MARKERS,
+    useEffect(() => initializeMap(containerInit), [
         containerInit,
-        initializeMap,
     ]);
-
-    useEffect((containerInit) => {
-        return () => removeMap(containerInit);
-    }, []);
 
     const [detectedWidth, detectedHeight] = useWindowSize();
     const width = isMobile(detectedWidth) ? detectedWidth : 1000;
     const height = isMobile(detectedWidth) ? detectedHeight : 756;
 
-    const finalMap = isMobile(detectedWidth) ? (
+    return (
         <div
             id="map"
             width={width}
             height={height}
             className={styles.mapWrapperMobile}
         />
-    ) : (
-        <div
-            id="map"
-            width={width}
-            height={height}
-            className={styles.mapWrapperDesk}
-        />
     );
-    return finalMap;
 };
 
 MapRender.propTypes = {
