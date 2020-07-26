@@ -19,8 +19,9 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 
-    console.log('RENDER')
-    console.log('containerInit', containerInit)
+    console.log('RENDER');
+    console.log('containerInit', containerInit);
+    console.log('mapFromLeaflet :>> ', mapFromLeaflet);
 
     const initializeMap = useCallback(
         (container, markers) => {
@@ -44,6 +45,14 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
         [getCoords, mapFromLeaflet, targetMap, tooglePanel],
     );
 
+    const removeMap = useCallback(
+        (container) => {
+            if (container != null) {
+                containerInit.remove();
+            }
+        },
+        [containerInit],
+    );
 
     // unmount!!!!!!
     useEffect(() => initializeMap(containerInit, MARKERS), [
@@ -52,9 +61,14 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
         initializeMap,
     ]);
 
+    useEffect((containerInit) => {
+        return () => removeMap(containerInit);
+    }, []);
+
     const [detectedWidth, detectedHeight] = useWindowSize();
     const width = isMobile(detectedWidth) ? detectedWidth : 1000;
     const height = isMobile(detectedWidth) ? detectedHeight : 756;
+
     const finalMap = isMobile(detectedWidth) ? (
         <div
             id="map"
