@@ -14,6 +14,7 @@
     border-bottom: 1px solid $base--ocra;
     @include respond-to($tablet) {
         max-width: $max--desktop;
+        margin: 0 auto;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;

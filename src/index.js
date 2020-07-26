@@ -9,11 +9,10 @@ import * as serviceWorker from './serviceWorker';
 
 import { tourMock } from '../src/server/tourMock';
 
-import App from './App';
 import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
-import styles from './index.module.scss';
+import './index.scss';
 
 const tourList = Object.keys(tourMock);
 
@@ -21,7 +20,8 @@ render(
     <React.StrictMode>
         <Provider store={store}>
             <Router>
-                <div className={styles.appContainer}>
+                {/* <div className={styles.appContainer}> */}
+                <>
                     <Header />
                     <Switch>
                         <Route exact path="/" component={TourHomePage} />
@@ -33,7 +33,8 @@ render(
                             />
                         ))}
                     </Switch>
-                </div>
+                </>
+                {/* </div> */}
             </Router>
         </Provider>
     </React.StrictMode>,
