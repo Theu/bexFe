@@ -6,11 +6,6 @@ const InfoPoint = ({ interest, getTarget }) => {
     if (interest.pointOfInterestCoverImg) {
         return (
             <div className={styles.infoBox}>
-                {/* <img
-                    src={interest.pointOfInterestCoverImg}
-                    alt={interest.title}
-                    className={styles.imageWrapper}
-                /> */}
                 <Slider images={interest.pointOfInterestGallery}/>
                 <div className={styles.title}>{interest.title}</div>
                 <div className={styles.text}>{interest.text}</div>

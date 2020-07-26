@@ -19,10 +19,6 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const containerInit = targetMap.DomUtil.get('map');
     const MARKERS = createMarkers(targetMap, mapBounds);
 
-    console.log('RENDER');
-    console.log('containerInit', containerInit);
-    console.log('mapFromLeaflet :>> ', mapFromLeaflet);
-
     const initializeMap = useCallback(
         (container, markers) => {
             if (container != null) {
@@ -54,7 +50,6 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
         [containerInit],
     );
 
-    // unmount!!!!!!
     useEffect(() => initializeMap(containerInit, MARKERS), [
         MARKERS,
         containerInit,
