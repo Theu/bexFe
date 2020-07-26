@@ -17,3 +17,9 @@ body {
     font-family: 'Oswald', sans-serif;
     background-color: $base--bg-color;
 }
+
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

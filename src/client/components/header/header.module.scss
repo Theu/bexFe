@@ -13,7 +13,7 @@
     flex: 0;
     border-bottom: 1px solid $base--ocra;
     @include respond-to($tablet) {
-        max-width: 1250px;
+        max-width: $max--desktop;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
