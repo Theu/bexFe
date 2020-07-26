@@ -1,35 +1,11 @@
-.card {
-    width: 300px;
-    height: 300px;
-    background-color: wheat;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title {
-    width: 300px;
-}
-
-.imgSimulator {
-    width: 300px;
-    height: 300px;
-    background-image: url(http://placekitten.com/g/300/300);
-}
-
-// .cardContainer {
-//     width: 1280px;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-// }
+@import '../../styles/index.scss';
 
 .container {
-    width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    @include respond-to($tablet) {
+        width: $max--desktop;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

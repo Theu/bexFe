@@ -3,6 +3,7 @@ import { isMobile } from '../../helpers/isMobile';
 import { useWindowSize } from '../../hooks/detectWindowSizes'
 import Card from './Card/Card';
 import { tourMock } from '../../../server/tourMock';
+import styles from './tourHomePage.module.scss';
 
 export const TourHomePage = () => {
     const cards = Object.values(tourMock);
@@ -10,7 +11,7 @@ export const TourHomePage = () => {
     const columns = isMobile(width) ? 1 : 5;
 
     return (
-        <div>
+        <div className={styles.container}>
             <div style={{ columnCount: columns }}>
                 {cards &&
                     cards.map((card, index) => (
