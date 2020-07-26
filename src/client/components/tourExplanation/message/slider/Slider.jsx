@@ -7,42 +7,55 @@ const Slider = ({ images }) => {
     const [state, setState] = useState({
         activeIndex: 0,
         translate: 0,
-        transition: 0.45
-      })
+        transition: 0.45,
+        imageSet: images,
+    });
 
-      const { translate, transition, activeIndex } = state
+    const { translate, transition, activeIndex, imageSet } = state;
 
-      const nextSlide = () => {
-        if (activeIndex === images.length - 1) {
-          return setState({
+    if (imageSet !== images) {
+        setState({
             ...state,
+            activeIndex: 0,
             translate: 0,
-            activeIndex: 0
-          })
+            transition: 0,
+            imageSet: images,
+        });
+    }
+
+    const nextSlide = () => {
+        if (activeIndex === images.length - 1) {
+            return setState({
+                ...state,
+                translate: 0,
+                activeIndex: 0,
+            });
         }
 
         setState({
-          ...state,
-          activeIndex: activeIndex + 1,
-          translate: (activeIndex + 1) * 300
-        })
-      }
-
-      const prevSlide = () => {
-        if (activeIndex === 0) {
-          return setState({
             ...state,
-            translate: (images.length - 1) * 300,
-            activeIndex: images.length - 1
-          })
+            activeIndex: activeIndex + 1,
+            translate: (activeIndex + 1) * 300,
+        });
+    };
+
+    const prevSlide = () => {
+        if (activeIndex === 0) {
+            return setState({
+                ...state,
+                translate: (images.length - 1) * 300,
+                activeIndex: images.length - 1,
+            });
         }
 
         setState({
-          ...state,
-          activeIndex: activeIndex - 1,
-          translate: (activeIndex - 1) * 300
-        })
-      }
+            ...state,
+            activeIndex: activeIndex - 1,
+            translate: (activeIndex - 1) * 300,
+        });
+    };
+    console.log('RENDER', state);
+    console.log(imageSet === images);
 
     return (
         <SliderWrapper>

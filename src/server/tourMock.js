@@ -34,7 +34,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512177,
@@ -44,14 +44,7 @@ export const tourMock = {
                 text:
                     'Della vecchia cancelleria imperiale è rimasto in piedi solo il frontale, che appare gravemente danneggiato. Davanti alla facciata e su quelle che un tempo erano aiuole si estende un cumulo di macerie su cui i passeri beccano solerti.',
                 pointOfInterestCoverImg: rogoBerlino,
-                pointOfInterestGallery: [
-                    alexanderPlatz,
-                    addioABerlino,
-                    wiederDa,
-                    cieloDiviso,
-                    rogoBerlino,
-                    cat,
-                ]
+                pointOfInterestGallery: [cat, rogoBerlino, cat, cat, cat, cat],
             },
             {
                 lat: 52.507523,
@@ -63,12 +56,12 @@ export const tourMock = {
                 pointOfInterestCoverImg: cieloDiviso,
                 pointOfInterestGallery: [
                     alexanderPlatz,
-                    addioABerlino,
+                    cat,
                     wiederDa,
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499503,
@@ -85,7 +78,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512694,
@@ -102,7 +95,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -132,7 +125,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.537,
@@ -149,7 +142,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -166,7 +159,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -183,7 +176,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -200,7 +193,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -217,7 +210,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -247,7 +240,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -264,7 +257,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -281,7 +274,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -298,7 +291,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -315,7 +308,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -345,7 +338,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -362,7 +355,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -379,7 +372,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -396,7 +389,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -413,7 +406,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -443,7 +436,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -460,7 +453,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -477,7 +470,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -494,7 +487,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -511,7 +504,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -541,7 +534,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512177,
@@ -558,7 +551,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.507523,
@@ -575,7 +568,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499503,
@@ -592,7 +585,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512694,
@@ -609,7 +602,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -639,7 +632,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -656,7 +649,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -673,7 +666,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -690,7 +683,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -707,7 +700,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -737,7 +730,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -754,7 +747,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -771,7 +764,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -788,7 +781,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -805,7 +798,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -835,7 +828,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.51555,
@@ -852,7 +845,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -869,7 +862,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -886,7 +879,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -903,7 +896,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
@@ -950,7 +943,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.50555,
@@ -967,7 +960,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.499555,
@@ -984,7 +977,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
             {
                 lat: 52.512555,
@@ -1001,7 +994,7 @@ export const tourMock = {
                     cieloDiviso,
                     rogoBerlino,
                     cat,
-                ]
+                ],
             },
         ],
     },
