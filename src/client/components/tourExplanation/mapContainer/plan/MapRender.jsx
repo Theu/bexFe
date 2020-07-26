@@ -16,8 +16,6 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const { pointOfInterest } = tourMock[tour];
     const containerInit = targetMap.DomUtil.get('map');
 
-    console.log('RENDER');
-
     const initializeMap = useCallback(
         (container) => {
             if (container != null) {

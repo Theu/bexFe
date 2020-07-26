@@ -20,7 +20,6 @@ render(
     <React.StrictMode>
         <Provider store={store}>
             <Router>
-                {/* <div className={styles.appContainer}> */}
                 <>
                     <Header />
                     <Switch>
@@ -34,7 +33,6 @@ render(
                         ))}
                     </Switch>
                 </>
-                {/* </div> */}
             </Router>
         </Provider>
     </React.StrictMode>,
