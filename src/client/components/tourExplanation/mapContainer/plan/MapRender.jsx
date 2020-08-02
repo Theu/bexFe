@@ -15,6 +15,7 @@ import styles from './mapRender.module.scss';
 const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const { pointOfInterest } = tourMock[tour];
     const containerInit = targetMap.DomUtil.get('map');
+    const bounds = extractBound(pointOfInterest);
 
     const initializeMap = useCallback(
         (container) => {
@@ -23,7 +24,7 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
             }
             container = targetMap
                 .map('map', createMapContainer(targetMap))
-                .fitBounds(extractBound(pointOfInterest), {
+                .fitBounds(bounds, {
                     padding: [25, 25],
                 });
 
