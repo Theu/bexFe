@@ -26,35 +26,29 @@ const tourList = Object.keys(tourMock);
 
 export const App = (props) => {
     return (
-        <React.StrictMode>
-            <Provider store={store}>
-                <AuthContext.Provider value={false}>
-                    <Router>
-                        <>
-                            <Header />
-                            <Switch>
+        <Provider store={store}>
+            <AuthContext.Provider value={false}>
+                <Router>
+                    <>
+                        <Header />
+                        <Switch>
+                            <Route exact path="/" component={TourHomePage} />
+                            {tourList.map((path) => (
                                 <Route
-                                    exact
-                                    path="/"
-                                    component={TourHomePage}
+                                    key={path}
+                                    path={`/${path}`}
+                                    component={TourExplanation}
                                 />
-                                {tourList.map((path) => (
-                                    <Route
-                                        key={path}
-                                        path={`/${path}`}
-                                        component={TourExplanation}
-                                    />
-                                ))}
-                            </Switch>
-                            <Route path="/login" component={LogIn} />
-                            <Route path="/signup" component={SignUp} />
-                            <Route path="/loginmock" component={LoginMock} />
-                            <PrivateRoute path="/admin" component={Admin} />
-                        </>
-                    </Router>
-                </AuthContext.Provider>
-            </Provider>
-        </React.StrictMode>
+                            ))}
+                        </Switch>
+                        <Route path="/login" component={LogIn} />
+                        <Route path="/signup" component={SignUp} />
+                        <Route path="/loginmock" component={LoginMock} />
+                        <PrivateRoute path="/admin" component={Admin} />
+                    </>
+                </Router>
+            </AuthContext.Provider>
+        </Provider>
     );
 };
 
