@@ -14,6 +14,9 @@ import { tourMock } from '../src/server/tourMock';
 import PrivateRoute from './client/components/authentication/PrivateRoute';
 import Admin from './client/components/authentication/mockComponent/AdminMock';
 import LoginMock from './client/components/authentication/mockComponent/LoginMock';
+import LogIn from './client/components/authentication/authForm/LogIn';
+import SignUp from './client/components/authentication/authForm/SignUp';
+
 import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
@@ -38,8 +41,10 @@ render(
                                 />
                             ))}
                         </Switch>
-                        <PrivateRoute path="/admin" component={Admin} />
+                        <Route path="/login" component={LogIn} />
+                        <Route path="/signup" component={SignUp} />
                         <Route path="/loginmock" component={LoginMock} />
+                        <PrivateRoute path="/admin" component={Admin} />
                     </>
                 </Router>
             </AuthContext.Provider>
