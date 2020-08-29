@@ -9,6 +9,7 @@ import {
 
 export const tourMock = {
     libri: {
+        tourName: 'libri',
         tourCover: {
             titleTest: 'libri',
             introText:
@@ -100,6 +101,7 @@ export const tourMock = {
         ],
     },
     gattini: {
+        tourName: 'gattini',
         tourCover: {
             titleTest: 'gattini',
             introText:
@@ -215,6 +217,7 @@ export const tourMock = {
         ],
     },
     chitarre: {
+        tourName: 'chitarre',
         tourCover: {
             titleTest: 'chitarre',
             introText:
@@ -313,6 +316,7 @@ export const tourMock = {
         ],
     },
     pizze: {
+        tourName: 'pizze',
         tourCover: {
             titleTest: 'pizze',
             introText:
@@ -411,6 +415,7 @@ export const tourMock = {
         ],
     },
     biciclette: {
+        tourName: 'biciclette',
         tourCover: {
             titleTest: 'biciclette',
             introText:
@@ -509,6 +514,7 @@ export const tourMock = {
         ],
     },
     foreste: {
+        tourName: 'foreste',
         tourCover: {
             titleTest: 'foreste',
             introText:
@@ -607,6 +613,7 @@ export const tourMock = {
         ],
     },
     tracceDelMuro: {
+        tourName: 'tracceDelMuro',
         tourCover: {
             titleTest: 'tracce del muro',
             introText:
@@ -705,6 +712,7 @@ export const tourMock = {
         ],
     },
     karlshorst: {
+        tourName: 'karlshorst',
         tourCover: {
             titleTest: 'karlshorst',
             introText:
@@ -803,6 +811,7 @@ export const tourMock = {
         ],
     },
     schöneweide: {
+        tourName: 'schöneweide',
         tourCover: {
             titleTest: 'Schöneweide',
             introText:
@@ -901,6 +910,7 @@ export const tourMock = {
         ],
     },
     lichtmberg: {
+        tourName: 'licthmberg',
         tourCover: {
             titleTest: 'Lichtmberg',
             introText:
