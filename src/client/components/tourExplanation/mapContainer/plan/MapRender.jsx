@@ -17,35 +17,30 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
     const containerInit = targetMap.DomUtil.get('map');
     const bounds = extractBound(pointOfInterest);
 
-    const initializeMap = useCallback(
-        (container) => {
-            if (container != null) {
-                container._leaflet_id = null;
-            }
-            container = targetMap
-                .map('map', createMapContainer(targetMap))
-                .fitBounds(bounds, {
-                    padding: [25, 25],
+    const initializeMap = useCallback((container) => {
+        if (container != null) {
+            container._leaflet_id = null;
+        }
+        container = targetMap
+            .map('map', createMapContainer(targetMap))
+            .fitBounds(bounds, {
+                padding: [25, 25],
+            });
+
+        targetMap
+            .featureGroup(
+                createMarkers(targetMap, extractBound(pointOfInterest)),
+            )
+            .eachLayer(function (layer) {
+                layer.on('click', function (ev) {
+                    tooglePanel(true);
+                    getCoords(ev.latlng);
                 });
+            })
+            .addTo(container);
+    }, []);
 
-            targetMap
-                .featureGroup(
-                    createMarkers(targetMap, extractBound(pointOfInterest)),
-                )
-                .eachLayer(function (layer) {
-                    layer.on('click', function (ev) {
-                        tooglePanel(true);
-                        getCoords(ev.latlng);
-                    });
-                })
-                .addTo(container);
-        },
-        [getCoords, createMapContainer(targetMap), targetMap, tooglePanel],
-    );
-
-    useEffect(() => initializeMap(containerInit), [
-        containerInit,
-    ]);
+    useEffect(() => initializeMap(containerInit), []);
 
     const [detectedWidth, detectedHeight] = useWindowSize();
     const width = isMobile(detectedWidth) ? detectedWidth : 1000;
