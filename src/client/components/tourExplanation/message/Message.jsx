@@ -20,7 +20,6 @@ const Message = ({
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
-    console.log('tourDisplay :>> ', tourDisplay);
 
     return (
         <>
@@ -29,7 +28,7 @@ const Message = ({
                     close [X]
                 </div>
                 {!!tourDisplay ? (
-                    <InfoPoint interest={tourDisplay} />
+                    <InfoPoint interest={tourDisplay} tourName={tour} pointsLength={tourDisplay.imgCount} />
                 ) : (
                     <div>
                         <p className={styles.introTitle}>Come usare la mappa</p>
