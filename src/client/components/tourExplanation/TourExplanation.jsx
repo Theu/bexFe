@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { tooglePanel } from '../../redux/modules/panel/actions';
+import { getCoords } from '../../redux/modules/coords/actions';
 
 import PlanContainer from './mapContainer/plan/PlanContainer';
 import Message from './message/Message';
@@ -15,6 +16,7 @@ export const TourExplanation = (props) => {
 
     const onClickClose = () => {
         props.tooglePanel(false)
+        props.getCoords({});
         setInfoPanel(false)
     };
 
@@ -46,7 +48,8 @@ export const TourExplanation = (props) => {
 };
 
 const mapDispatchToProps = {
-    tooglePanel
+    tooglePanel,
+    getCoords
 }
 
 
