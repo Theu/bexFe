@@ -4,67 +4,34 @@ import Arrow from './Arrow';
 import { SliderWrapper, SliderContent, Slide } from './Slider.styles';
 
 const Slider = ({ images }) => {
-    const [state, setState] = useState({
-        activeIndex: 0,
-        translate: 0,
-        transition: 0.45,
-        imageSet: images,
-    });
-
-    const { translate, transition, activeIndex, imageSet } = state;
-
-    if (imageSet !== images) {
-        setState({
-            ...state,
-            activeIndex: 0,
-            translate: 0,
-            transition: 0,
-            imageSet: images,
-        });
-    }
+    const TRANSITION_SPEED = 0.45;
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [translate, setTranslate] = useState(0);
 
     const nextSlide = () => {
         if (activeIndex === images.length - 1) {
-            return setState({
-                ...state,
-                translate: 0,
-                activeIndex: 0,
-            });
+            return;
         }
-
-        setState({
-            ...state,
-            activeIndex: activeIndex + 1,
-            translate: (activeIndex + 1) * 300,
-        });
+        setActiveIndex(activeIndex + 1);
+        setTranslate((activeIndex + 1) * 300);
     };
 
     const prevSlide = () => {
         if (activeIndex === 0) {
-            return setState({
-                ...state,
-                translate: (images.length - 1) * 300,
-                activeIndex: images.length - 1,
-            });
-        }
-
-        setState({
-            ...state,
-            activeIndex: activeIndex - 1,
-            translate: (activeIndex - 1) * 300,
-        });
+            return;
+        } else {
+            setActiveIndex(activeIndex - 1);
+            setTranslate((activeIndex - 1) * 300);
+        };
     };
-    console.log('RENDER', state);
-    console.log(imageSet === images);
 
     return (
         <SliderWrapper>
-            <SliderContent translate={translate} transition={transition}>
+            <SliderContent translate={translate} transition={TRANSITION_SPEED}>
                 {images.map((slide, i) => (
                     <Slide key={slide + i} content={slide} />
                 ))}
             </SliderContent>
-
             <Arrow direction="left" handleClick={prevSlide} />
             <Arrow direction="right" handleClick={nextSlide} />
         </SliderWrapper>
