@@ -4,8 +4,8 @@ import styles from './card.module.scss';
 
 const Card = (props) => (
     <Link
-        key={`${props.card.tourCover.tourUrl}`}
-        to={`${props.card.tourCover.tourUrl}`}
+        key={`${props.card.tourName}`}
+        to={`${props.card.tourName}`}
     >
         <div className={styles.card}>
             <img src={props.card.tourCover.coverImg} className={styles.image} />
