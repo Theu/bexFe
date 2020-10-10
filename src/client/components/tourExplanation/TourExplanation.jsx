@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
 import { connect, useSelector } from 'react-redux';
 import { tooglePanel } from '../../redux/modules/panel/actions';
 
