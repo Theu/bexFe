@@ -20,13 +20,14 @@ const Message = ({
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
+
     return (
         <>
             <div className={wrapperStyle}>
                 <div onClick={onClickClose} className={styles.closeIntro}>
                     close [X]
                 </div>
-                {!!coord.lat && !!tourDisplay ? (
+                {!!tourDisplay ? (
                     <InfoPoint interest={tourDisplay} />
                 ) : (
                     <div>
