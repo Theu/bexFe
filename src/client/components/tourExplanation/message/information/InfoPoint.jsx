@@ -2,23 +2,19 @@ import React from 'react';
 import Slider from '../slider/Slider';
 import styles from './infoPoint.module.scss';
 
-const InfoPoint = ({ interest, getTarget }) => {
-    if (interest.pointOfInterestCoverImg) {
-        return (
-            <div className={styles.infoBox}>
-                <Slider images={interest.pointOfInterestGallery}/>
-                <div className={styles.title}>{interest.title}</div>
-                <div className={styles.text}>{interest.text}</div>
-            </div>
-        );
-    } else {
-        return (
-            <div onClick={getTarget} className={styles.infoBox}>
-                <div className={styles.title}> {interest.title}</div>
-                <div className={styles.text}>{interest.text}</div>
-            </div>
-        );
-    }
+const InfoPoint = ({ interest, pointsLength, tourName }) => {
+    const arrayLengt = [...Array(Number(pointsLength)).keys()];
+    const images = arrayLengt.map(
+        (index) => `${tourName}/${interest.imgFolderName}/img${index + 1}.jpeg`,
+    );
+
+    return (
+        <div className={styles.infoBox}>
+            <Slider images={images} />
+            <div className={styles.title}>{interest.title}</div>
+            <div className={styles.text}>{interest.text}</div>
+        </div>
+    );
 };
 
 export default InfoPoint;

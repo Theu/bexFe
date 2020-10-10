@@ -21,7 +21,7 @@ export const SliderContent = styled.div`
 export const Slide = styled.div`
     height: 300px;
     width: 300px;
-    background-image: url(${(props) => props.content});
+    background-image: url(${(props) => (props.content)});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

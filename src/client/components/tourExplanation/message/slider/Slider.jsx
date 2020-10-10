@@ -28,9 +28,11 @@ const Slider = ({ images }) => {
     return (
         <SliderWrapper>
             <SliderContent translate={translate} transition={TRANSITION_SPEED}>
-                {images.map((slide, i) => (
-                    <Slide key={slide + i} content={slide} />
-                ))}
+                {images.map((slide, i) => {
+                    const path = require(`../../../../assets/${slide}`);
+                    return (
+                    <Slide key={slide + i} content={path} />
+                )})}
             </SliderContent>
             <Arrow direction="left" handleClick={prevSlide} />
             <Arrow direction="right" handleClick={nextSlide} />
