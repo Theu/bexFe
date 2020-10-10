@@ -14,7 +14,6 @@ export const tourMock = {
             titleTest: 'libri',
             tourCard:
                 'This will take you to a page where you’ll be asked to authenticate with your Google account. Select the account that you’d like this project to be affiliated with, and press OK.',
-            coverImg: alexanderPlatz,
         },
         pointOfInterest: [
             {
@@ -93,7 +92,6 @@ export const tourMock = {
             titleTest: 'gattini',
             tourCard:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            coverImg: addioABerlino,
         },
         pointOfInterest: [
             {

@@ -20,6 +20,7 @@ const Message = ({
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
+    console.log('tourDisplay :>> ', tourDisplay);
 
     return (
         <>
