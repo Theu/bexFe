@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './card.module.scss';
+import { Image, CardText, CardTitle, CardIntroText, CardItem } from './Card.styles';
 
 const Card = (props) => {
     const { tourName, tourCover } = props.card;
@@ -8,20 +8,19 @@ const Card = (props) => {
 
     return (
         <Link key={`${tourName}`} to={`${tourName}`}>
-            <div className={styles.card}>
-                <img
+            <CardItem>
+                <Image
                     src={cover}
-                    className={styles.image}
                 />
-                <div className={styles.cardText}>
-                    <p className={styles.cardTitle}>
+                <CardText>
+                    <CardTitle>
                         {props.card.tourCover.titleTest}
-                    </p>
-                    <p className={styles.cardIntroText}>
+                    </CardTitle>
+                    <CardIntroText>
                         {tourCover.tourCard}
-                    </p>
-                </div>
-            </div>
+                    </CardIntroText>
+                </CardText>
+            </CardItem>
         </Link>
     );
 };
