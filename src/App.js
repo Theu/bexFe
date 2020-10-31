@@ -6,6 +6,9 @@ import { tourMock } from '../src/server/tourMock';
 import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
+
+import AdminLog from './client/components/adminLog/AdminLog';
+
 import './index.scss';
 
 const tourList = Object.keys(tourMock);
@@ -24,6 +27,7 @@ const App = () => (
                     />
                 ))}
             </Switch>
+            <Route path='/admin' component={AdminLog} />
         </>
     </Router>
 );
