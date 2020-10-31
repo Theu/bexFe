@@ -107,5 +107,3 @@ dist
 # DS
 .DS_Store
 
-# FireBASE
-/src/client/config.js
