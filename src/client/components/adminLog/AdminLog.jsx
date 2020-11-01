@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import useFormValidation from '../hooks/useFormValidation';
+import useFormValidation from '../compHooks/useFormValidation';
 import validateLogin from './validateLogin';
 import {
     Wrapper,
@@ -44,8 +44,6 @@ const AdminLog = (props) => {
         }
     }
 
-    console.log('RENDER');
-
     return (
         <Wrapper>
             <h2>
@@ -57,8 +55,8 @@ const AdminLog = (props) => {
                 {!login && (
                     <Input
                         onChange={handleChange}
-                        value={values.username}
-                        name="username"
+                        value={values.name}
+                        name="name"
                         type="text"
                         placeholder="Chose user name"
                         autoComplete="off"
