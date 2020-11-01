@@ -6,12 +6,8 @@ import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
 
-import { tourMock } from '../src/server/tourMock';
-
 import App from './App';
 import './index.scss';
-
-const tourList = Object.keys(tourMock);
 
 render(
     <Provider store={store}>

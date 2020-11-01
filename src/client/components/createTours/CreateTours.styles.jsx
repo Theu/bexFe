@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { maxDesktop, baseOcra } from '../../styles/variables';
+import { maxDesktop } from '../../styles/variables';
 
 export const Wrapper = styled.div`
     width: ${maxDesktop}px;
