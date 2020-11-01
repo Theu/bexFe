@@ -28,3 +28,7 @@ export const InputButton = styled.button`
     background-color: ${baseOcra};
     margin-right: 10px;
 `;
+
+export const ErrorText = styled.p`
+    color: red;
+`;
