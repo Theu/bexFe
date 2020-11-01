@@ -38,9 +38,9 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
                 });
             })
             .addTo(container);
-    }, []);
+    }, [bounds, getCoords, pointOfInterest, targetMap, tooglePanel]);
 
-    useEffect(() => initializeMap(containerInit), []);
+    useEffect(() => initializeMap(containerInit));
 
     const [detectedWidth, detectedHeight] = useWindowSize();
     const width = isMobile(detectedWidth) ? detectedWidth : 1000;
