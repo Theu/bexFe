@@ -10,7 +10,7 @@ const InfoPoint = ({ interest, pointsLength, tourName, mobileImgWidth, isMobile 
 
     return (
         <div className={styles.infoBox}>
-            <Slider isMobile={isMobile} mobileImgWidth={mobileImgWidth} images={images} />
+            <Slider pointsLength={pointsLength} isMobile={isMobile} mobileImgWidth={mobileImgWidth} images={images} />
             <div className={styles.title}>{interest.title}</div>
             <div className={styles.text}>{interest.text}</div>
         </div>

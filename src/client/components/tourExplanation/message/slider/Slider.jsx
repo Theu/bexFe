@@ -3,7 +3,7 @@ import Arrow from './Arrow';
 
 import { SliderWrapper, SliderContent, Slide } from './Slider.styles';
 
-const Slider = ({ images, mobileImgWidth, isMobile }) => {
+const Slider = ({ images, mobileImgWidth, isMobile, pointsLength }) => {
     const TRANSITION_SPEED = 0.45;
     const [activeIndex, setActiveIndex] = useState(0);
     const [translate, setTranslate] = useState(0);
@@ -25,9 +25,17 @@ const Slider = ({ images, mobileImgWidth, isMobile }) => {
         }
     };
 
+    console.log('mobileImgWidth :>> ', mobileImgWidth);
+    console.log('pointsLength :>> ', Number(pointsLength) * mobileImgWidth);
+
     return (
         <SliderWrapper mobileImgWidth={mobileImgWidth} isMobile={isMobile}>
-            <SliderContent translate={translate} transition={TRANSITION_SPEED}>
+            <SliderContent
+                mobileImgWidth={mobileImgWidth}
+                translate={translate}
+                transition={TRANSITION_SPEED}
+                pointsLength={Number(pointsLength)}
+            >
                 {images.map((slide, i) => {
                     const path = require(`../../../../assets/${slide}`);
 

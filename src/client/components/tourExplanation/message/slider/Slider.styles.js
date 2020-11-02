@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 export const SliderWrapper = styled.div`
-    width: ${(props) => props.isMobile ? props.mobileImgWidth : 300}px;
-    height: ${(props) => props.isMobile ? props.mobileImgWidth : 300}px;
+    width: ${(props) => (props.isMobile ? props.mobileImgWidth : 300)}px;
+    height: ${(props) => (props.isMobile ? props.mobileImgWidth : 300)}px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
 `;
 
 export const SliderContent = styled.div`
-    width: 3000px;
+    width: ${(props) =>
+        props.mobileImgWidth * props.pointsLength}px;
     /* height: 300px; */
     height: 100%;
     display: flex;
@@ -19,8 +20,8 @@ export const SliderContent = styled.div`
 `;
 
 export const Slide = styled.div`
-    height: ${(props) => props.isMobile ? props.mobileImgWidth : 300}px;
-    width: ${(props) => props.isMobile ? props.mobileImgWidth : 300}px;
+    height: ${(props) => (props.isMobile ? props.mobileImgWidth : 300)}px;
+    width: ${(props) => (props.isMobile ? props.mobileImgWidth : 300)}px;
     background-image: url(${(props) => props.content});
     background-size: cover;
     background-repeat: no-repeat;
