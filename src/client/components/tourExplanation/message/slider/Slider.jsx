@@ -3,7 +3,7 @@ import Arrow from './Arrow';
 
 import { SliderWrapper, SliderContent, Slide } from './Slider.styles';
 
-const Slider = ({ images }) => {
+const Slider = ({ images, imgWidth }) => {
     const TRANSITION_SPEED = 0.45;
     const [activeIndex, setActiveIndex] = useState(0);
     const [translate, setTranslate] = useState(0);
@@ -13,7 +13,7 @@ const Slider = ({ images }) => {
             return;
         }
         setActiveIndex(activeIndex + 1);
-        setTranslate((activeIndex + 1) * 300);
+        setTranslate((activeIndex + 1) * imgWidth);
     };
 
     const prevSlide = () => {
@@ -21,8 +21,8 @@ const Slider = ({ images }) => {
             return;
         } else {
             setActiveIndex(activeIndex - 1);
-            setTranslate((activeIndex - 1) * 300);
-        };
+            setTranslate((activeIndex - 1) * imgWidth);
+        }
     };
 
     return (
@@ -30,9 +30,15 @@ const Slider = ({ images }) => {
             <SliderContent translate={translate} transition={TRANSITION_SPEED}>
                 {images.map((slide, i) => {
                     const path = require(`../../../../assets/${slide}`);
+
                     return (
-                    <Slide key={slide + i} content={path} />
-                )})}
+                        <Slide
+                            imgWidth={imgWidth}
+                            key={slide + i}
+                            content={path}
+                        />
+                    );
+                })}
             </SliderContent>
             <Arrow direction="left" handleClick={prevSlide} />
             <Arrow direction="right" handleClick={nextSlide} />

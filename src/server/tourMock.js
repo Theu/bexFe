@@ -31,7 +31,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                imgCount: '5',
+                imgCount: '6',
                 imgFolderName: 'labrador',
             },
             {

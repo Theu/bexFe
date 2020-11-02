@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const SliderWrapper = styled.div`
-    width: 300px;
-    height: 300px;
+    width: ${(props) => props.imgWidth}px;
+    height: ${(props) => props.imgWidth}px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -19,10 +19,11 @@ export const SliderContent = styled.div`
 `;
 
 export const Slide = styled.div`
-    height: 300px;
-    width: 300px;
-    background-image: url(${(props) => (props.content)});
+    height: ${(props) => props.imgWidth}px;
+    width: ${(props) => props.imgWidth}px;
+    background-image: url(${(props) => props.content});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
 `;

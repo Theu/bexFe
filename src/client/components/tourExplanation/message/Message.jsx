@@ -1,6 +1,6 @@
 import React from 'react';
 import { tourMock } from '../../../../server/tourMock';
-
+import { useWindowSize } from '../../../hooks/detectWindowSizes';
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
 
@@ -20,6 +20,8 @@ const Message = ({
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
+    const [width] = useWindowSize();
+
 
     return (
         <>
@@ -28,7 +30,7 @@ const Message = ({
                     close [X]
                 </div>
                 {!!tourDisplay ? (
-                    <InfoPoint interest={tourDisplay} tourName={tour} pointsLength={tourDisplay.imgCount} />
+                    <InfoPoint imgWidth={width - 20} interest={tourDisplay} tourName={tour} pointsLength={tourDisplay.imgCount} />
                 ) : (
                     <div>
                         <p className={styles.introTitle}>Come usare la mappa</p>
