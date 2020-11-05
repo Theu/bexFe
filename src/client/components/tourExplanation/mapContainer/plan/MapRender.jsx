@@ -7,13 +7,13 @@ import { useWindowSize } from '../../../../hooks/detectWindowSizes';
 
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
-import { tourMock } from '../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import { createMarkers } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
-    const { pointOfInterest } = tourMock[tour];
+const MapRender = ({ targetMap, getCoords, tooglePanel, tourInformation }) => {
+    const { pointOfInterest } = tourInformation;
+
     const containerInit = targetMap.DomUtil.get('map');
     const bounds = extractBound(pointOfInterest);
 
@@ -29,7 +29,7 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
 
         targetMap
             .featureGroup(
-                createMarkers(targetMap, extractBound(pointOfInterest)),
+                createMarkers(targetMap, bounds),
             )
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {

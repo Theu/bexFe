@@ -15,7 +15,7 @@ import firebase, { FirebaseContext } from './firebase';
 import './index.scss';
 import useAuth from './client/components/compHooks/useAuth';
 
-const tourList = Object.keys(tourMock);
+const tourList = tourMock.map(({ tourName }) => tourName);
 
 const App = () => {
     const user = useAuth();

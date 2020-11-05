@@ -1,5 +1,4 @@
 import React from 'react';
-import { tourMock } from '../../../../server/tourMock';
 import { useWindowSize } from '../../../hooks/detectWindowSizes';
 import { isMobile } from '../../../helpers/isMobile';
 import InfoPoint from './information/InfoPoint';
@@ -13,8 +12,9 @@ const Message = ({
     panel,
     coord,
     tour,
+    tourInformation
 }) => {
-    const { pointOfInterest } = tourMock[tour];
+    const { pointOfInterest } = tourInformation;
     const tourDisplay = pointOfInterest.find(
         (o) => o.lat === coord.lat && o.lon === coord.lng,
     );
