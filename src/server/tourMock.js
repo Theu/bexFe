@@ -1,10 +1,9 @@
-export const tourMock = {
-    libri: {
+export const tourMock = [
+    {
         tourName: 'libri',
         tourCover: {
-            titleTest: 'libri',
-            tourCard:
-                'This will take you to a page where you’ll be asked to authenticate with your Google account. Select the account that you’d like this project to be affiliated with, and press OK.',
+            titleTest: 'uno',
+            tourCard: 'This will take you to a ',
         },
         pointOfInterest: [
             {
@@ -31,7 +30,7 @@ export const tourMock = {
                 title: 'Il cielo diviso, 1963',
                 text:
                     'Che cosa dobbiamo cercare noi? Il cielo almeno non possono dividerlo, disse Manfred beffardo. Il cielo? Tutta questa cupola di speranza e di anelito, di amore e di tristezza? Si invece, disse lei piano. Il cielo è sempre il primo ad essere diviso.',
-                imgCount: '5',
+                imgCount: '6',
                 imgFolderName: 'labrador',
             },
             {
@@ -54,12 +53,12 @@ export const tourMock = {
             },
         ],
     },
-    gattini: {
+    {
         tourName: 'gattini',
         tourCover: {
-            titleTest: 'gattini',
+            titleTest: 'due',
             tourCard:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'Lorem',
         },
         pointOfInterest: [
             {
@@ -109,4 +108,5 @@ export const tourMock = {
             },
         ],
     },
-};
+];
+

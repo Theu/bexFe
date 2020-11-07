@@ -1,36 +1,35 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { isMobile } from '../../../../helpers/isMobile';
-import { useWindowSize } from '../../../../hooks/detectWindowSizes';
-
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
-import { tourMock } from '../../../../../server/tourMock';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
-import { createMarkers } from './helpers/markersHelpers';
+import {
+    createMarkers,
+    createFreeMarkers,
+    createToPayMarkers,
+} from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
-    const { pointOfInterest } = tourMock[tour];
-    const containerInit = targetMap.DomUtil.get('map');
+const MapRender = (props) => {
+    const {
+        targetMap,
+        getCoords,
+        tooglePanel,
+        tourInformation,
+        width,
+        height,
+    } = props;
+    const { pointOfInterest } = tourInformation;
+
     const bounds = extractBound(pointOfInterest);
+    const freeBounds = bounds.slice(0, 2);
+    const toPayBounds = bounds.slice(2);
 
-    const initializeMap = useCallback((container) => {
-        if (container != null) {
-            container._leaflet_id = null;
-        }
-        container = targetMap
-            .map('map', createMapContainer(targetMap))
-            .fitBounds(bounds, {
-                padding: [25, 25],
-            });
-
+    const createFreePointers = (container, bounds) =>
         targetMap
-            .featureGroup(
-                createMarkers(targetMap, extractBound(pointOfInterest)),
-            )
+            .featureGroup(createFreeMarkers(targetMap, bounds))
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
                     tooglePanel(true);
@@ -38,13 +37,31 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tour }) => {
                 });
             })
             .addTo(container);
-    }, [bounds, getCoords, pointOfInterest, targetMap, tooglePanel]);
 
-    useEffect(() => initializeMap(containerInit));
+    const createToPayPointers = (container, bounds) =>
+        targetMap
+            .featureGroup(createToPayMarkers(targetMap, bounds))
+            .eachLayer(function (layer) {
+                layer.on('click', function (ev) {
+                    tooglePanel(true);
+                    getCoords();
+                });
+            })
+            .addTo(container);
 
-    const [detectedWidth, detectedHeight] = useWindowSize();
-    const width = isMobile(detectedWidth) ? detectedWidth : 1000;
-    const height = isMobile(detectedWidth) ? detectedHeight : 756;
+    const initializeMap = (container) => {
+        container = targetMap
+            .map('map', createMapContainer(targetMap))
+            .fitBounds(bounds, {
+                padding: [25, 25],
+            });
+
+        createFreePointers(container, freeBounds);
+        createToPayPointers(container, toPayBounds);
+    };
+    const containerInit = targetMap.DomUtil.get('map');
+
+    useEffect(() => initializeMap(containerInit), []);
 
     return (
         <div

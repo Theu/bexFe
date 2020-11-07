@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
+import { tourMock } from '../../../server/tourMock';
 import { tooglePanel } from '../../redux/modules/panel/actions';
 import { getCoords } from '../../redux/modules/coords/actions';
 
@@ -8,27 +9,30 @@ import Message from './message/Message';
 import styles from './tourExplanation.module.scss';
 
 export const TourExplanation = (props) => {
-    const panel = useSelector(state => state.panel.isPanelOpen);
-    const coord = useSelector(state => state.coords.coords);
+    const panel = useSelector((state) => state.panel.isPanelOpen);
+    const coord = useSelector((state) => state.coords.coords);
 
     const [isInfoPanel, setInfoPanel] = useState(true);
     const [showInstruction, setShowInstruction] = useState(false);
 
     const onClickClose = () => {
-        props.tooglePanel(false)
+        props.tooglePanel(false);
         props.getCoords({});
-        setInfoPanel(false)
+        setInfoPanel(false);
     };
 
     const onClickOpenInfo = () => {
-        setInfoPanel(true)
+        setInfoPanel(true);
     };
 
     const onClickShowInstruction = () => {
-        setShowInstruction(!showInstruction)
-    }
+        setShowInstruction(!showInstruction);
+    };
 
-    const tour = props.location.pathname.substr(1)
+    const tour = props.location.pathname.substr(1);
+    const tourInformation = tourMock.filter(
+        (item) => item.tourName === tour,
+    )[0];
 
     return (
         <div className={styles.wrapper}>
@@ -41,16 +45,16 @@ export const TourExplanation = (props) => {
                 panel={panel}
                 coord={coord}
                 tour={tour}
+                tourInformation={tourInformation}
             />
-            <PlanContainer tour={tour} />
+            <PlanContainer tour={tour} tourInformation={tourInformation} />
         </div>
     );
 };
 
 const mapDispatchToProps = {
     tooglePanel,
-    getCoords
-}
-
+    getCoords,
+};
 
 export default connect(null, mapDispatchToProps)(TourExplanation);

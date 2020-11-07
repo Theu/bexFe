@@ -14,7 +14,7 @@
     border-radius: 5px;
     overflow: scroll;
 
-    @include respond-to($desktop) {
+    @include respond-to($tablet) {
         position: relative;
         width: 405px;
         margin-right: 5px;
