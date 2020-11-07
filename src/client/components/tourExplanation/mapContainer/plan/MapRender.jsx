@@ -2,9 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { isMobile } from '../../../../helpers/isMobile';
-import { useWindowSize } from '../../../../hooks/detectWindowSizes';
-
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
@@ -15,12 +12,16 @@ import {
 } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
-const MapRender = ({ targetMap, getCoords, tooglePanel, tourInformation }) => {
+const MapRender = (props) => {
+    const {
+        targetMap,
+        getCoords,
+        tooglePanel,
+        tourInformation,
+        width,
+        height,
+    } = props;
     const { pointOfInterest } = tourInformation;
-
-    const containerInit = targetMap.DomUtil.get('map');
-
-    console.log('containerInit :>> ', containerInit);
 
     const bounds = extractBound(pointOfInterest);
     const freeBounds = bounds.slice(0, 2);
@@ -58,15 +59,10 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tourInformation }) => {
         createFreePointers(container, freeBounds);
         createToPayPointers(container, toPayBounds);
     };
+    const containerInit = targetMap.DomUtil.get('map');
 
     useEffect(() => initializeMap(containerInit), []);
 
-
-    const [detectedWidth, detectedHeight] = useWindowSize();
-    const width = isMobile(detectedWidth) ? detectedWidth : 1000;
-    const height = isMobile(detectedWidth) ? detectedHeight : 756;
-
-    console.log('RENDER');
     return (
         <div
             id="map"

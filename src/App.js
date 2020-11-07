@@ -6,19 +6,22 @@ import { tourMock } from '../src/server/tourMock';
 import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
-
 import AdminLog from './client/components/adminLog/AdminLog';
 import CreateTours from './client/components/createTours/CreateTours';
+import useAuth from './client/components/compHooks/useAuth';
+
+import { isMobile } from './client/helpers/isMobile';
+import { useWindowSize } from './client/hooks/detectWindowSizes';
 
 import firebase, { FirebaseContext } from './firebase';
 
 import './index.scss';
-import useAuth from './client/components/compHooks/useAuth';
 
 const tourList = tourMock.map(({ tourName }) => tourName);
 
 const App = () => {
     const user = useAuth();
+
     return (
         <BrowserRouter>
             <FirebaseContext.Provider value={{ user, firebase }}>
