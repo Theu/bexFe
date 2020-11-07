@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -8,29 +8,27 @@ import { useWindowSize } from '../../../../hooks/detectWindowSizes';
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
-import { createMarkers } from './helpers/markersHelpers';
+import {
+    createMarkers,
+    createFreeMarkers,
+    createToPayMarkers,
+} from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
 const MapRender = ({ targetMap, getCoords, tooglePanel, tourInformation }) => {
     const { pointOfInterest } = tourInformation;
 
     const containerInit = targetMap.DomUtil.get('map');
+
+    console.log('containerInit :>> ', containerInit);
+
     const bounds = extractBound(pointOfInterest);
+    const freeBounds = bounds.slice(0, 2);
+    const toPayBounds = bounds.slice(2);
 
-    const initializeMap = useCallback((container) => {
-        if (container != null) {
-            container._leaflet_id = null;
-        }
-        container = targetMap
-            .map('map', createMapContainer(targetMap))
-            .fitBounds(bounds, {
-                padding: [25, 25],
-            });
-
+    const createFreePointers = (container, bounds) =>
         targetMap
-            .featureGroup(
-                createMarkers(targetMap, bounds),
-            )
+            .featureGroup(createFreeMarkers(targetMap, bounds))
             .eachLayer(function (layer) {
                 layer.on('click', function (ev) {
                     tooglePanel(true);
@@ -38,14 +36,37 @@ const MapRender = ({ targetMap, getCoords, tooglePanel, tourInformation }) => {
                 });
             })
             .addTo(container);
-    }, [bounds, getCoords, pointOfInterest, targetMap, tooglePanel]);
+
+    const createToPayPointers = (container, bounds) =>
+        targetMap
+            .featureGroup(createToPayMarkers(targetMap, bounds))
+            .eachLayer(function (layer) {
+                layer.on('click', function (ev) {
+                    tooglePanel(true);
+                    getCoords();
+                });
+            })
+            .addTo(container);
+
+    const initializeMap = (container) => {
+        container = targetMap
+            .map('map', createMapContainer(targetMap))
+            .fitBounds(bounds, {
+                padding: [25, 25],
+            });
+
+        createFreePointers(container, freeBounds);
+        createToPayPointers(container, toPayBounds);
+    };
 
     useEffect(() => initializeMap(containerInit), []);
+
 
     const [detectedWidth, detectedHeight] = useWindowSize();
     const width = isMobile(detectedWidth) ? detectedWidth : 1000;
     const height = isMobile(detectedWidth) ? detectedHeight : 756;
 
+    console.log('RENDER');
     return (
         <div
             id="map"

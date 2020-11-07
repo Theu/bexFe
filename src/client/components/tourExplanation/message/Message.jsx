@@ -15,9 +15,10 @@ const Message = ({
     tourInformation
 }) => {
     const { pointOfInterest } = tourInformation;
-    const tourDisplay = pointOfInterest.find(
+    const tourDisplay = !!coord && pointOfInterest.find(
         (o) => o.lat === coord.lat && o.lon === coord.lng,
     );
+    const payMessage = !coord;
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
@@ -29,7 +30,15 @@ const Message = ({
                 <div onClick={onClickClose} className={styles.closeIntro}>
                     close [X]
                 </div>
-                {!!tourDisplay ? (
+                {payMessage && (
+                    <div>
+                    <p className={styles.introTitle}>Come vedere questo contenuto</p>
+                    <p className={styles.introText}>
+                        Paga!!
+                    </p>
+                </div>
+                )}
+                {!!tourDisplay && (
                     <InfoPoint
                         isMobile={isMobile(width)}
                         mobileImgWidth={width - 20}
@@ -37,7 +46,8 @@ const Message = ({
                         tourName={tour}
                         pointsLength={tourDisplay.imgCount}
                     />
-                ) : (
+                )}
+                {!payMessage && !tourDisplay && (
                     <div>
                         <p className={styles.introTitle}>Come usare la mappa</p>
                         <p className={styles.introText}>
@@ -45,6 +55,7 @@ const Message = ({
                         </p>
                     </div>
                 )}
+
             </div>
             {!showInfo && (
                 <div className={infoStile} onClick={onClickOpenInfo}>
