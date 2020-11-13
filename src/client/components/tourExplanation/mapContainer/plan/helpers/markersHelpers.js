@@ -24,39 +24,25 @@ margin-left: -2px;
 margin-top: -3px;
 background-color: red;`;
 
-const pointer = `position: absolute;
-content: '';
-width: 5px;
-height: 5px;
-border-radius: 50%;
-top: 50%;
-left: 50%;
-margin-left: -2px;
-margin-top: -3px;
-background-color: #fff;`;
-
 const myIcon = (mapToAdd, index) => {
-    if (index === 0) {
-        return mapToAdd.divIcon({
-            className: `${markerHtmlStyles}`,
-            html: `<div style="${markerHtmlStyles}"><div style="${pointerRed}" /></div>`,
-        });
-    } else {
-        return mapToAdd.divIcon({
-            className: `${markerHtmlStyles}`,
-            html: `<div style="${markerHtmlStyles}"></div>`,
-        });
-    }
+    return index === 0
+        ? mapToAdd.divIcon({
+              className: `${markerHtmlStyles}`,
+              html: `<div style="${markerHtmlStyles}"><div style="${pointerRed}" /></div>`,
+          })
+        : mapToAdd.divIcon({
+              className: `${markerHtmlStyles}`,
+              html: `<div style="${markerHtmlStyles}"></div>`,
+          });
 };
 
 export const createMarkers = (mapToAdd, pointers) =>
     pointers.map((pointer) => mapToAdd.marker(pointer));
 
 export const createFreeMarkers = (mapToAdd, pointers) =>
-    pointers.map((pointer, index) => {
-        console.log('index :>> ', index);
-        return mapToAdd.marker(pointer, { icon: myIcon(mapToAdd, index) });
-    });
+    pointers.map((pointer, index) =>
+        mapToAdd.marker(pointer, { icon: myIcon(mapToAdd, index) }),
+    );
 
 export const createToPayMarkers = (mapToAdd, pointers) =>
     pointers.map((pointer) =>
