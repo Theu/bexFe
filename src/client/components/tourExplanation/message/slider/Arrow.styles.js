@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { maxDesktop, baseOcra } from '../../../../styles/variables';
+import { baseOcra } from '../../../../styles/variables';
 
 export const ArrowContainer = styled.a`
     display: flex;

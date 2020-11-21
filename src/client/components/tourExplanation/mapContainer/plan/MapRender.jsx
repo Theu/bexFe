@@ -6,7 +6,6 @@ import { getCoords } from '../../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../../redux/modules/panel/actions';
 import { createMapContainer, extractBound } from './helpers/mapHelpers';
 import {
-    createMarkers,
     createFreeMarkers,
     createToPayMarkers,
 } from './helpers/markersHelpers';
@@ -61,7 +60,7 @@ const MapRender = (props) => {
     };
     const containerInit = targetMap.DomUtil.get('map');
 
-    useEffect(() => initializeMap(containerInit), []);
+    useEffect(() => initializeMap(containerInit));
 
     return (
         <div

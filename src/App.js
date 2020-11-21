@@ -10,9 +10,6 @@ import AdminLog from './client/components/adminLog/AdminLog';
 import CreateTours from './client/components/createTours/CreateTours';
 import useAuth from './client/components/compHooks/useAuth';
 
-import { isMobile } from './client/helpers/isMobile';
-import { useWindowSize } from './client/hooks/detectWindowSizes';
-
 import firebase, { FirebaseContext } from './firebase';
 
 import './index.scss';

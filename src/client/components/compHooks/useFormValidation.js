@@ -21,7 +21,7 @@ const useFormValidation = (initialState, validateInput, utiliseForm) => {
                 setSubmitting(false);
             }
         }
-    }, [errors]);
+    }, [errors, isSubmitting, utiliseForm]);
 
     // handle changes (inputs)
     // handle blur (check values when click away)
