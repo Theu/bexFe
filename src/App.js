@@ -24,7 +24,7 @@ const App = () => {
             <FirebaseContext.Provider value={{ user, firebase }}>
                 <Header />
                 <Switch>
-                    <Route exact path="/mappe" component={TourHomePage} />
+                    <Route exact path="/" component={TourHomePage} />
                     {tourList.map((path) => (
                         <Route
                             key={path}
