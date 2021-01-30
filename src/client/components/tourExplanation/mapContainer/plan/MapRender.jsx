@@ -21,9 +21,10 @@ const MapRender = (props) => {
         height,
     } = props;
     const { pointOfInterest } = tourInformation;
+    const isDad = document.URL.includes('?dad');
 
     const bounds = extractBound(pointOfInterest);
-    const freeBounds = bounds.slice(0, 2);
+    const freeBounds = isDad ? bounds : bounds.slice(0, 2);
     const toPayBounds = bounds.slice(2);
 
     const createFreePointers = (container, bounds) =>
@@ -56,7 +57,7 @@ const MapRender = (props) => {
             });
 
         createFreePointers(container, freeBounds);
-        createToPayPointers(container, toPayBounds);
+        {!isDad && createToPayPointers(container, toPayBounds)};
     };
     const containerInit = targetMap.DomUtil.get('map');
 
