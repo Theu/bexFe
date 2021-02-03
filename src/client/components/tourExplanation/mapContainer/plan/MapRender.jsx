@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -21,12 +22,14 @@ const MapRender = (props) => {
         height,
         isDad,
         selectedCoords,
+        getCoords,
+        tooglePanel,
     } = props;
     const { pointOfInterest } = tourInformation;
     const bounds = extractBound(pointOfInterest);
     const createMarkers = (bounds) =>
         bounds.map((point) => ({
-            latLng: { lat: point[0], lon: point[1] },
+            latLng: { lat: point[0], lng: point[1] },
             coords: `${point[0]}_${point[1]}`,
         }));
     const createdMarkers = createMarkers(bounds);
@@ -61,25 +64,41 @@ const MapRender = (props) => {
         {
             latLng: {
                 lat: selectedCoords?.coords.lat,
-                lon: selectedCoords?.coords.lng,
+                lng: selectedCoords?.coords.lng,
             },
             coords: `${selectedCoords?.coords.lat}_${selectedCoords?.coords.lng}`,
         },
     ];
 
+    const openExplanationOnClick = (coords) => {
+        tooglePanel(true);
+        getCoords(coords);
+    };
+    const selectedIcon = targetMap.divIcon({
+        className: 'selected-icon',
+        html: ReactDOMServer.renderToString(
+            <div className={styles.selected} />,
+        ),
+    });
+    const baseIcon = targetMap.divIcon({
+        className: 'base-icon',
+        html: ReactDOMServer.renderToString(
+            <div className={styles.base} />,
+        ),
+    });
     const displayMarkers = (marker, selectedMarker) => {
         if (marker.coords === selectedMarker[0]?.coords) {
             targetMap
-                .divIcon({
-                    className: 'selected-icon',
-                    html: <div>dd</div>,
+                .marker(marker.latLng, { icon: selectedIcon })
+                .on('click', () => {
+                    openExplanationOnClick(marker.latLng);
                 })
                 .addTo(layerRef.current);
         } else {
             targetMap
-                .divIcon({
-                    className: 'base-icon',
-                    html: <div>dd</div>,
+                .marker(marker.latLng, { icon: baseIcon })
+                .on('click', () => {
+                    openExplanationOnClick(marker.latLng);
                 })
                 .addTo(layerRef.current);
         }
