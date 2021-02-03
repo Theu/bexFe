@@ -14,11 +14,10 @@ export const TourExplanation = (props) => {
 
     const [isInfoPanel, setInfoPanel] = useState(true);
     const [showInstruction, setShowInstruction] = useState(false);
+    const isDad = document.URL.includes('?dad');
 
     const onClickClose = () => {
-        props.tooglePanel(false);
         props.getCoords({});
-        setInfoPanel(false);
     };
 
     const onClickOpenInfo = () => {
@@ -46,8 +45,15 @@ export const TourExplanation = (props) => {
                 coord={coord}
                 tour={tour}
                 tourInformation={tourInformation}
+                isDad={isDad}
             />
-            <PlanContainer tour={tour} tourInformation={tourInformation} />
+            <PlanContainer
+                tour={tour}
+                tourInformation={tourInformation}
+                isDad={isDad}
+                tooglePanel={tooglePanel}
+                getCoords={getCoords}
+            />
         </div>
     );
 };

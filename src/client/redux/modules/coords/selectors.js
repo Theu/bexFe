@@ -1,0 +1,1 @@
+export const getCoordinates = (state) => state.coords;
