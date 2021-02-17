@@ -8,3 +8,42 @@
 .mapWrapperMobile {
     width: 100%;
 }
+
+.base,
+.selected {
+    position: absolute;
+    top: -29px;
+    left: -5px;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+
+.base:after, .selected:after {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    bottom: -30px;
+    left: -6px;
+    border: 10px solid transparent;
+}
+
+.base {
+    background-color: transparent;
+    border: 8px solid $base--ocra;
+}
+
+.selected {
+    background-color: transparent;
+    border: 8px solid $base--title49;
+}
+
+.base:after {
+    border-top: 17px solid $base--ocra;
+}
+
+.selected:after {
+    border-top: 17px solid $base--title49;
+}

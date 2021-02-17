@@ -1,10 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useWindowSize } from '../../../hooks/detectWindowSizes';
 import { isMobile } from '../../../helpers/isMobile';
+import { getCoords } from '../../../redux/modules/coords/actions';
+import { tooglePanel } from '../../../redux/modules/panel/actions';
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
 
 // TODO info should stay in a controller container?
+
 const Message = ({
     onClickClose,
     onClickOpenInfo,
@@ -12,18 +16,52 @@ const Message = ({
     panel,
     coord,
     tour,
-    tourInformation
+    tourInformation,
+    getCoords,
+    isDad,
 }) => {
+    const [width] = useWindowSize();
     const { pointOfInterest } = tourInformation;
-    const tourDisplay = !!coord && pointOfInterest.find(
-        (o) => o.lat === coord.lat && o.lon === coord.lng,
-    );
+    // const [pointsOfInterest, setPointsOfInterest] = useState(pointOfInterest);
+    const tourDisplay =
+        !!coord &&
+        pointOfInterest.find((o) => o.lat === coord.lat && o.lon === coord.lng);
     const payMessage = !coord;
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
-    const [width] = useWindowSize();
+    const getCoordsForIndicator = (coord) => {
+        getCoords(coord);
+    };
 
+    const createPointsList = () =>
+        pointOfInterest.map((point, index) => {
+            const coord = {
+                lat: point.lat,
+                lng: point.lon
+            }
+            return (
+                <li
+                    key={`${index}_${point.lat}`}
+                    onClick={() => getCoordsForIndicator(coord)}
+                >
+                    {point.title}
+                </li>
+            );
+        });
+
+    const MapPointers = (pointsOfInterest) => (
+        <div>
+            <p className={styles.introTitle}>
+                Seleziona un indicatore per leggere la descrizione
+            </p>
+            <ul>{createPointsList()}</ul>
+        </div>
+    );
+
+    console.log('pointOfInterest :>> ', pointOfInterest);
+    console.log('coord :ggffdgdfg>> ', coord);
+    console.log('tourDisplay :>> ', tourDisplay);
     return (
         <>
             <div className={wrapperStyle}>
@@ -32,11 +70,11 @@ const Message = ({
                 </div>
                 {payMessage && (
                     <div>
-                    <p className={styles.introTitle}>Come vedere questo contenuto</p>
-                    <p className={styles.introText}>
-                        Paga!!
-                    </p>
-                </div>
+                        <p className={styles.introTitle}>
+                            Come vedere questo contenuto
+                        </p>
+                        <p className={styles.introText}>Paga!!</p>
+                    </div>
                 )}
                 {!!tourDisplay && (
                     <InfoPoint
@@ -47,15 +85,7 @@ const Message = ({
                         pointsLength={tourDisplay.imgCount}
                     />
                 )}
-                {!payMessage && !tourDisplay && (
-                    <div>
-                        <p className={styles.introTitle}>Come usare la mappa</p>
-                        <p className={styles.introText}>
-                            Seleziona un indicatore per leggere la descrizione
-                        </p>
-                    </div>
-                )}
-
+                {!payMessage && !tourDisplay && <MapPointers />}
             </div>
             {!showInfo && (
                 <div className={infoStile} onClick={onClickOpenInfo}>
@@ -66,4 +96,6 @@ const Message = ({
     );
 };
 
-export default Message;
+const mapDispatchToProps = { getCoords, tooglePanel };
+
+export default connect(null, mapDispatchToProps)(Message);
