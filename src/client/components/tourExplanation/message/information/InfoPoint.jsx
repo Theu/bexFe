@@ -8,6 +8,7 @@ const InfoPoint = ({
     tourName,
     mobileImgWidth,
     isMobile,
+    isDad,
 }) => {
     const arrayLengt = [...Array(Number(pointsLength)).keys()];
     const images = arrayLengt.map(
@@ -21,6 +22,7 @@ const InfoPoint = ({
                 isMobile={isMobile}
                 mobileImgWidth={mobileImgWidth}
                 images={images}
+                isDad={isDad}
             />
             <div className={styles.title}>{interest.title}</div>
             <div className={styles.text}>{interest.text}</div>

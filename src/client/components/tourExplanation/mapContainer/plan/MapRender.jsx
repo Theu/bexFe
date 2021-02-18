@@ -74,18 +74,21 @@ const MapRender = (props) => {
         tooglePanel(true);
         getCoords(coords);
     };
+
     const selectedIcon = targetMap.divIcon({
         className: 'selected-icon',
         html: ReactDOMServer.renderToString(
             <div className={styles.selected} />,
         ),
     });
+
     const baseIcon = targetMap.divIcon({
         className: 'base-icon',
         html: ReactDOMServer.renderToString(
             <div className={styles.base} />,
         ),
     });
+
     const displayMarkers = (marker, selectedMarker) => {
         if (marker.coords === selectedMarker[0]?.coords) {
             targetMap

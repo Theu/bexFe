@@ -59,9 +59,6 @@ const Message = ({
         </div>
     );
 
-    console.log('pointOfInterest :>> ', pointOfInterest);
-    console.log('coord :ggffdgdfg>> ', coord);
-    console.log('tourDisplay :>> ', tourDisplay);
     return (
         <>
             <div className={wrapperStyle}>
@@ -83,6 +80,7 @@ const Message = ({
                         interest={tourDisplay}
                         tourName={tour}
                         pointsLength={tourDisplay.imgCount}
+                        isDad={isDad}
                     />
                 )}
                 {!payMessage && !tourDisplay && <MapPointers />}
