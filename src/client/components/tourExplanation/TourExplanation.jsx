@@ -6,6 +6,7 @@ import { tooglePanel } from '../../redux/modules/panel/actions';
 import { toogleGallery } from '../../redux/modules/gallery/actions';
 import { getCoords } from '../../redux/modules/coords/actions';
 
+import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
 import Message from './message/Message';
 
@@ -20,7 +21,6 @@ export const TourExplanation = (props) => {
     const panel = useSelector((state) => state.panel.isPanelOpen);
     const coord = useSelector((state) => state.coords.coords);
     const isGalleryOpen = useSelector((state) => state.gallery.isGalleryOpen);
-
     const [isInfoPanel, setInfoPanel] = useState(true);
     const [showInstruction, setShowInstruction] = useState(false);
     const isDad = document.URL.includes('?dad');
@@ -69,11 +69,10 @@ export const TourExplanation = (props) => {
                 getCoords={getCoords}
             />
             {isGalleryOpen && (
-                <GalleryWrapper height={height}>
-                    <CloseGallery onClick={onClickCloseGallery}>
-                        CLOSE
-                    </CloseGallery>
-                </GalleryWrapper>
+                <Gallery
+                    height={height}
+                    onClickCloseGallery={onClickCloseGallery}
+                />
             )}
         </Wrapper>
     );
