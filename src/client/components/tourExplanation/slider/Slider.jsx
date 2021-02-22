@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { toogleGallery } from '../../../../redux/modules/gallery/actions';
+import { toogleGallery } from '../../../redux/modules/gallery/actions';
 import Arrow from './Arrow';
 
 import { SliderWrapper, SliderContent, Slide } from './Slider.styles';
@@ -38,7 +38,7 @@ const Slider = ({
         toogleGallery(true);
     };
 
-    const pathCover = require(`../../../../assets/${images[0]}`);
+    const pathCover = require(`../../../assets/${images[0]}`);
     return (
         <>
             <SliderWrapper mobileImgWidth={mobileImgWidth} isMobile={isMobile}>
@@ -58,7 +58,7 @@ const Slider = ({
                             pointsLength={Number(pointsLength)}
                         >
                             {images.map((slide, i) => {
-                                const path = require(`../../../../assets/${slide}`);
+                                const path = require(`../../../assets/${slide}`);
 
                                 return (
                                     <Slide

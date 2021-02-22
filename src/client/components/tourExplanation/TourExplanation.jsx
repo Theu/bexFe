@@ -72,6 +72,16 @@ export const TourExplanation = (props) => {
                 <Gallery
                     height={height}
                     onClickCloseGallery={onClickCloseGallery}
+                    onClickClose={onClickClose}
+                    onClickOpenInfo={onClickOpenInfo}
+                    showInfo={isInfoPanel}
+                    onClickShowInstruction={onClickShowInstruction}
+                    showInstruction={showInstruction}
+                    panel={panel}
+                    coord={coord}
+                    tour={tour}
+                    tourInformation={tourInformation}
+                    isDad={isDad}
                 />
             )}
         </Wrapper>
