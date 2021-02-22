@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { tourMock } from '../../../server/tourMock';
+import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { tooglePanel } from '../../redux/modules/panel/actions';
 import { toogleGallery } from '../../redux/modules/gallery/actions';
@@ -12,9 +13,7 @@ import Message from './message/Message';
 
 import { mapDeskHeight } from '../../styles/variables';
 import {
-    Wrapper,
-    GalleryWrapper,
-    CloseGallery,
+    Wrapper
 } from './TourExplanation.styles';
 
 export const TourExplanation = (props) => {
@@ -25,6 +24,7 @@ export const TourExplanation = (props) => {
     const [showInstruction, setShowInstruction] = useState(false);
     const isDad = document.URL.includes('?dad');
     const height = isMobile(window.innerHeight) ? '80vh' : `${mapDeskHeight}px`;
+    const [width] = useWindowSize();
 
     const onClickClose = () => {
         props.getCoords({});
@@ -46,6 +46,10 @@ export const TourExplanation = (props) => {
     const tourInformation = tourMock.filter(
         (item) => item.tourName === tour,
     )[0];
+    const { pointOfInterest } = tourInformation;
+    const tourDisplay =
+        !!coord &&
+        pointOfInterest.find((o) => o.lat === coord.lat && o.lon === coord.lng);
 
     return (
         <Wrapper>
@@ -58,7 +62,9 @@ export const TourExplanation = (props) => {
                 panel={panel}
                 coord={coord}
                 tour={tour}
-                tourInformation={tourInformation}
+                pointOfInterest={pointOfInterest}
+                tourDisplay={tourDisplay}
+                width={width}
                 isDad={isDad}
             />
             <PlanContainer
@@ -72,16 +78,12 @@ export const TourExplanation = (props) => {
                 <Gallery
                     height={height}
                     onClickCloseGallery={onClickCloseGallery}
-                    onClickClose={onClickClose}
-                    onClickOpenInfo={onClickOpenInfo}
-                    showInfo={isInfoPanel}
-                    onClickShowInstruction={onClickShowInstruction}
-                    showInstruction={showInstruction}
-                    panel={panel}
-                    coord={coord}
-                    tour={tour}
-                    tourInformation={tourInformation}
-                    isDad={isDad}
+                    pointOfInterest={pointOfInterest}
+                    tourDisplay={tourDisplay}
+                    pointsLength={tourDisplay.imgCount}
+                    interest={tourDisplay}
+                    mobileImgWidth={width - 20}
+                    tourName={tour}
                 />
             )}
         </Wrapper>

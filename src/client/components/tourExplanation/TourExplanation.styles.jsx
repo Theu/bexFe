@@ -8,17 +8,3 @@ export const Wrapper = styled.div`
     height: 80vh;
     padding: 5px;
 `;
-
-export const GalleryWrapper = styled.div`
-    position: absolute;
-    z-index: ${overMap};
-    background-color: ${galleryBackground};
-    width: calc(100% - 10px);
-    height: ${(props) => props.height};
-`;
-
-export const CloseGallery = styled.div`
-    width: 25px;
-    height: 25px;
-    background-color: red
-`;
