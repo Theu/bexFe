@@ -22,7 +22,8 @@ export const TourExplanation = (props) => {
     const isGalleryOpen = useSelector((state) => state.gallery.isGalleryOpen);
     const [isInfoPanel, setInfoPanel] = useState(true);
     const [showInstruction, setShowInstruction] = useState(false);
-    const isDad = document.URL.includes('?dad');
+    // const isDad = document.URL.includes('?dad');
+    const isDad = true;
     const height = isMobile(window.innerHeight) ? '80vh' : `${mapDeskHeight}px`;
     const [width] = useWindowSize();
 

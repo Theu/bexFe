@@ -12,5 +12,7 @@ export const GalleryWrapper = styled.div`
 export const CloseGallery = styled.div`
     width: 25px;
     height: 25px;
-    background-color: red
+    background-color: red;
+    position: absolute;
+    z-index: ${overMap};
 `;
