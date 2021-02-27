@@ -1,1 +1,1 @@
-export const isMobile = (value) => (value < 992 ? true : false);
+export const isMobile = (value) => (value < 769 ? true : false);

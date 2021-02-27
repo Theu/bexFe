@@ -1,0 +1,1 @@
+const getIsGalleryOpen = state => state.panel.isGalleyOpen;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useWindowSize } from '../../../hooks/detectWindowSizes';
 import { isMobile } from '../../../helpers/isMobile';
 import { getCoords } from '../../../redux/modules/coords/actions';
 import { tooglePanel } from '../../../redux/modules/panel/actions';
@@ -16,16 +15,13 @@ const Message = ({
     panel,
     coord,
     tour,
-    tourInformation,
+    pointOfInterest,
     getCoords,
+    tourDisplay,
+    width,
     isDad,
 }) => {
-    const [width] = useWindowSize();
-    const { pointOfInterest } = tourInformation;
-    // const [pointsOfInterest, setPointsOfInterest] = useState(pointOfInterest);
-    const tourDisplay =
-        !!coord &&
-        pointOfInterest.find((o) => o.lat === coord.lat && o.lon === coord.lng);
+
     const payMessage = !coord;
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
@@ -59,9 +55,6 @@ const Message = ({
         </div>
     );
 
-    console.log('pointOfInterest :>> ', pointOfInterest);
-    console.log('coord :ggffdgdfg>> ', coord);
-    console.log('tourDisplay :>> ', tourDisplay);
     return (
         <>
             <div className={wrapperStyle}>
@@ -83,6 +76,7 @@ const Message = ({
                         interest={tourDisplay}
                         tourName={tour}
                         pointsLength={tourDisplay.imgCount}
+                        isDad={isDad}
                     />
                 )}
                 {!payMessage && !tourDisplay && <MapPointers />}
