@@ -2,7 +2,7 @@ import React from 'react';
 import { isMobile } from '../../helpers/isMobile';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import Card from './Card/Card';
-import { tourMock } from '../../../server/tourMock';
+import { tourMock as tour } from '../../../server/tourMock';
 import { Container } from './TourHomePage.styles';
 
 export const TourHomePage = () => {
@@ -12,10 +12,9 @@ export const TourHomePage = () => {
     return (
         <Container>
             <div style={{ columnCount: columns }}>
-                {tourMock &&
-                    tourMock.map((card, index) => (
-                        <Card key={index} card={card} />
-                    ))}
+                {tour?.map((card, index) => (
+                    <Card key={index} card={card} />
+                ))}
             </div>
         </Container>
     );

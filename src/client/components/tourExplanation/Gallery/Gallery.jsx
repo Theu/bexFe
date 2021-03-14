@@ -1,7 +1,5 @@
 import React from 'react';
 import { isMobile } from '../../../helpers/isMobile';
-import { useWindowSize } from '../../../hooks/detectWindowSizes';
-import { getCoords } from '../../../redux/modules/coords/actions';
 import SliderGallery from '../sliderGallery/SliderGallery';
 
 import { GalleryWrapper, CloseGallery } from './Gallery.styles';
@@ -17,7 +15,6 @@ export const Gallery = (props) => {
         tourName
     } = props;
     const arrayLengt = [...Array(Number(pointsLength)).keys()];
-    console.log('arrayLengt :>> ', arrayLengt);
     const images = arrayLengt.map(
         (index) => `${tourName}/${interest.imgFolderName}/img${index + 1}.jpeg`,
     );

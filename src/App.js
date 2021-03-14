@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { tourMock } from '../src/server/tourMock';
+import { tourMock as tour } from '../src/server/tourMock';
 
 import Header from './client/components/header/Header';
 import TourHomePage from './client/components/tourHomePage/TourHomePage';
@@ -14,7 +14,7 @@ import firebase, { FirebaseContext } from './firebase';
 
 import './index.scss';
 
-const tourList = tourMock.map(({ tourName }) => tourName);
+const tourList = tour.map(({ tourName }) => tourName);
 
 const App = () => {
     const user = useAuth();
