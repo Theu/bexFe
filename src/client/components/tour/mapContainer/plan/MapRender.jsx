@@ -3,8 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getCoords } from '../../../../redux/modules/coords/actions';
-import { getCoordinates } from '../../../../redux/modules/coords/selectors';
+import { getCoordinates } from '../../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../../redux/modules/panel/actions';
 import { extractBound } from './helpers/mapHelpers';
 import {
@@ -22,7 +21,7 @@ const MapRender = (props) => {
         height,
         isDad,
         selectedCoords,
-        getCoords,
+        getCoordinates,
         toglePanel,
     } = props;
     const { pointOfInterest } = tourInformation;
@@ -72,7 +71,7 @@ const MapRender = (props) => {
 
     const openExplanationOnClick = (coords) => {
         toglePanel(true);
-        getCoords(coords);
+        getCoordinates(coords);
     };
 
     const selectedIcon = targetMap.divIcon({
@@ -129,7 +128,7 @@ MapRender.propTypes = {
     tour: PropTypes.string,
 };
 
-const mapDispatchToProps = { getCoords, toglePanel };
+const mapDispatchToProps = { getCoordinates, toglePanel };
 const mapStateToProps = (state) => ({
     selectedCoords: getCoordinates(state),
 });

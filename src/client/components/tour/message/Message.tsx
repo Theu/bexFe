@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { isMobile } from '../../../helpers/isMobile';
-import { getCoords } from '../../../redux/modules/coords/actions';
+import { getCoordinates } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
@@ -11,7 +11,7 @@ import { SinglePointOfInterest, Coordinates } from '../../types/types';
 interface MessageProps {
     onClickClose: () => void;
     onClickOpenInfo: () => void;
-    getCoords: (args1: Coordinates | any) => void;
+    getCoordinates: (args1: Coordinates | any) => void;
     tour: string;
     pointOfInterest: SinglePointOfInterest[];
     width: number;
@@ -30,7 +30,7 @@ const Message: React.FC<MessageProps> = ({
     coord,
     tour,
     pointOfInterest,
-    getCoords,
+    getCoordinates,
     tourDisplay,
     width,
     isDad,
@@ -43,7 +43,7 @@ const Message: React.FC<MessageProps> = ({
     console.log('coord', coord);
     console.log('tour', tour);
     console.log('pointOfInterest', pointOfInterest);
-    console.log('getCoords', getCoords);
+    console.log('getCoordinates', getCoordinates);
     console.log('tourDisplay', tourDisplay);
     console.log('width', width);
     console.log('isDad', isDad);
@@ -54,7 +54,7 @@ const Message: React.FC<MessageProps> = ({
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
     const getCoordsForIndicator = (coord: any) => {
-        getCoords(coord);
+        getCoordinates(coord);
     };
     const createPointsList = () =>
         pointOfInterest.map((point: any, index: any) => {
@@ -113,5 +113,5 @@ const Message: React.FC<MessageProps> = ({
         </>
     );
 };
-const mapDispatchToProps = { getCoords, toglePanel };
+const mapDispatchToProps = { getCoordinates, toglePanel };
 export default connect(null, mapDispatchToProps)(Message);

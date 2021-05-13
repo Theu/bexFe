@@ -5,7 +5,7 @@ import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { toglePanel } from '../../redux/modules/panel/actions';
 import { togleGallery } from '../../redux/modules/gallery/actions';
-import { getCoords } from '../../redux/modules/coords/actions';
+import { getCoordinates } from '../../redux/modules/coords/actions';
 import { RootState } from '../../redux/store/configureStore';
 import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
@@ -15,7 +15,7 @@ import { Wrapper } from './Tour.styles';
 import { Coordinates } from '../types/types';
 
 interface TourProps {
-    getCoords: (arg1: Coordinates | any) => void;
+    getCoordinates: (arg1: Coordinates | any) => void;
     location: {
         hash: string;
         key: string;
@@ -28,7 +28,7 @@ interface TourProps {
 }
 
 export const Tour: React.FC<TourProps> = ({
-    getCoords,
+    getCoordinates,
     location,
     togleGallery,
     toglePanel,
@@ -46,7 +46,7 @@ export const Tour: React.FC<TourProps> = ({
     const [width] = useWindowSize();
 
     const onClickClose = () => {
-        getCoords({});
+        getCoordinates({});
     };
 
     const onClickOpenInfo = () => {
@@ -92,7 +92,7 @@ export const Tour: React.FC<TourProps> = ({
                 tourInformation={tourInformation}
                 isDad={isDad}
                 toglePanel={toglePanel}
-                getCoords={getCoords}
+                getCoordinates={getCoordinates}
             />
             {isGalleryOpen && (
                 <Gallery
@@ -114,7 +114,7 @@ export const Tour: React.FC<TourProps> = ({
 const mapDispatchToProps = {
     toglePanel,
     togleGallery,
-    getCoords,
+    getCoordinates,
 };
 
 export default connect(null, mapDispatchToProps)(Tour);
