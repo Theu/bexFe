@@ -8,4 +8,7 @@ const store = createStore(
         (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+
 export default store;

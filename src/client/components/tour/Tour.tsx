@@ -3,23 +3,40 @@ import { connect, useSelector } from 'react-redux';
 import { tourMock } from '../../../server/tourMock';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
-import { tooglePanel } from '../../redux/modules/panel/actions';
-import { toogleGallery } from '../../redux/modules/gallery/actions';
+import { toglePanel } from '../../redux/modules/panel/actions';
+import { togleGallery } from '../../redux/modules/gallery/actions';
 import { getCoords } from '../../redux/modules/coords/actions';
-
+import { RootState } from '../../redux/store/configureStore';
 import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
 import Message from './message/Message';
-
 import { mapDeskHeight } from '../../styles/variables';
-import {
-    Wrapper
-} from './Tour.styles';
+import { Wrapper } from './Tour.styles';
 
-export const Tour = (props) => {
-    const panel = useSelector((state) => state.panel.isPanelOpen);
-    const coord = useSelector((state) => state.coords.coords);
-    const isGalleryOpen = useSelector((state) => state.gallery.isGalleryOpen);
+interface TourProps {
+    getCoords: (arg1: any) => void;
+    location: {
+        hash: string,
+        key: string,
+        pathname: string,
+        search: string,
+        state: any;
+    };
+    togleGallery: (args1: boolean) => void;
+    toglePanel: () => void;
+}
+
+export const Tour: React.FC<TourProps> = ({
+    getCoords,
+    location,
+    togleGallery,
+    toglePanel,
+}: TourProps) => {
+    const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
+    const coord = useSelector((state: RootState) => state.coords.coords);
+    const isGalleryOpen = useSelector(
+        (state: RootState) => state.gallery.isGalleryOpen,
+    );
     const [isInfoPanel, setInfoPanel] = useState(true);
     const [showInstruction, setShowInstruction] = useState(false);
     // const isDad = document.URL.includes('?dad');
@@ -28,7 +45,7 @@ export const Tour = (props) => {
     const [width] = useWindowSize();
 
     const onClickClose = () => {
-        props.getCoords({});
+        getCoords({});
     };
 
     const onClickOpenInfo = () => {
@@ -40,10 +57,10 @@ export const Tour = (props) => {
     };
 
     const onClickCloseGallery = () => {
-        props.toogleGallery(false);
+        togleGallery(false);
     };
 
-    const tour = props.location.pathname.substr(1);
+    const tour = location.pathname.substr(1);
     const tourInformation = tourMock.filter(
         (item) => item.tourName === tour,
     )[0];
@@ -58,6 +75,7 @@ export const Tour = (props) => {
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
+                // @ts-ignore
                 onClickShowInstruction={onClickShowInstruction}
                 showInstruction={showInstruction}
                 panel={panel}
@@ -72,7 +90,7 @@ export const Tour = (props) => {
                 tour={tour}
                 tourInformation={tourInformation}
                 isDad={isDad}
-                tooglePanel={tooglePanel}
+                toglePanel={toglePanel}
                 getCoords={getCoords}
             />
             {isGalleryOpen && (
@@ -81,6 +99,7 @@ export const Tour = (props) => {
                     onClickCloseGallery={onClickCloseGallery}
                     pointOfInterest={pointOfInterest}
                     tourDisplay={tourDisplay}
+                    // @ts-ignore
                     pointsLength={tourDisplay.imgCount}
                     interest={tourDisplay}
                     mobileImgWidth={width - 20}
@@ -92,8 +111,8 @@ export const Tour = (props) => {
 };
 
 const mapDispatchToProps = {
-    tooglePanel,
-    toogleGallery,
+    toglePanel,
+    togleGallery,
     getCoords,
 };
 

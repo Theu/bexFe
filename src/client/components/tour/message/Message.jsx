@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { isMobile } from '../../../helpers/isMobile';
 import { getCoords } from '../../../redux/modules/coords/actions';
-import { tooglePanel } from '../../../redux/modules/panel/actions';
+import { toglePanel } from '../../../redux/modules/panel/actions';
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
 
@@ -90,6 +90,6 @@ const Message = ({
     );
 };
 
-const mapDispatchToProps = { getCoords, tooglePanel };
+const mapDispatchToProps = { getCoords, toglePanel };
 
 export default connect(null, mapDispatchToProps)(Message);

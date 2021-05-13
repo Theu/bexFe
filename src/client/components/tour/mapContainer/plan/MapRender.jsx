@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { getCoords } from '../../../../redux/modules/coords/actions';
 import { getCoordinates } from '../../../../redux/modules/coords/selectors';
-import { tooglePanel } from '../../../../redux/modules/panel/actions';
+import { toglePanel } from '../../../../redux/modules/panel/actions';
 import { extractBound } from './helpers/mapHelpers';
 import {
     createFreeMarkers,
@@ -23,7 +23,7 @@ const MapRender = (props) => {
         isDad,
         selectedCoords,
         getCoords,
-        tooglePanel,
+        toglePanel,
     } = props;
     const { pointOfInterest } = tourInformation;
     const bounds = extractBound(pointOfInterest);
@@ -71,7 +71,7 @@ const MapRender = (props) => {
     ];
 
     const openExplanationOnClick = (coords) => {
-        tooglePanel(true);
+        toglePanel(true);
         getCoords(coords);
     };
 
@@ -129,7 +129,7 @@ MapRender.propTypes = {
     tour: PropTypes.string,
 };
 
-const mapDispatchToProps = { getCoords, tooglePanel };
+const mapDispatchToProps = { getCoords, toglePanel };
 const mapStateToProps = (state) => ({
     selectedCoords: getCoordinates(state),
 });
