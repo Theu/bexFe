@@ -1,39 +1,31 @@
 {
-  "compilerOptions": {
-    "noImplicitAny": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "baseUrl": "./",
-    "jsx": "preserve",
-    "lib": [
-      "es2015",
-      "es2017",
-      "dom"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "allowJs": true,
-    "outDir": "built",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "noEmit": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "./types"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.test.ts",
-    "**/*.spec.js",
-    "**/*.test.js"
-  ]
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "jsx": "preserve",
+        "baseUrl": "./src",
+        "lib": ["es2015", "es2017", "dom"],
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "allowJs": true,
+        "outDir": "built",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "noEmit": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "./types"],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "**/*.spec.js",
+        "**/*.test.js"
+    ]
 }

@@ -2,8 +2,8 @@
     "libri": {
         "tourName": "libri",
         "tourCover": {
-            "titleTest": "libri",
-            "tourCard": "This will take you to a page where you’ll be asked to authenticate with your Google account. Select the account that you’d like this project to be affiliated with, and press OK."
+            "tourCardTitle": "libri",
+            "tourCardIntroText": "This will take you to a page where you’ll be asked to authenticate with your Google account. Select the account that you’d like this project to be affiliated with, and press OK."
         },
         "pointOfInterest": [
             {
@@ -51,8 +51,8 @@
     "gattini": {
         "tourName": "gattini",
         "tourCover": {
-            "titleTest": "gattini",
-            "tourCard": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "tourCardTitle": "gattini",
+            "tourCardIntroText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         "pointOfInterest": [
             {
