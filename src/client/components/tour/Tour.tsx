@@ -55,6 +55,7 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
+    // possible future usage
     const onClickShowInstruction = () => {
         setShowInstruction(!showInstruction);
     };
@@ -82,6 +83,10 @@ export const Tour: React.FC<TourProps> = ({
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
+                // @ts-ignore possible future usage
+                onClickShowInstruction={onClickShowInstruction}
+                // @ts-ignore possible future usage
+                showInstruction={showInstruction}
                 panel={panel}
                 coordinates={selectedCoordinates}
                 tour={tour}
