@@ -19,7 +19,7 @@ interface MessageProps {
     showInfo: boolean;
     panel: boolean;
     tourDisplay: any;
-    coord: Coordinates;
+    coordinates: Coordinates;
 }
 
 const Message: React.FC<MessageProps> = ({
@@ -27,7 +27,7 @@ const Message: React.FC<MessageProps> = ({
     onClickOpenInfo,
     showInfo,
     panel,
-    coord,
+    coordinates,
     tour,
     pointOfInterest,
     getCoordinates,
@@ -35,37 +35,25 @@ const Message: React.FC<MessageProps> = ({
     width,
     isDad,
 }: MessageProps) => {
-    console.log('-----------------------------');
-    console.log('onClickClose', onClickClose);
-    console.log('onClickOpenInfo', onClickOpenInfo);
-    console.log('showInfo', showInfo);
-    console.log('panel', panel);
-    console.log('coord', coord);
-    console.log('tour', tour);
-    console.log('pointOfInterest', pointOfInterest);
-    console.log('getCoordinates', getCoordinates);
-    console.log('tourDisplay', tourDisplay);
-    console.log('width', width);
-    console.log('isDad', isDad);
-    console.log('-----------------------------');
-
-    const payMessage = !coord;
+    const payMessage = !coordinates;
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
-    const getCoordsForIndicator = (coord: any) => {
-        getCoordinates(coord);
+
+    const getCoordsForIndicator = (coordinates: Coordinates) => {
+        getCoordinates(coordinates);
     };
+
     const createPointsList = () =>
-        pointOfInterest.map((point: any, index: any) => {
-            const coord = {
+        pointOfInterest.map((point: SinglePointOfInterest, index: number) => {
+            const coordinatesFromPoint = {
                 lat: point.lat,
                 lng: point.lon,
             };
             return (
                 <li
                     key={`${index}_${point.lat}`}
-                    onClick={() => getCoordsForIndicator(coord)}
+                    onClick={() => getCoordsForIndicator(coordinatesFromPoint)}
                 >
                     {point.title}
                 </li>
@@ -113,5 +101,7 @@ const Message: React.FC<MessageProps> = ({
         </>
     );
 };
+
 const mapDispatchToProps = { getCoordinates, toglePanel };
+
 export default connect(null, mapDispatchToProps)(Message);

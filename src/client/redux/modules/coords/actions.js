@@ -1,4 +1,4 @@
-export const getCoordinates = (coord) => ({
+export const getCoordinates = (coordinates) => ({
     type: 'GET_COORDINATES',
-    coords: coord
+    coords: coordinates
 });

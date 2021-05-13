@@ -34,7 +34,9 @@ export const Tour: React.FC<TourProps> = ({
     toglePanel,
 }: TourProps) => {
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
-    const coord = useSelector((state: RootState) => state.coords.coords);
+    const selectedCoordinates = useSelector(
+        (state: RootState) => state.coords.coords,
+    );
     const isGalleryOpen = useSelector(
         (state: RootState) => state.gallery.isGalleryOpen,
     );
@@ -67,8 +69,12 @@ export const Tour: React.FC<TourProps> = ({
     )[0];
     const { pointOfInterest } = tourInformation;
     const tourDisplay =
-        !!coord &&
-        pointOfInterest.find((o) => o.lat === coord.lat && o.lon === coord.lng);
+        !!selectedCoordinates &&
+        pointOfInterest.find(
+            (o) =>
+                o.lat === selectedCoordinates.lat &&
+                o.lon === selectedCoordinates.lng,
+        );
 
     return (
         <Wrapper>
@@ -76,11 +82,8 @@ export const Tour: React.FC<TourProps> = ({
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
-                // @ts-ignore
-                onClickShowInstruction={onClickShowInstruction}
-                showInstruction={showInstruction}
                 panel={panel}
-                coord={coord}
+                coordinates={selectedCoordinates}
                 tour={tour}
                 pointOfInterest={pointOfInterest}
                 tourDisplay={tourDisplay}
