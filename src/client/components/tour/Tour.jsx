@@ -14,9 +14,9 @@ import Message from './message/Message';
 import { mapDeskHeight } from '../../styles/variables';
 import {
     Wrapper
-} from './TourExplanation.styles';
+} from './Tour.styles';
 
-export const TourExplanation = (props) => {
+export const Tour = (props) => {
     const panel = useSelector((state) => state.panel.isPanelOpen);
     const coord = useSelector((state) => state.coords.coords);
     const isGalleryOpen = useSelector((state) => state.gallery.isGalleryOpen);
@@ -97,4 +97,4 @@ const mapDispatchToProps = {
     getCoords,
 };
 
-export default connect(null, mapDispatchToProps)(TourExplanation);
+export default connect(null, mapDispatchToProps)(Tour);

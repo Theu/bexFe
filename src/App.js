@@ -5,7 +5,7 @@ import { tourMock as tour } from '../src/server/tourMock';
 
 import Header from './client/components/header/Header';
 import HomePage from './client/components/homePage/HomePage';
-import TourExplanation from './client/components/tourExplanation/TourExplanation';
+import Tour from './client/components/tour/Tour';
 import AdminLog from './client/components/adminLog/AdminLog';
 import ToursCreator from './client/components/toursCreator/ToursCreator';
 import useAuth from './client/hooks/useAuth';
@@ -29,7 +29,7 @@ const App = () => {
                         <Route
                             key={path}
                             path={`/${path}`}
-                            component={TourExplanation}
+                            component={Tour}
                         />
                     ))}
                 </Switch>
