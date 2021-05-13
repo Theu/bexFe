@@ -12,14 +12,15 @@ import PlanContainer from './mapContainer/plan/PlanContainer';
 import Message from './message/Message';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
+import { Coordinates } from '../types/types';
 
 interface TourProps {
-    getCoords: (arg1: any) => void;
+    getCoords: (arg1: Coordinates | any) => void;
     location: {
-        hash: string,
-        key: string,
-        pathname: string,
-        search: string,
+        hash: string;
+        key: string;
+        pathname: string;
+        search: string;
         state: any;
     };
     togleGallery: (args1: boolean) => void;

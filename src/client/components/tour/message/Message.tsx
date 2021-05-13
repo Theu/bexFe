@@ -5,10 +5,24 @@ import { getCoords } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
 import InfoPoint from './information/InfoPoint';
 import styles from './message.module.scss';
-
+import { SinglePointOfInterest, Coordinates } from '../../types/types';
 // TODO info should stay in a controller container?
 
-const Message = ({
+interface MessageProps {
+    onClickClose: () => void;
+    onClickOpenInfo: () => void;
+    getCoords: (args1: Coordinates | any) => void;
+    tour: string;
+    pointOfInterest: SinglePointOfInterest[];
+    width: number;
+    isDad: boolean;
+    showInfo: boolean;
+    panel: boolean;
+    tourDisplay: any;
+    coord: Coordinates;
+}
+
+const Message: React.FC<MessageProps> = ({
     onClickClose,
     onClickOpenInfo,
     showInfo,
@@ -20,22 +34,34 @@ const Message = ({
     tourDisplay,
     width,
     isDad,
-}) => {
+}: MessageProps) => {
+    console.log('-----------------------------');
+    console.log('onClickClose', onClickClose);
+    console.log('onClickOpenInfo', onClickOpenInfo);
+    console.log('showInfo', showInfo);
+    console.log('panel', panel);
+    console.log('coord', coord);
+    console.log('tour', tour);
+    console.log('pointOfInterest', pointOfInterest);
+    console.log('getCoords', getCoords);
+    console.log('tourDisplay', tourDisplay);
+    console.log('width', width);
+    console.log('isDad', isDad);
+    console.log('-----------------------------');
 
     const payMessage = !coord;
     const wrapperStyle =
         panel || showInfo ? styles.messageWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
-    const getCoordsForIndicator = (coord) => {
+    const getCoordsForIndicator = (coord: any) => {
         getCoords(coord);
     };
-
     const createPointsList = () =>
-        pointOfInterest.map((point, index) => {
+        pointOfInterest.map((point: any, index: any) => {
             const coord = {
                 lat: point.lat,
-                lng: point.lon
-            }
+                lng: point.lon,
+            };
             return (
                 <li
                     key={`${index}_${point.lat}`}
@@ -45,8 +71,7 @@ const Message = ({
                 </li>
             );
         });
-
-    const MapPointers = (pointsOfInterest) => (
+    const MapPointers = () => (
         <div>
             <p className={styles.introTitle}>
                 Seleziona un indicatore per leggere la descrizione
@@ -54,7 +79,6 @@ const Message = ({
             <ul>{createPointsList()}</ul>
         </div>
     );
-
     return (
         <>
             <div className={wrapperStyle}>
@@ -89,7 +113,5 @@ const Message = ({
         </>
     );
 };
-
 const mapDispatchToProps = { getCoords, toglePanel };
-
 export default connect(null, mapDispatchToProps)(Message);
