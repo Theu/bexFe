@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { tourMock as tour } from '../src/server/tourMock';
 
 import Header from './client/components/header/Header';
-import TourHomePage from './client/components/tourHomePage/TourHomePage';
+import HomePage from './client/components/HomePage/HomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
 import AdminLog from './client/components/adminLog/AdminLog';
 import CreateTours from './client/components/createTours/CreateTours';
@@ -24,7 +24,7 @@ const App = () => {
             <FirebaseContext.Provider value={{ user, firebase }}>
                 <Header />
                 <Switch>
-                    <Route exact path="/mappe" component={TourHomePage} />
+                    <Route exact path="/mappe" component={HomePage} />
                     {tourList.map((path) => (
                         <Route
                             key={path}

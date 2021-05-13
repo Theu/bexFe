@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { tablet, maxDesktop } from "../../styles/variables";
 import { respondFrom } from "../../helpers/screens";
+
 export const Container = styled.div`
   ${respondFrom(tablet)(`
         width: ${maxDesktop}px;
