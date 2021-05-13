@@ -7,8 +7,8 @@ import Header from './client/components/header/Header';
 import HomePage from './client/components/HomePage/HomePage';
 import TourExplanation from './client/components/tourExplanation/TourExplanation';
 import AdminLog from './client/components/adminLog/AdminLog';
-import CreateTours from './client/components/createTours/CreateTours';
-import useAuth from './client/components/compHooks/useAuth';
+import ToursCreator from './client/components/ToursCreator/ToursCreator';
+import useAuth from './client/hooks/useAuth';
 
 import firebase, { FirebaseContext } from './firebase';
 
@@ -34,7 +34,7 @@ const App = () => {
                     ))}
                 </Switch>
                 <Route path="/admin" component={AdminLog} />
-                <Route path="/create-tours" component={CreateTours} />
+                <Route path="/create-tours" component={ToursCreator} />
             </FirebaseContext.Provider>
         </BrowserRouter>
     );
