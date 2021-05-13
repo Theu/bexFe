@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es6",
-        "baseUrl": ".",
-        "moduleResolution": "node",
-        "experimentalDecorators": true
-    },
-    "include": ["common/src/**/*", "src/**/*", "testing/*"]
-}
