@@ -4,7 +4,13 @@ import { isMobile } from '../../../helpers/isMobile';
 import { getCoordinates } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
 import PointGallery from './pointGallery/PointGallery';
-import styles from './pointExplanation.module.scss';
+import {
+    PointExplanationWrapper,
+    IntroText,
+    IntroTitle,
+    CloseIntro,
+    Info,
+} from './PointExplanation.styles';
 import { SinglePointOfInterest, Coordinates } from '../../types/types';
 // TODO info should stay in a controller container?
 
@@ -36,10 +42,10 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
     isDad,
 }: PointExplanationProps) => {
     const payPointExplanation = !coordinates;
-    const wrapperStyle =
-        panel || showInfo ? styles.pointExplanationWrapper : styles.hide;
-    const infoStile = !panel ? styles.info : styles.hide;
-    console.log('wrapperStyle :>> ', panel || showInfo);
+    const displayPointExplanation = panel || showInfo;
+    const displayInfo = !panel;
+    console.log('panel :>> ', panel);
+    console.log('showInfo :>> ', showInfo);
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
@@ -61,43 +67,39 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
         });
     const MapPointers = () => (
         <div>
-            <p className={styles.introTitle}>
+            <IntroText>
                 Seleziona un indicatore per leggere la descrizione
-            </p>
+            </IntroText>
             <ul>{createPointsList()}</ul>
         </div>
     );
     return (
         <>
-            <div className={wrapperStyle}>
-                <div onClick={onClickClose} className={styles.closeIntro}>
-                    close [X]
-                </div>
-                {payPointExplanation && (
-                    <div>
-                        <p className={styles.introTitle}>
-                            Come vedere questo contenuto
-                        </p>
-                        <p className={styles.introText}>Paga!!</p>
-                    </div>
-                )}
-                {!!tourDisplay && (
-                    <PointGallery
-                        isMobile={isMobile(width)}
-                        mobileImgWidth={width - 20}
-                        interest={tourDisplay}
-                        tourName={tour}
-                        pointsLength={tourDisplay.imgCount}
-                        isDad={isDad}
-                    />
-                )}
-                {!payPointExplanation && !tourDisplay && <MapPointers />}
-            </div>
-            {!showInfo && (
-                <div className={infoStile} onClick={onClickOpenInfo}>
-                    info
-                </div>
+            {displayPointExplanation && (
+                <PointExplanationWrapper>
+                    <CloseIntro onClick={onClickClose}>close [X]</CloseIntro>
+                    {payPointExplanation && (
+                        <>
+                            <IntroTitle>
+                                Come vedere questo contenuto
+                            </IntroTitle>
+                            <IntroText>Paga!!</IntroText>
+                        </>
+                    )}
+                    {!!tourDisplay && (
+                        <PointGallery
+                            isMobile={isMobile(width)}
+                            mobileImgWidth={width - 20}
+                            interest={tourDisplay}
+                            tourName={tour}
+                            pointsLength={tourDisplay.imgCount}
+                            isDad={isDad}
+                        />
+                    )}
+                    {!payPointExplanation && !tourDisplay && <MapPointers />}
+                </PointExplanationWrapper>
             )}
+            {/* {displayInfo && <Info onClick={onClickOpenInfo}>info</Info>} */}
         </>
     );
 };
