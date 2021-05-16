@@ -9,7 +9,7 @@ import { getCoordinates } from '../../redux/modules/coords/actions';
 import { RootState } from '../../redux/store/configureStore';
 import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
-import Message from './message/Message';
+import PointExplanation from './pointExplanation/PointExplanation';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
 import { Coordinates } from '../types/types';
@@ -79,7 +79,7 @@ export const Tour: React.FC<TourProps> = ({
 
     return (
         <Wrapper>
-            <Message
+            <PointExplanation
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}

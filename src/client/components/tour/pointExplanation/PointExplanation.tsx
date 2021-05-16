@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { isMobile } from '../../../helpers/isMobile';
 import { getCoordinates } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
-import InfoPoint from './information/InfoPoint';
-import styles from './message.module.scss';
+import PointGallery from './pointGallery/PointGallery';
+import styles from './pointExplanation.module.scss';
 import { SinglePointOfInterest, Coordinates } from '../../types/types';
 // TODO info should stay in a controller container?
 
-interface MessageProps {
+interface PointExplanationProps {
     onClickClose: () => void;
     onClickOpenInfo: () => void;
     getCoordinates: (args1: Coordinates | any) => void;
@@ -22,7 +22,7 @@ interface MessageProps {
     coordinates: Coordinates;
 }
 
-const Message: React.FC<MessageProps> = ({
+const PointExplanation: React.FC<PointExplanationProps> = ({
     onClickClose,
     onClickOpenInfo,
     showInfo,
@@ -34,12 +34,12 @@ const Message: React.FC<MessageProps> = ({
     tourDisplay,
     width,
     isDad,
-}: MessageProps) => {
-    const payMessage = !coordinates;
+}: PointExplanationProps) => {
+    const payPointExplanation = !coordinates;
     const wrapperStyle =
-        panel || showInfo ? styles.messageWrapper : styles.hide;
+        panel || showInfo ? styles.pointExplanationWrapper : styles.hide;
     const infoStile = !panel ? styles.info : styles.hide;
-
+    console.log('wrapperStyle :>> ', panel || showInfo);
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
@@ -73,7 +73,7 @@ const Message: React.FC<MessageProps> = ({
                 <div onClick={onClickClose} className={styles.closeIntro}>
                     close [X]
                 </div>
-                {payMessage && (
+                {payPointExplanation && (
                     <div>
                         <p className={styles.introTitle}>
                             Come vedere questo contenuto
@@ -82,7 +82,7 @@ const Message: React.FC<MessageProps> = ({
                     </div>
                 )}
                 {!!tourDisplay && (
-                    <InfoPoint
+                    <PointGallery
                         isMobile={isMobile(width)}
                         mobileImgWidth={width - 20}
                         interest={tourDisplay}
@@ -91,7 +91,7 @@ const Message: React.FC<MessageProps> = ({
                         isDad={isDad}
                     />
                 )}
-                {!payMessage && !tourDisplay && <MapPointers />}
+                {!payPointExplanation && !tourDisplay && <MapPointers />}
             </div>
             {!showInfo && (
                 <div className={infoStile} onClick={onClickOpenInfo}>
@@ -104,4 +104,4 @@ const Message: React.FC<MessageProps> = ({
 
 const mapDispatchToProps = { getCoordinates, toglePanel };
 
-export default connect(null, mapDispatchToProps)(Message);
+export default connect(null, mapDispatchToProps)(PointExplanation);
