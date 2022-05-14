@@ -3,9 +3,9 @@ import { isMobile } from '../../helpers/isMobile';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import Card from './Card/Card';
 import { tourMock as tour } from '../../../server/tourMock';
-import { Container } from './TourHomePage.styles';
+import { Container } from './HomePage.styles';
 
-export const TourHomePage = () => {
+export const HomePage = () => {
     const [width] = useWindowSize();
     const columns = isMobile(width) ? 1 : 5;
 
@@ -20,4 +20,4 @@ export const TourHomePage = () => {
     );
 };
 
-export default TourHomePage;
+export default HomePage;

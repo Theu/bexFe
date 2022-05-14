@@ -3,9 +3,8 @@ import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getCoords } from '../../../../redux/modules/coords/actions';
-import { getCoordinates } from '../../../../redux/modules/coords/selectors';
-import { tooglePanel } from '../../../../redux/modules/panel/actions';
+import { getCoordinates } from '../../../../redux/modules/coords/actions';
+import { toglePanel } from '../../../../redux/modules/panel/actions';
 import { extractBound } from './helpers/mapHelpers';
 import {
     createFreeMarkers,
@@ -22,8 +21,8 @@ const MapRender = (props) => {
         height,
         isDad,
         selectedCoords,
-        getCoords,
-        tooglePanel,
+        getCoordinates,
+        toglePanel,
     } = props;
     const { pointOfInterest } = tourInformation;
     const bounds = extractBound(pointOfInterest);
@@ -71,8 +70,8 @@ const MapRender = (props) => {
     ];
 
     const openExplanationOnClick = (coords) => {
-        tooglePanel(true);
-        getCoords(coords);
+        toglePanel(true);
+        getCoordinates(coords);
     };
 
     const selectedIcon = targetMap.divIcon({
@@ -129,7 +128,7 @@ MapRender.propTypes = {
     tour: PropTypes.string,
 };
 
-const mapDispatchToProps = { getCoords, tooglePanel };
+const mapDispatchToProps = { getCoordinates, toglePanel };
 const mapStateToProps = (state) => ({
     selectedCoords: getCoordinates(state),
 });

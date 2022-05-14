@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 import FirebaseContext from '../../../firebase/context';
 import { NavLink } from 'react-router-dom';
-import { Wrapper } from './CreateTours.styles';
+import { Wrapper } from './ToursCreator.styles';
 
-const CreateTours = (props) => {
+const ToursCreator = (props) => {
     const { firebase, user } = useContext(FirebaseContext);
 
     const handleLogOut = () => {
@@ -25,4 +25,4 @@ const CreateTours = (props) => {
     );
 };
 
-export default CreateTours;
+export default ToursCreator;

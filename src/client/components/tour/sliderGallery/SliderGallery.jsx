@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { toogleGallery } from '../../../redux/modules/gallery/actions';
+import { togleGallery } from '../../../redux/modules/gallery/actions';
 import Arrow from './Arrow';
 
-import { SliderWrapper, SliderContent, Slide } from './Slider.styles';
+import { SliderWrapper, SliderContent, Slide } from './SliderGallery.styles';
 
 const Slider = ({
     images,
@@ -11,7 +11,8 @@ const Slider = ({
     isMobile,
     pointsLength,
     isDad,
-    toogleGallery,
+    togleGallery,
+    height
 }) => {
     const TRANSITION_SPEED = 0.45;
     const [activeIndex, setActiveIndex] = useState(0);
@@ -35,16 +36,18 @@ const Slider = ({
     };
 
     const openGalleryOnClick = () => {
-        toogleGallery(true);
+        togleGallery(true);
     };
 
     const pathCover = require(`../../../assets/${images[0]}`);
+    const isMobileWidth = isMobile(window.innerWidth);
+
     return (
         <>
             <SliderWrapper mobileImgWidth={mobileImgWidth} isMobile={isMobile}>
                 {isDad ? (
                     <Slide
-                        isMobile={isMobile}
+                        isMobile={isMobileWidth}
                         mobileImgWidth={mobileImgWidth}
                         content={pathCover}
                         onClick={openGalleryOnClick}
@@ -62,10 +65,11 @@ const Slider = ({
 
                                 return (
                                     <Slide
-                                        isMobile={isMobile}
+                                        isMobile={isMobileWidth}
                                         mobileImgWidth={mobileImgWidth}
                                         key={slide + i}
                                         content={path}
+                                        height={height}
                                     />
                                 );
                             })}
@@ -80,7 +84,7 @@ const Slider = ({
 };
 
 const mapDispatchToProps = {
-    toogleGallery,
+    togleGallery,
 };
 
 export default connect(null, mapDispatchToProps)(Slider);

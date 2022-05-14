@@ -19,7 +19,7 @@ export const CardItem = styled.div`
     align-items: center;
     ${respondFrom(tablet)(`
         width: 100%;
-    `)}
+    `)};
 `;
 
 export const Image = styled.img`

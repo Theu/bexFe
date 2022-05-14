@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import useFormValidation from '../compHooks/useFormValidation';
+import useFormValidation from '../../hooks/useFormValidation';
 import validateLogin from './validateLogin';
 import {
     Wrapper,

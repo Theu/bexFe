@@ -1,43 +1,33 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import { tourMock as tour } from '../src/server/tourMock';
-
 import Header from './client/components/header/Header';
-import TourHomePage from './client/components/tourHomePage/TourHomePage';
-import TourExplanation from './client/components/tourExplanation/TourExplanation';
+import HomePage from './client/components/HomePage/HomePage';
+import Tour from './client/components/tour/Tour';
 import AdminLog from './client/components/adminLog/AdminLog';
-import CreateTours from './client/components/createTours/CreateTours';
-import useAuth from './client/components/compHooks/useAuth';
-
+import ToursCreator from './client/components/ToursCreator/ToursCreator';
+import useAuth from './client/hooks/useAuth';
 import firebase, { FirebaseContext } from './firebase';
-
 import './index.scss';
 
 const tourList = tour.map(({ tourName }) => tourName);
 
 const App = () => {
     const user = useAuth();
-
     return (
         <BrowserRouter>
-            <FirebaseContext.Provider value={{ user, firebase }}>
+            {/* paused for now <FirebaseContext.Provider value={{ user, firebase }}> */}
                 <Header />
                 <Switch>
-                    <Route exact path="/mappe" component={TourHomePage} />
+                    <Route exact path="/" component={HomePage} />
                     {tourList.map((path) => (
-                        <Route
-                            key={path}
-                            path={`/${path}`}
-                            component={TourExplanation}
-                        />
+                        <Route key={path} path={`/${path}`} component={Tour} />
                     ))}
                 </Switch>
                 <Route path="/admin" component={AdminLog} />
-                <Route path="/create-tours" component={CreateTours} />
-            </FirebaseContext.Provider>
+                <Route path="/create-tours" component={ToursCreator} />
+            {/* </FirebaseContext.Provider> */}
         </BrowserRouter>
     );
 };
-
 export default App;

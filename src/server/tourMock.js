@@ -2,8 +2,8 @@ export const tourMock = [
     {
         tourName: 'libri',
         tourCover: {
-            titleTest: 'uno',
-            tourCard: 'This will take you to a ',
+            tourCardTitle: 'uno',
+            tourCardIntroText: 'This will take you to a ',
         },
         pointOfInterest: [
             {
@@ -56,8 +56,8 @@ export const tourMock = [
     {
         tourName: 'gattini',
         tourCover: {
-            titleTest: 'due',
-            tourCard:
+            tourCardTitle: 'due',
+            tourCardIntroText:
                 'Lorem',
         },
         pointOfInterest: [

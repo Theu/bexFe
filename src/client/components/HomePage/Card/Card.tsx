@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SinglePointOfInterest } from '../../types/types';
 import {
     Image,
     CardText,
@@ -8,9 +9,18 @@ import {
     CardItem,
 } from './Card.styles';
 
-const Card = ({ card }) => {
+interface Card {
+  tourName: string,
+  pointOfInterest: SinglePointOfInterest[];
+  tourCover: {
+    tourCardTitle: string,
+    tourCardIntroText: string
+  }
+}
+
+const Card: React.FC<{card: Card}> = ({card}) => {
     const { tourName, tourCover } = card;
-    const { titleTest, tourCard } = tourCover;
+    const { tourCardTitle, tourCardIntroText } = tourCover;
     const cover = require(`../../../assets/${tourName}/cover.jpeg`);
 
     return (
@@ -18,8 +28,8 @@ const Card = ({ card }) => {
             <CardItem>
                 <Image src={cover} />
                 <CardText>
-                    <CardTitle>{titleTest}</CardTitle>
-                    <CardIntroText>{tourCard}</CardIntroText>
+                    <CardTitle>{tourCardTitle}</CardTitle>
+                    <CardIntroText>{tourCardIntroText}</CardIntroText>
                 </CardText>
             </CardItem>
         </Link>
