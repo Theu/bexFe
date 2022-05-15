@@ -11,22 +11,22 @@ import {
 
 interface Card {
   tourName: string,
-  pointOfInterest: SinglePointOfInterest[];
+  pointOfInterest: SinglePointOfInterest[]; // change to PointOfInterest from contentful.ts
   tourCover: {
     tourCardTitle: string,
     tourCardIntroText: string
-    tourCardImg: any
+    coverImage: any
   }
 }
 
 const Card: React.FC<{card: Card}> = ({card}) => {
     const { tourName, tourCover } = card;
-    const { tourCardTitle, tourCardIntroText, tourCardImg } = tourCover;
+    const { tourCardTitle, tourCardIntroText, coverImage } = tourCover;
 
     return (
         <Link key={`${tourName}`} to={`${tourName}`}>
             <CardItem>
-                <Image src={tourCardImg} />
+                <Image src={coverImage} />
                 <CardText>
                     <CardTitle>{tourCardTitle}</CardTitle>
                     <CardIntroText>{tourCardIntroText}</CardIntroText>

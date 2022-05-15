@@ -25,6 +25,7 @@ interface TourProps {
     };
     togleGallery: (args1: boolean) => void;
     toglePanel: () => void;
+    tours: any;
 }
 
 export const Tour: React.FC<TourProps> = ({
@@ -32,7 +33,10 @@ export const Tour: React.FC<TourProps> = ({
     location,
     togleGallery,
     toglePanel,
+    tours,
 }: TourProps) => {
+    console.log('tourMock :>> ', tourMock);
+    console.log('tours :>> ', tours);
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
@@ -65,14 +69,15 @@ export const Tour: React.FC<TourProps> = ({
     };
 
     const tour = location.pathname.substr(1);
-    const tourInformation = tourMock.filter(
-        (item) => item.tourName === tour,
+    const tourInformation = tours.filter(
+        (item: any) => item.tourName === tour,
     )[0];
     const { pointOfInterest } = tourInformation;
+
     const tourDisplay =
         !!selectedCoordinates &&
         pointOfInterest.find(
-            (o) =>
+            (o: any) =>
                 o.lat === selectedCoordinates.lat &&
                 o.lon === selectedCoordinates.lng,
         );

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import { getCoordinates } from '../../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../../redux/modules/panel/actions';
 import { extractBound } from './helpers/mapHelpers';
-import {
-    createFreeMarkers,
-    createToPayMarkers,
-    createSelectedMarker,
-} from './helpers/markersHelpers';
+// import {
+//     createFreeMarkers,
+//     createToPayMarkers,
+//     createSelectedMarker,
+// } from './helpers/markersHelpers';
 import styles from './mapRender.module.scss';
 
 const MapRender = (props) => {
@@ -19,7 +19,7 @@ const MapRender = (props) => {
         tourInformation,
         width,
         height,
-        isDad,
+        // isDad,
         selectedCoords,
         getCoordinates,
         toglePanel,
@@ -32,8 +32,8 @@ const MapRender = (props) => {
             coords: `${point[0]}_${point[1]}`,
         }));
     const createdMarkers = createMarkers(bounds);
-    const freeBounds = isDad ? bounds : bounds.slice(0, 2);
-    const toPayBounds = bounds.slice(2);
+    // const freeBounds = isDad ? bounds : bounds.slice(0, 2);
+    // const toPayBounds = bounds.slice(2);
 
     const mapRef = useRef();
     useEffect(() => {
