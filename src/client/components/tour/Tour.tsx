@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
-import { tourMock } from '../../../server/tourMock';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { toglePanel } from '../../redux/modules/panel/actions';
@@ -35,8 +34,6 @@ export const Tour: React.FC<TourProps> = ({
     toglePanel,
     tours,
 }: TourProps) => {
-    console.log('tourMock :>> ', tourMock);
-    console.log('tours :>> ', tours);
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
@@ -115,6 +112,7 @@ export const Tour: React.FC<TourProps> = ({
                     tourDisplay={tourDisplay}
                     // @ts-ignore
                     pointsLength={tourDisplay.imgCount}
+                    images={tourDisplay.images}
                     interest={tourDisplay}
                     mobileImgWidth={width - 20}
                     tourName={tour}

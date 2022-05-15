@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { tourMock as tour } from '../src/server/tourMock';
 import Header from './client/components/header/Header';
 import HomePage from './client/components/HomePage/HomePage';
 import Tour from './client/components/tour/Tour';
@@ -11,22 +10,15 @@ import ToursCreator from './client/components/ToursCreator/ToursCreator';
 import './index.scss';
 import { useTours } from 'client/hooks/useTour';
 
-const tourListMock = tour.map(({ tourName }) => tourName);
-
 const App = () => {
     // const user = useAuth();
     const [tours, isLoading] = useTours();
 
     if (isLoading) return <p>Loading...</p>;
 
-    console.log('======================');
-    console.log('tour :>> ', tour);
-    console.log('tourccs :>> ', tours);
-    console.log('======================');
     // @ts-ignore
     const tourList = tours.map(({ tourName }) => tourName);
-    console.log('tourList :>> ', tourList);
-    console.log('tourListMock :>> ', tourListMock);
+
 
     return (
         <BrowserRouter>

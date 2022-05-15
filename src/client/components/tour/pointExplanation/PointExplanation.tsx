@@ -44,8 +44,6 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
     const payPointExplanation = !coordinates;
     const displayPointExplanation = panel || showInfo;
     // const displayInfo = !panel;
-    console.log('panel :>> ', panel);
-    console.log('showInfo :>> ', showInfo);
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
@@ -93,6 +91,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
                             interest={tourDisplay}
                             tourName={tour}
                             pointsLength={tourDisplay.imgCount}
+                            images={tourDisplay.images}
                             isDad={isDad}
                         />
                     )}

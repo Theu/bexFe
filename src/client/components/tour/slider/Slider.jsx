@@ -38,7 +38,8 @@ const Slider = ({
         togleGallery(true);
     };
 
-    const pathCover = require(`../../../assets/${images[0]}`);
+    // const pathCover = require(`../../../assets/${images[0]}`);
+    const pathCover = images[0];
     return (
         <>
             <SliderWrapper mobileImgWidth={mobileImgWidth} isMobile={isMobile}>
@@ -58,14 +59,14 @@ const Slider = ({
                             pointsLength={Number(pointsLength)}
                         >
                             {images.map((slide, i) => {
-                                const path = require(`../../../assets/${slide}`);
+                                // const path = slide;
 
                                 return (
                                     <Slide
                                         isMobile={isMobile}
                                         mobileImgWidth={mobileImgWidth}
                                         key={slide + i}
-                                        content={path}
+                                        content={slide}
                                     />
                                 );
                             })}

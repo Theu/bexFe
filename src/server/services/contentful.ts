@@ -1,4 +1,4 @@
-import { createClient, Entry } from 'contentful';
+import { createClient } from 'contentful';
 
 const mapBexClient = createClient({
     space: 'r0y0gnkozdz0',
@@ -75,10 +75,6 @@ export const getMapBexClient = async () => {
     const { items } = await mapBexClient.getEntries();
     const toursToBeNormalised = extractTours(items);
     const usableTours = normaLiseTours(toursToBeNormalised);
-    // console.log('usableTours :>> ', usableTours);
-    // console.log('toursToBeNormalised :>> ', toursToBeNormalised);
 
     return usableTours;
 };
-
-// export const getBexMapsContent = () => async () => {};
