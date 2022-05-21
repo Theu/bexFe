@@ -1,8 +1,8 @@
 import { createClient } from 'contentful';
 
 const mapBexClient = createClient({
-    space: 'r0y0gnkozdz0',
-    accessToken: 'fh2nTX0oMcGQ0Uwmd5bcClq_TMr7qyAC6GfPcroZVQk',
+    space: `${process.env.REACT_APP_CONTENTFUL_SPACEID}`,
+    accessToken: `${process.env.REACT_APP_CONTENTFUL_KEY}`,
 });
 
 const extractTours = (list: any[]): any[] => {
