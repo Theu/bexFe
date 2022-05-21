@@ -6,7 +6,6 @@ import store from './client/redux/store/configureStore';
 import { Provider } from 'react-redux';
 
 import App from './App';
-import './index.scss';
 
 render(
     <Provider store={store}>
