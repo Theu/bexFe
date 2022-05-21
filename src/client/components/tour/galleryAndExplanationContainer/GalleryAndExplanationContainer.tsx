@@ -5,16 +5,16 @@ import { getCoordinates } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
 import PointGallery from './pointGallery/PointGallery';
 import {
-    PointExplanationWrapper,
+    GalleryAndExplanationContainerWrapper,
     IntroText,
     IntroTitle,
     CloseIntro,
     // Info,
-} from './PointExplanation.styles';
+} from './GalleryAndExplanationContainer.styles';
 import { TourPointsList, Coordinates } from 'types';
 // TODO info should stay in a controller container?
 
-interface PointExplanationProps {
+interface GalleryAndExplanationContainerProps {
     onClickClose: () => void;
     onClickOpenInfo: () => void;
     getCoordinates: (args1: Coordinates | any) => void;
@@ -23,16 +23,18 @@ interface PointExplanationProps {
     width: number;
     isDad: boolean;
     showInfo: boolean;
-    panel: boolean;
+    isGalleryAndExplanationOpen: boolean;
     selectedTour: any;
     coordinates: Coordinates;
 }
 
-const PointExplanation: React.FC<PointExplanationProps> = ({
+const GalleryAndExplanationContainer: React.FC<
+    GalleryAndExplanationContainerProps
+> = ({
     onClickClose,
     // onClickOpenInfo,
     showInfo,
-    panel,
+    isGalleryAndExplanationOpen,
     coordinates,
     tour,
     tourPointsList,
@@ -40,10 +42,10 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
     selectedTour,
     width,
     isDad,
-}: PointExplanationProps) => {
-    const payPointExplanation = !coordinates;
-    const displayPointExplanation = panel || showInfo;
-    // const displayInfo = !panel;
+}: GalleryAndExplanationContainerProps) => {
+    const payGalleryAndExplanationContainer = !coordinates;
+    const displayGalleryAndExplanationContainer =
+        isGalleryAndExplanationOpen || showInfo;
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
@@ -71,12 +73,14 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
             <ul>{createPointsList()}</ul>
         </div>
     );
+
+    console.log('selectedTour :>> ', selectedTour);
     return (
         <>
-            {displayPointExplanation && (
-                <PointExplanationWrapper>
+            {displayGalleryAndExplanationContainer && (
+                <GalleryAndExplanationContainerWrapper>
                     <CloseIntro onClick={onClickClose}>close [X]</CloseIntro>
-                    {payPointExplanation && (
+                    {payGalleryAndExplanationContainer && (
                         <>
                             <IntroTitle>
                                 Come vedere questo contenuto
@@ -95,8 +99,10 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
                             isDad={isDad}
                         />
                     )}
-                    {!payPointExplanation && !selectedTour && <MapPointers />}
-                </PointExplanationWrapper>
+                    {!payGalleryAndExplanationContainer && !selectedTour && (
+                        <MapPointers />
+                    )}
+                </GalleryAndExplanationContainerWrapper>
             )}
             {/* {displayInfo && <Info onClick={onClickOpenInfo}>info</Info>} */}
         </>
@@ -105,4 +111,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
 
 const mapDispatchToProps = { getCoordinates, toglePanel };
 
-export default connect(null, mapDispatchToProps)(PointExplanation);
+export default connect(
+    null,
+    mapDispatchToProps,
+)(GalleryAndExplanationContainer);

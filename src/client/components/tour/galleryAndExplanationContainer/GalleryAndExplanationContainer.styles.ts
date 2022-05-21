@@ -9,7 +9,7 @@ import {
 } from '../../../styles/variables';
 import { respondFrom } from '../../../helpers/screens';
 
-export const PointExplanationWrapper = styled.div`
+export const GalleryAndExplanationContainerWrapper = styled.div`
     position: absolute;
     width: calc(100% - 20px);
     display: flex;

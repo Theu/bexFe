@@ -6,7 +6,7 @@ import { toglePanel } from '../../redux/modules/panel/actions';
 import { getCoordinates } from '../../redux/modules/coords/actions';
 import { RootState } from '../../redux/store/configureStore';
 import PlanContainer from './mapContainer/plan/PlanContainer';
-import PointExplanation from './pointExplanation/PointExplanation';
+import GalleryAndExplanationContainer from './galleryAndExplanationContainer/GalleryAndExplanationContainer';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
 import { TourPointsList, Coordinates } from 'types';
@@ -25,7 +25,7 @@ export const Tour: React.FC<TourProps> = ({
     tourName,
 }: TourProps) => {
     // the info panel
-    const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
+    const isGalleryAndExplanationOpen = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
     );
@@ -44,6 +44,9 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
+    const rerer =  tours.filter(
+        (singleTour: any) => singleTour.tourName === tourName,
+    )
     const tourInformation = tours.filter(
         (singleTour: any) => singleTour.tourName === tourName,
     )[0];
@@ -56,17 +59,14 @@ export const Tour: React.FC<TourProps> = ({
                 singlePoint.lat === selectedCoordinates.lat &&
                 singlePoint.lon === selectedCoordinates.lng,
         );
-    console.log('---------------------');
-    console.log('panel :>> ', panel);
-    console.log('---------------------');
 
     return (
         <Wrapper>
-            <PointExplanation
+            <GalleryAndExplanationContainer
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
-                panel={panel}
+                isGalleryAndExplanationOpen={isGalleryAndExplanationOpen}
                 coordinates={selectedCoordinates}
                 tour={tourName}
                 tourPointsList={tourPointsList}
