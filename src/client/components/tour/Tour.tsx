@@ -15,25 +15,20 @@ import { Coordinates } from '../types/types';
 
 interface TourProps {
     getCoordinates: (arg1: Coordinates | any) => void;
-    location: {
-        hash: string;
-        key: string;
-        pathname: string;
-        search: string;
-        state: any;
-    };
     togleGallery: (args1: boolean) => void;
     toglePanel: () => void;
     tours: any;
+    tourName: string;
 }
 
 export const Tour: React.FC<TourProps> = ({
     getCoordinates,
-    location,
     togleGallery,
     toglePanel,
     tours,
+    tourName
 }: TourProps) => {
+    // the info panel
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
@@ -42,9 +37,9 @@ export const Tour: React.FC<TourProps> = ({
         (state: RootState) => state.gallery.isGalleryOpen,
     );
     const [isInfoPanel, setInfoPanel] = useState(true);
-    const [showInstruction, setShowInstruction] = useState(false);
     // const isDad = document.URL.includes('?dad');
     const isDad = true;
+
     const height = isMobile(window.innerHeight) ? '80vh' : `${mapDeskHeight}px`;
     const [width] = useWindowSize();
 
@@ -56,18 +51,12 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
-    // possible future usage
-    const onClickShowInstruction = () => {
-        setShowInstruction(!showInstruction);
-    };
-
     const onClickCloseGallery = () => {
         togleGallery(false);
     };
 
-    const tour = location.pathname.substr(1);
     const tourInformation = tours.filter(
-        (item: any) => item.tourName === tour,
+        (item: any) => item.tourName === tourName,
     )[0];
     const { pointOfInterest } = tourInformation;
 
@@ -85,20 +74,16 @@ export const Tour: React.FC<TourProps> = ({
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
-                // @ts-ignore possible future usage
-                onClickShowInstruction={onClickShowInstruction}
-                // @ts-ignore possible future usage
-                showInstruction={showInstruction}
                 panel={panel}
                 coordinates={selectedCoordinates}
-                tour={tour}
+                tour={tourName}
                 pointOfInterest={pointOfInterest}
                 tourDisplay={tourDisplay}
                 width={width}
                 isDad={isDad}
             />
             <PlanContainer
-                tour={tour}
+                tour={tourName}
                 tourInformation={tourInformation}
                 isDad={isDad}
                 toglePanel={toglePanel}
@@ -115,7 +100,7 @@ export const Tour: React.FC<TourProps> = ({
                     images={tourDisplay.images}
                     interest={tourDisplay}
                     mobileImgWidth={width - 20}
-                    tourName={tour}
+                    tourName={tourName}
                 />
             )}
         </Wrapper>

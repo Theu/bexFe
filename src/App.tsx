@@ -14,7 +14,6 @@ const App = () => {
     // @ts-ignore
     const tourList = tours.map(({ tourName }) => tourName);
 
-
     return (
         <BrowserRouter>
             <Header />
@@ -29,8 +28,12 @@ const App = () => {
                         key={path}
                         path={`/${path}`}
                         render={(props) => {
-                            // @ts-expect-error
-                            return <Tour tours={tours} {...props} />;
+                            return (
+                                <Tour
+                                    tours={tours}
+                                    tourName={path}
+                                />
+                            );
                         }}
                     />
                 ))}
