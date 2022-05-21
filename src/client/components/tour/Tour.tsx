@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
-import { tourMock } from '../../../server/tourMock';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { toglePanel } from '../../redux/modules/panel/actions';
@@ -25,6 +24,7 @@ interface TourProps {
     };
     togleGallery: (args1: boolean) => void;
     toglePanel: () => void;
+    tours: any;
 }
 
 export const Tour: React.FC<TourProps> = ({
@@ -32,6 +32,7 @@ export const Tour: React.FC<TourProps> = ({
     location,
     togleGallery,
     toglePanel,
+    tours,
 }: TourProps) => {
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
@@ -65,14 +66,15 @@ export const Tour: React.FC<TourProps> = ({
     };
 
     const tour = location.pathname.substr(1);
-    const tourInformation = tourMock.filter(
-        (item) => item.tourName === tour,
+    const tourInformation = tours.filter(
+        (item: any) => item.tourName === tour,
     )[0];
     const { pointOfInterest } = tourInformation;
+
     const tourDisplay =
         !!selectedCoordinates &&
         pointOfInterest.find(
-            (o) =>
+            (o: any) =>
                 o.lat === selectedCoordinates.lat &&
                 o.lon === selectedCoordinates.lng,
         );
@@ -110,6 +112,7 @@ export const Tour: React.FC<TourProps> = ({
                     tourDisplay={tourDisplay}
                     // @ts-ignore
                     pointsLength={tourDisplay.imgCount}
+                    images={tourDisplay.images}
                     interest={tourDisplay}
                     mobileImgWidth={width - 20}
                     tourName={tour}

@@ -9,7 +9,7 @@ import {
     IntroText,
     IntroTitle,
     CloseIntro,
-    Info,
+    // Info,
 } from './PointExplanation.styles';
 import { SinglePointOfInterest, Coordinates } from '../../types/types';
 // TODO info should stay in a controller container?
@@ -30,7 +30,7 @@ interface PointExplanationProps {
 
 const PointExplanation: React.FC<PointExplanationProps> = ({
     onClickClose,
-    onClickOpenInfo,
+    // onClickOpenInfo,
     showInfo,
     panel,
     coordinates,
@@ -43,9 +43,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
 }: PointExplanationProps) => {
     const payPointExplanation = !coordinates;
     const displayPointExplanation = panel || showInfo;
-    const displayInfo = !panel;
-    console.log('panel :>> ', panel);
-    console.log('showInfo :>> ', showInfo);
+    // const displayInfo = !panel;
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
@@ -93,6 +91,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
                             interest={tourDisplay}
                             tourName={tour}
                             pointsLength={tourDisplay.imgCount}
+                            images={tourDisplay.images}
                             isDad={isDad}
                         />
                     )}

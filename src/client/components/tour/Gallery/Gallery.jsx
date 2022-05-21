@@ -9,15 +9,16 @@ export const Gallery = (props) => {
         height,
         onClickCloseGallery,
         pointsLength,
+        images,
         interest,
         mobileImgWidth,
         isDad,
         tourName
     } = props;
     const arrayLengt = [...Array(Number(pointsLength)).keys()];
-    const images = arrayLengt.map(
-        (index) => `${tourName}/${interest.imgFolderName}/img${index + 1}.jpeg`,
-    );
+    // const images = arrayLengt.map(
+    //     (index) => `${tourName}/${interest.imgFolderName}/img${index + 1}.jpeg`,
+    // );
 
     return (
         <GalleryWrapper height={height}>

@@ -23,12 +23,8 @@ const useFormValidation = (initialState, validateInput, utiliseForm) => {
         }
     }, [errors, isSubmitting, utiliseForm]);
 
-    // handle changes (inputs)
-    // handle blur (check values when click away)
-    // handle submit (submit...)
     const handleChange = (event) => {
         event.persist();
-        console.log('event.target.value :>> ', event.target.value);
         setValues((previousValue) => ({
             ...previousValue,
             [event.target.name]: event.target.value,

@@ -2,17 +2,19 @@ import React from 'react';
 import { isMobile } from '../../helpers/isMobile';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import Card from './Card/Card';
-import { tourMock as tour } from '../../../server/tourMock';
 import { Container } from './HomePage.styles';
 
-export const HomePage = () => {
+interface Props {
+    tours: any
+}
+export const HomePage: React.FC<Props> = ({ tours }) => {
     const [width] = useWindowSize();
     const columns = isMobile(width) ? 1 : 5;
 
     return (
         <Container>
             <div style={{ columnCount: columns }}>
-                {tour?.map((card, index) => (
+                {tours?.map((card: any, index: any) => (
                     <Card key={index} card={card} />
                 ))}
             </div>
