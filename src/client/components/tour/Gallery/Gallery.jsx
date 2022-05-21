@@ -8,23 +8,17 @@ export const Gallery = (props) => {
     const {
         height,
         onClickCloseGallery,
-        pointsLength,
         images,
-        interest,
         mobileImgWidth,
         isDad,
-        tourName
     } = props;
-    const arrayLengt = [...Array(Number(pointsLength)).keys()];
-    // const images = arrayLengt.map(
-    //     (index) => `${tourName}/${interest.imgFolderName}/img${index + 1}.jpeg`,
-    // );
+    const imagesNumber = images.length;
 
     return (
         <GalleryWrapper height={height}>
             <CloseGallery onClick={onClickCloseGallery}>CLOSE</CloseGallery>
             <SliderGallery
-                pointsLength={pointsLength}
+                pointsLength={imagesNumber}
                 isMobile={isMobile}
                 mobileImgWidth={mobileImgWidth}
                 images={images}

@@ -11,7 +11,7 @@ import {
     CloseIntro,
     // Info,
 } from './PointExplanation.styles';
-import { SinglePointOfInterest, Coordinates } from '../../types/types';
+import { TourPointsList, Coordinates } from 'types';
 // TODO info should stay in a controller container?
 
 interface PointExplanationProps {
@@ -19,12 +19,12 @@ interface PointExplanationProps {
     onClickOpenInfo: () => void;
     getCoordinates: (args1: Coordinates | any) => void;
     tour: string;
-    pointOfInterest: SinglePointOfInterest[];
+    tourPointsList: TourPointsList[];
     width: number;
     isDad: boolean;
     showInfo: boolean;
     panel: boolean;
-    tourDisplay: any;
+    selectedTour: any;
     coordinates: Coordinates;
 }
 
@@ -35,9 +35,9 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
     panel,
     coordinates,
     tour,
-    pointOfInterest,
+    tourPointsList,
     getCoordinates,
-    tourDisplay,
+    selectedTour,
     width,
     isDad,
 }: PointExplanationProps) => {
@@ -49,7 +49,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
     };
 
     const createPointsList = () =>
-        pointOfInterest.map((point: SinglePointOfInterest, index: number) => {
+        tourPointsList.map((point: TourPointsList, index: number) => {
             const coordinatesFromPoint = {
                 lat: point.lat,
                 lng: point.lon,
@@ -84,18 +84,18 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
                             <IntroText>Paga!!</IntroText>
                         </>
                     )}
-                    {!!tourDisplay && (
+                    {!!selectedTour && (
                         <PointGallery
                             isMobile={isMobile(width)}
                             mobileImgWidth={width - 20}
-                            interest={tourDisplay}
+                            interest={selectedTour}
                             tourName={tour}
-                            pointsLength={tourDisplay.imgCount}
-                            images={tourDisplay.images}
+                            pointsLength={selectedTour.imgCount}
+                            images={selectedTour.images}
                             isDad={isDad}
                         />
                     )}
-                    {!payPointExplanation && !tourDisplay && <MapPointers />}
+                    {!payPointExplanation && !selectedTour && <MapPointers />}
                 </PointExplanationWrapper>
             )}
             {/* {displayInfo && <Info onClick={onClickOpenInfo}>info</Info>} */}

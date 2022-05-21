@@ -10,9 +10,7 @@ const Slider = ({
     mobileImgWidth,
     isMobile,
     pointsLength,
-    isDad,
-    togleGallery,
-    height
+    height,
 }) => {
     const TRANSITION_SPEED = 0.45;
     const [activeIndex, setActiveIndex] = useState(0);
@@ -35,47 +33,31 @@ const Slider = ({
         }
     };
 
-    const openGalleryOnClick = () => {
-        togleGallery(true);
-    };
-
-    const pathCover = images[0];
     const isMobileWidth = isMobile(window.innerWidth);
 
     return (
         <>
             <SliderWrapper mobileImgWidth={mobileImgWidth} isMobile={isMobile}>
-                {isDad ? (
-                    <Slide
-                        isMobile={isMobileWidth}
-                        mobileImgWidth={mobileImgWidth}
-                        content={pathCover}
-                        onClick={openGalleryOnClick}
-                    />
-                ) : (
-                    <>
-                        <SliderContent
-                            mobileImgWidth={mobileImgWidth}
-                            translate={translate}
-                            transition={TRANSITION_SPEED}
-                            pointsLength={Number(pointsLength)}
-                        >
-                            {images.map((slide, i) => {
-                                return (
-                                    <Slide
-                                        isMobile={isMobileWidth}
-                                        mobileImgWidth={mobileImgWidth}
-                                        key={slide + i}
-                                        content={slide}
-                                        height={height}
-                                    />
-                                );
-                            })}
-                        </SliderContent>
-                        <Arrow direction="left" handleClick={prevSlide} />
-                        <Arrow direction="right" handleClick={nextSlide} />
-                    </>
-                )}
+                <SliderContent
+                    mobileImgWidth={mobileImgWidth}
+                    translate={translate}
+                    transition={TRANSITION_SPEED}
+                    pointsLength={Number(pointsLength)}
+                >
+                    {images.map((slide, i) => {
+                        return (
+                            <Slide
+                                isMobile={isMobileWidth}
+                                mobileImgWidth={mobileImgWidth}
+                                key={slide + i}
+                                content={slide}
+                                height={height}
+                            />
+                        );
+                    })}
+                </SliderContent>
+                <Arrow direction="left" handleClick={prevSlide} />
+                <Arrow direction="right" handleClick={nextSlide} />
             </SliderWrapper>
         </>
     );

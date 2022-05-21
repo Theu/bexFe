@@ -3,19 +3,16 @@ import { connect, useSelector } from 'react-redux';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { toglePanel } from '../../redux/modules/panel/actions';
-import { togleGallery } from '../../redux/modules/gallery/actions';
 import { getCoordinates } from '../../redux/modules/coords/actions';
 import { RootState } from '../../redux/store/configureStore';
-import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
 import PointExplanation from './pointExplanation/PointExplanation';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
-import { Coordinates } from '../types/types';
+import { TourPointsList, Coordinates } from 'types';
 
 interface TourProps {
     getCoordinates: (arg1: Coordinates | any) => void;
-    togleGallery: (args1: boolean) => void;
     toglePanel: () => void;
     tours: any;
     tourName: string;
@@ -23,24 +20,20 @@ interface TourProps {
 
 export const Tour: React.FC<TourProps> = ({
     getCoordinates,
-    togleGallery,
     toglePanel,
     tours,
-    tourName
+    tourName,
 }: TourProps) => {
     // the info panel
     const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
     );
-    const isGalleryOpen = useSelector(
-        (state: RootState) => state.gallery.isGalleryOpen,
-    );
+
     const [isInfoPanel, setInfoPanel] = useState(true);
     // const isDad = document.URL.includes('?dad');
-    const isDad = true;
+    const isDad = false;
 
-    const height = isMobile(window.innerHeight) ? '80vh' : `${mapDeskHeight}px`;
     const [width] = useWindowSize();
 
     const onClickClose = () => {
@@ -51,22 +44,21 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
-    const onClickCloseGallery = () => {
-        togleGallery(false);
-    };
-
     const tourInformation = tours.filter(
-        (item: any) => item.tourName === tourName,
+        (singleTour: any) => singleTour.tourName === tourName,
     )[0];
-    const { pointOfInterest } = tourInformation;
+    const { tourPointsList } = tourInformation;
 
-    const tourDisplay =
+    const selectedTour =
         !!selectedCoordinates &&
-        pointOfInterest.find(
-            (o: any) =>
-                o.lat === selectedCoordinates.lat &&
-                o.lon === selectedCoordinates.lng,
+        tourPointsList.find(
+            (singlePoint: TourPointsList) =>
+                singlePoint.lat === selectedCoordinates.lat &&
+                singlePoint.lon === selectedCoordinates.lng,
         );
+    console.log('---------------------');
+    console.log('panel :>> ', panel);
+    console.log('---------------------');
 
     return (
         <Wrapper>
@@ -77,8 +69,8 @@ export const Tour: React.FC<TourProps> = ({
                 panel={panel}
                 coordinates={selectedCoordinates}
                 tour={tourName}
-                pointOfInterest={pointOfInterest}
-                tourDisplay={tourDisplay}
+                tourPointsList={tourPointsList}
+                selectedTour={selectedTour}
                 width={width}
                 isDad={isDad}
             />
@@ -89,27 +81,12 @@ export const Tour: React.FC<TourProps> = ({
                 toglePanel={toglePanel}
                 getCoordinates={getCoordinates}
             />
-            {isGalleryOpen && (
-                <Gallery
-                    height={height}
-                    onClickCloseGallery={onClickCloseGallery}
-                    pointOfInterest={pointOfInterest}
-                    tourDisplay={tourDisplay}
-                    // @ts-ignore
-                    pointsLength={tourDisplay.imgCount}
-                    images={tourDisplay.images}
-                    interest={tourDisplay}
-                    mobileImgWidth={width - 20}
-                    tourName={tourName}
-                />
-            )}
         </Wrapper>
     );
 };
 
 const mapDispatchToProps = {
     toglePanel,
-    togleGallery,
     getCoordinates,
 };
 

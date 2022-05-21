@@ -27,7 +27,7 @@ const App = () => {
                     <Route
                         key={path}
                         path={`/${path}`}
-                        render={(props) => {
+                        render={() => {
                             return (
                                 <Tour
                                     tours={tours}

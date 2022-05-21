@@ -5,7 +5,7 @@
             "tourCardTitle": "libri",
             "tourCardIntroText": "This will take you to a page where you’ll be asked to authenticate with your Google account. Select the account that you’d like this project to be affiliated with, and press OK."
         },
-        "pointOfInterest": [
+        "tourPointsList": [
             {
                 "lat": 52.522114,
                 "lng": 13.413215,
@@ -54,7 +54,7 @@
             "tourCardTitle": "gattini",
             "tourCardIntroText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
-        "pointOfInterest": [
+        "tourPointsList": [
             {
                 "lat": 52.52955,
                 "lng": 13.499999,
