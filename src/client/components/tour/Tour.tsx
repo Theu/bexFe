@@ -44,9 +44,6 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
-    const rerer =  tours.filter(
-        (singleTour: any) => singleTour.tourName === tourName,
-    )
     const tourInformation = tours.filter(
         (singleTour: any) => singleTour.tourName === tourName,
     )[0];

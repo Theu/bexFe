@@ -15,7 +15,7 @@ import styles from './mapRender.module.scss';
 
 const MapRender = (props) => {
     const {
-        targetMap,
+        mapFromLeafLet,
         tourInformation,
         width,
         height,
@@ -36,10 +36,10 @@ const MapRender = (props) => {
 
     const mapRef = useRef();
     useEffect(() => {
-        mapRef.current = targetMap
+        mapRef.current = mapFromLeafLet
             .map('map', {
                 layers: [
-                    targetMap.tileLayer(
+                    mapFromLeafLet.tileLayer(
                         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                         {
                             attribution: '',
@@ -55,7 +55,7 @@ const MapRender = (props) => {
     // add layer
     const layerRef = useRef(null);
     useEffect(() => {
-        layerRef.current = targetMap.layerGroup().addTo(mapRef.current);
+        layerRef.current = mapFromLeafLet.layerGroup().addTo(mapRef.current);
     }, []);
 
     const selectedMarker = [
@@ -73,14 +73,14 @@ const MapRender = (props) => {
         getCoordinates(coords);
     };
 
-    const selectedIcon = targetMap.divIcon({
+    const selectedIcon = mapFromLeafLet.divIcon({
         className: 'selected-icon',
         html: ReactDOMServer.renderToString(
             <div className={styles.selected} />,
         ),
     });
 
-    const baseIcon = targetMap.divIcon({
+    const baseIcon = mapFromLeafLet.divIcon({
         className: 'base-icon',
         html: ReactDOMServer.renderToString(
             <div className={styles.base} />,
@@ -89,14 +89,14 @@ const MapRender = (props) => {
 
     const displayMarkers = (marker, selectedMarker) => {
         if (marker.coords === selectedMarker[0]?.coords) {
-            targetMap
+            mapFromLeafLet
                 .marker(marker.latLng, { icon: selectedIcon })
                 .on('click', () => {
                     openExplanationOnClick(marker.latLng);
                 })
                 .addTo(layerRef.current);
         } else {
-            targetMap
+            mapFromLeafLet
                 .marker(marker.latLng, { icon: baseIcon })
                 .on('click', () => {
                     openExplanationOnClick(marker.latLng);
@@ -123,7 +123,7 @@ const MapRender = (props) => {
 };
 
 MapRender.propTypes = {
-    targetMap: PropTypes.object,
+    mapFromLeafLet: PropTypes.object,
     tour: PropTypes.string,
 };
 
