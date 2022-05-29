@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import { UserSelectedPoints } from 'types';
 
 const mapBexClient = createClient({
     space: `${process.env.REACT_APP_CONTENTFUL_SPACEID}`,
@@ -12,15 +13,7 @@ const extractTours = (list: any[]): any[] => {
         .map((tour) => tour.fields);
 };
 
-interface PointOfInterest {
-    lat: number;
-    lon: number;
-    title: string;
-    text: string;
-    images: string[];
-    imgCount?: string;
-    imgFolderName?: string;
-}
+
 
 const normaliseImageList = (list: any[]): string[] => {
     const mutableList = [...list];
@@ -29,9 +22,9 @@ const normaliseImageList = (list: any[]): string[] => {
     return imageList;
 };
 
-const normalisePointOfInterest = (list: any[]): PointOfInterest[] => {
+const normalisePointOfInterest = (list: any[]): UserSelectedPoints[] => {
     let mutableList = [...list];
-    const pointOfInterest = mutableList.map((single) => {
+    const tourPointsList = mutableList.map((single) => {
         const result = {
             lat: single.fields.location.lat,
             lon: single.fields.location.lon,
@@ -44,7 +37,7 @@ const normalisePointOfInterest = (list: any[]): PointOfInterest[] => {
         return result;
     });
 
-    return pointOfInterest;
+    return tourPointsList;
 };
 
 const normaLiseTours = (list: any[]): any[] => {
@@ -61,7 +54,7 @@ const normaLiseTours = (list: any[]): any[] => {
                     singleTour.coverCardHomepage.fields.tourCardImg.fields.file
                         .url,
             },
-            pointOfInterest: normalisePointOfInterest([
+            tourPointsList: normalisePointOfInterest([
                 ...singleTour.singolaTappaDelTour,
             ]),
         };

@@ -19,13 +19,12 @@ const MapRender = (props) => {
         tourInformation,
         width,
         height,
-        // isDad,
         selectedCoords,
         getCoordinates,
         toglePanel,
     } = props;
-    const { pointOfInterest } = tourInformation;
-    const bounds = extractBound(pointOfInterest);
+    const { tourPointsList } = tourInformation;
+    const bounds = extractBound(tourPointsList);
     const createMarkers = (bounds) =>
         bounds.map((point) => ({
             latLng: { lat: point[0], lng: point[1] },

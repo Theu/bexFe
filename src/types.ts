@@ -1,9 +1,11 @@
-export interface SinglePointOfInterest {
+export interface UserSelectedPoints {
     lat: number;
     lon: number;
     title: string;
     text: string;
-    imgCount: string;
+    images: string[];
+    imgCount?: string;
+    imgFolderName?: string;
 }
 
 export interface Coordinates {

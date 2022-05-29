@@ -6,7 +6,7 @@ export const tourMock = [
             tourCardIntroText: 'This will take you to a ',
             tourCardImg: require(`../client/assets/libri/cover.jpeg`),
         },
-        pointOfInterest: [
+        tourPointsList: [
             {
                 lat: 52.522114,
                 lon: 13.413215,
@@ -56,7 +56,7 @@ export const tourMock = [
             tourCardIntroText: 'Lorem',
             tourCardImg: require(`../client/assets/gattini/cover.jpeg`),
         },
-        pointOfInterest: [
+        tourPointsList: [
             {
                 lat: 52.52955,
                 lon: 13.499999,

@@ -5,51 +5,53 @@ import { getCoordinates } from '../../../redux/modules/coords/actions';
 import { toglePanel } from '../../../redux/modules/panel/actions';
 import PointGallery from './pointGallery/PointGallery';
 import {
-    PointExplanationWrapper,
+    GalleryAndExplanationContainerWrapper,
     IntroText,
-    IntroTitle,
+    // IntroTitle,
     CloseIntro,
     // Info,
-} from './PointExplanation.styles';
-import { SinglePointOfInterest, Coordinates } from '../../types/types';
+} from './GalleryAndExplanationContainer.styles';
+import { UserSelectedPoints, Coordinates } from 'types';
 // TODO info should stay in a controller container?
 
-interface PointExplanationProps {
+interface GalleryAndExplanationContainerProps {
     onClickClose: () => void;
     onClickOpenInfo: () => void;
     getCoordinates: (args1: Coordinates | any) => void;
     tour: string;
-    pointOfInterest: SinglePointOfInterest[];
+    tourPointsList: UserSelectedPoints[];
     width: number;
     isDad: boolean;
     showInfo: boolean;
-    panel: boolean;
-    tourDisplay: any;
+    isGalleryAndExplanationOpen: boolean;
+    selectedTour: any;
     coordinates: Coordinates;
 }
 
-const PointExplanation: React.FC<PointExplanationProps> = ({
+const GalleryAndExplanationContainer: React.FC<
+    GalleryAndExplanationContainerProps
+> = ({
     onClickClose,
     // onClickOpenInfo,
     showInfo,
-    panel,
+    isGalleryAndExplanationOpen,
     coordinates,
     tour,
-    pointOfInterest,
+    tourPointsList,
     getCoordinates,
-    tourDisplay,
+    selectedTour,
     width,
     isDad,
-}: PointExplanationProps) => {
-    const payPointExplanation = !coordinates;
-    const displayPointExplanation = panel || showInfo;
-    // const displayInfo = !panel;
+}: GalleryAndExplanationContainerProps) => {
+    const showPayRequest = !coordinates;
+    const displayGalleryAndExplanationContainer =
+        isGalleryAndExplanationOpen || showInfo;
     const getCoordsForIndicator = (coordinates: Coordinates) => {
         getCoordinates(coordinates);
     };
 
-    const createPointsList = () =>
-        pointOfInterest.map((point: SinglePointOfInterest, index: number) => {
+    const availablePoints = () =>
+        tourPointsList.map((point: UserSelectedPoints, index: number) => {
             const coordinatesFromPoint = {
                 lat: point.lat,
                 lng: point.lon,
@@ -63,40 +65,49 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
                 </li>
             );
         });
-    const MapPointers = () => (
+    const ListOfAvailablePoints = () => (
         <div>
             <IntroText>
                 Seleziona un indicatore per leggere la descrizione
             </IntroText>
-            <ul>{createPointsList()}</ul>
+            <ul>{availablePoints()}</ul>
         </div>
     );
+
+    console.log('selectedTour :>> ', selectedTour);
     return (
         <>
-            {displayPointExplanation && (
-                <PointExplanationWrapper>
-                    <CloseIntro onClick={onClickClose}>close [X]</CloseIntro>
-                    {payPointExplanation && (
+            {displayGalleryAndExplanationContainer && (
+                <GalleryAndExplanationContainerWrapper>
+                    {!!selectedTour && (
+                        <CloseIntro onClick={onClickClose}>
+                            close [X]
+                        </CloseIntro>
+                    )}
+                    {/* DEVELOP THIS FOR PAY MODEL */}
+                    {/* {showPayRequest && (
                         <>
                             <IntroTitle>
                                 Come vedere questo contenuto
                             </IntroTitle>
                             <IntroText>Paga!!</IntroText>
                         </>
+                    )} */}
+                    {!showPayRequest && !selectedTour && (
+                        <ListOfAvailablePoints />
                     )}
-                    {!!tourDisplay && (
+                    {!!selectedTour && (
                         <PointGallery
                             isMobile={isMobile(width)}
                             mobileImgWidth={width - 20}
-                            interest={tourDisplay}
+                            interest={selectedTour}
                             tourName={tour}
-                            pointsLength={tourDisplay.imgCount}
-                            images={tourDisplay.images}
+                            pointsLength={selectedTour.imgCount}
+                            images={selectedTour.images}
                             isDad={isDad}
                         />
                     )}
-                    {!payPointExplanation && !tourDisplay && <MapPointers />}
-                </PointExplanationWrapper>
+                </GalleryAndExplanationContainerWrapper>
             )}
             {/* {displayInfo && <Info onClick={onClickOpenInfo}>info</Info>} */}
         </>
@@ -105,4 +116,7 @@ const PointExplanation: React.FC<PointExplanationProps> = ({
 
 const mapDispatchToProps = { getCoordinates, toglePanel };
 
-export default connect(null, mapDispatchToProps)(PointExplanation);
+export default connect(
+    null,
+    mapDispatchToProps,
+)(GalleryAndExplanationContainer);

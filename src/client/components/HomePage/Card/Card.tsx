@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SinglePointOfInterest } from '../../types/types';
+import { UserSelectedPoints } from 'types';
 import {
     Image,
     CardText,
@@ -11,7 +11,6 @@ import {
 
 interface Card {
   tourName: string,
-  pointOfInterest: SinglePointOfInterest[]; // change to PointOfInterest from contentful.ts
   tourCover: {
     tourCardTitle: string,
     tourCardIntroText: string

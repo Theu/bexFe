@@ -3,49 +3,37 @@ import { connect, useSelector } from 'react-redux';
 import { useWindowSize } from '../../hooks/detectWindowSizes';
 import { isMobile } from '../../helpers/isMobile';
 import { toglePanel } from '../../redux/modules/panel/actions';
-import { togleGallery } from '../../redux/modules/gallery/actions';
 import { getCoordinates } from '../../redux/modules/coords/actions';
 import { RootState } from '../../redux/store/configureStore';
-import Gallery from './Gallery/Gallery';
 import PlanContainer from './mapContainer/plan/PlanContainer';
-import PointExplanation from './pointExplanation/PointExplanation';
+import GalleryAndExplanationContainer from './galleryAndExplanationContainer/GalleryAndExplanationContainer';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
-import { Coordinates } from '../types/types';
+import { UserSelectedPoints, Coordinates } from 'types';
 
 interface TourProps {
     getCoordinates: (arg1: Coordinates | any) => void;
-    location: {
-        hash: string;
-        key: string;
-        pathname: string;
-        search: string;
-        state: any;
-    };
-    togleGallery: (args1: boolean) => void;
     toglePanel: () => void;
     tours: any;
+    tourName: string;
 }
 
 export const Tour: React.FC<TourProps> = ({
     getCoordinates,
-    location,
-    togleGallery,
     toglePanel,
     tours,
+    tourName,
 }: TourProps) => {
-    const panel = useSelector((state: RootState) => state.panel.isPanelOpen);
+    // the info panel
+    const isGalleryAndExplanationOpen = useSelector((state: RootState) => state.panel.isPanelOpen);
     const selectedCoordinates = useSelector(
         (state: RootState) => state.coords.coords,
     );
-    const isGalleryOpen = useSelector(
-        (state: RootState) => state.gallery.isGalleryOpen,
-    );
+
     const [isInfoPanel, setInfoPanel] = useState(true);
-    const [showInstruction, setShowInstruction] = useState(false);
     // const isDad = document.URL.includes('?dad');
-    const isDad = true;
-    const height = isMobile(window.innerHeight) ? '80vh' : `${mapDeskHeight}px`;
+    const isDad = false;
+
     const [width] = useWindowSize();
 
     const onClickClose = () => {
@@ -56,75 +44,49 @@ export const Tour: React.FC<TourProps> = ({
         setInfoPanel(true);
     };
 
-    // possible future usage
-    const onClickShowInstruction = () => {
-        setShowInstruction(!showInstruction);
-    };
-
-    const onClickCloseGallery = () => {
-        togleGallery(false);
-    };
-
-    const tour = location.pathname.substr(1);
+    const rerer =  tours.filter(
+        (singleTour: any) => singleTour.tourName === tourName,
+    )
     const tourInformation = tours.filter(
-        (item: any) => item.tourName === tour,
+        (singleTour: any) => singleTour.tourName === tourName,
     )[0];
-    const { pointOfInterest } = tourInformation;
+    const { tourPointsList } = tourInformation;
 
-    const tourDisplay =
+    const selectedTour =
         !!selectedCoordinates &&
-        pointOfInterest.find(
-            (o: any) =>
-                o.lat === selectedCoordinates.lat &&
-                o.lon === selectedCoordinates.lng,
+        tourPointsList.find(
+            (singlePoint: UserSelectedPoints) =>
+                singlePoint.lat === selectedCoordinates.lat &&
+                singlePoint.lon === selectedCoordinates.lng,
         );
 
     return (
         <Wrapper>
-            <PointExplanation
+            <GalleryAndExplanationContainer
                 onClickClose={onClickClose}
                 onClickOpenInfo={onClickOpenInfo}
                 showInfo={isInfoPanel}
-                // @ts-ignore possible future usage
-                onClickShowInstruction={onClickShowInstruction}
-                // @ts-ignore possible future usage
-                showInstruction={showInstruction}
-                panel={panel}
+                isGalleryAndExplanationOpen={isGalleryAndExplanationOpen}
                 coordinates={selectedCoordinates}
-                tour={tour}
-                pointOfInterest={pointOfInterest}
-                tourDisplay={tourDisplay}
+                tour={tourName}
+                tourPointsList={tourPointsList}
+                selectedTour={selectedTour}
                 width={width}
                 isDad={isDad}
             />
             <PlanContainer
-                tour={tour}
+                tour={tourName}
                 tourInformation={tourInformation}
                 isDad={isDad}
                 toglePanel={toglePanel}
                 getCoordinates={getCoordinates}
             />
-            {isGalleryOpen && (
-                <Gallery
-                    height={height}
-                    onClickCloseGallery={onClickCloseGallery}
-                    pointOfInterest={pointOfInterest}
-                    tourDisplay={tourDisplay}
-                    // @ts-ignore
-                    pointsLength={tourDisplay.imgCount}
-                    images={tourDisplay.images}
-                    interest={tourDisplay}
-                    mobileImgWidth={width - 20}
-                    tourName={tour}
-                />
-            )}
         </Wrapper>
     );
 };
 
 const mapDispatchToProps = {
     toglePanel,
-    togleGallery,
     getCoordinates,
 };
 

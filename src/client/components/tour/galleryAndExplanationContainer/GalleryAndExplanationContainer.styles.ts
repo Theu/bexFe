@@ -9,7 +9,7 @@ import {
 } from '../../../styles/variables';
 import { respondFrom } from '../../../helpers/screens';
 
-export const PointExplanationWrapper = styled.div`
+export const GalleryAndExplanationContainerWrapper = styled.div`
     position: absolute;
     width: calc(100% - 20px);
     display: flex;
@@ -30,13 +30,6 @@ export const PointExplanationWrapper = styled.div`
     `)}
 `;
 
-export const IntroTitle = styled.p`
-    color: ${baseTitle49};
-    font-size: 19px;
-    font-weight: 300;
-    border-bottom: 1px solid ${baseOcra};
-`;
-
 export const IntroText = styled.p`
     font-family: 'NewCycle';
     color: ${baseText81};
@@ -49,17 +42,4 @@ export const CloseIntro = styled.div`
     font-size: 15px;
     font-weight: 300;
     padding: 5px 0;
-`;
-
-export const Info = styled.div`
-    width: 25px;
-    height: 25px;
-    margin: 5px auto;
-    padding: 5px;
-    background-color: white;
-    position: absolute;
-    left: 18px;
-    top: 200px;
-    z-index: ${overMap};
-    border-radius: 5px;
 `;
