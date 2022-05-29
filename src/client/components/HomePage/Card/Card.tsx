@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TourPointsList } from 'types';
+import { UserSelectedPoints } from 'types';
 import {
     Image,
     CardText,
@@ -11,7 +11,6 @@ import {
 
 interface Card {
   tourName: string,
-  tourPointsList: TourPointsList[];
   tourCover: {
     tourCardTitle: string,
     tourCardIntroText: string

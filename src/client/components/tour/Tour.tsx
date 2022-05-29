@@ -9,7 +9,7 @@ import PlanContainer from './mapContainer/plan/PlanContainer';
 import GalleryAndExplanationContainer from './galleryAndExplanationContainer/GalleryAndExplanationContainer';
 import { mapDeskHeight } from '../../styles/variables';
 import { Wrapper } from './Tour.styles';
-import { TourPointsList, Coordinates } from 'types';
+import { UserSelectedPoints, Coordinates } from 'types';
 
 interface TourProps {
     getCoordinates: (arg1: Coordinates | any) => void;
@@ -55,7 +55,7 @@ export const Tour: React.FC<TourProps> = ({
     const selectedTour =
         !!selectedCoordinates &&
         tourPointsList.find(
-            (singlePoint: TourPointsList) =>
+            (singlePoint: UserSelectedPoints) =>
                 singlePoint.lat === selectedCoordinates.lat &&
                 singlePoint.lon === selectedCoordinates.lng,
         );

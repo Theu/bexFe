@@ -7,7 +7,9 @@ import PointGallery from './pointGallery/PointGallery';
 import {
     GalleryAndExplanationContainerWrapper,
     IntroText,
+    // IntroTitle,
     CloseIntro,
+    // Info,
 } from './GalleryAndExplanationContainer.styles';
 import { UserSelectedPoints, Coordinates } from 'types';
 // TODO info should stay in a controller container?
@@ -30,7 +32,7 @@ const GalleryAndExplanationContainer: React.FC<
     GalleryAndExplanationContainerProps
 > = ({
     onClickClose,
-    onClickOpenInfo,
+    // onClickOpenInfo,
     showInfo,
     isGalleryAndExplanationOpen,
     coordinates,
@@ -72,6 +74,7 @@ const GalleryAndExplanationContainer: React.FC<
         </div>
     );
 
+    console.log('selectedTour :>> ', selectedTour);
     return (
         <>
             {displayGalleryAndExplanationContainer && (
@@ -81,6 +84,15 @@ const GalleryAndExplanationContainer: React.FC<
                             close [X]
                         </CloseIntro>
                     )}
+                    {/* DEVELOP THIS FOR PAY MODEL */}
+                    {/* {showPayRequest && (
+                        <>
+                            <IntroTitle>
+                                Come vedere questo contenuto
+                            </IntroTitle>
+                            <IntroText>Paga!!</IntroText>
+                        </>
+                    )} */}
                     {!showPayRequest && !selectedTour && (
                         <ListOfAvailablePoints />
                     )}
@@ -97,6 +109,7 @@ const GalleryAndExplanationContainer: React.FC<
                     )}
                 </GalleryAndExplanationContainerWrapper>
             )}
+            {/* {displayInfo && <Info onClick={onClickOpenInfo}>info</Info>} */}
         </>
     );
 };

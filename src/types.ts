@@ -1,4 +1,4 @@
-export interface TourPointsList {
+export interface UserSelectedPoints {
     lat: number;
     lon: number;
     title: string;

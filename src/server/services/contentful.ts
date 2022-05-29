@@ -1,5 +1,5 @@
 import { createClient } from 'contentful';
-import { TourPointsList } from 'types';
+import { UserSelectedPoints } from 'types';
 
 const mapBexClient = createClient({
     space: `${process.env.REACT_APP_CONTENTFUL_SPACEID}`,
@@ -22,7 +22,7 @@ const normaliseImageList = (list: any[]): string[] => {
     return imageList;
 };
 
-const normalisePointOfInterest = (list: any[]): TourPointsList[] => {
+const normalisePointOfInterest = (list: any[]): UserSelectedPoints[] => {
     let mutableList = [...list];
     const tourPointsList = mutableList.map((single) => {
         const result = {
