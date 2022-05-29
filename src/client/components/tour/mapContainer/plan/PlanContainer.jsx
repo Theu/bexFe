@@ -6,13 +6,13 @@ import MapRender from './MapRender';
 
 const PlanContainer = (props) => {
     const { tour, tourInformation, isDad } = props;
-    const targetMap = L;
+    const mapFromLeafLet = L;
     const width = isMobile(window.innerWidth) ? window.innerWidth : 1000;
     const height = isMobile(window.innerHeight) ? window.innerHeight : Number(`${mapDeskHeight}`);
 
     return (
         <MapRender
-            targetMap={targetMap}
+            mapFromLeafLet={mapFromLeafLet}
             tour={tour}
             tourInformation={tourInformation}
             width={width}
