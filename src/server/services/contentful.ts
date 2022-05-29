@@ -6,8 +6,6 @@ const mapBexClient = createClient({
     accessToken: `${process.env.REACT_APP_CONTENTFUL_KEY}`,
 });
 
-console.log('process.env :>> ', process.env);
-
 const extractTours = (list: any[]): any[] => {
     const transformable = [...list];
     return transformable
