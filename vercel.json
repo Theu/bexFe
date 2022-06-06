@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      {
+        "source": "/tourVirtuali",
+        "has": [
+          {
+            "type": "host",
+            "value": "https://www.berlino-explorer.com/"
+          }
+        ],
+        "destination": "/"
+      }
+    ]
+  }
