@@ -13,8 +13,6 @@ const extractTours = (list: any[]): any[] => {
         .map((tour) => tour.fields);
 };
 
-
-
 const normaliseImageList = (list: any[]): string[] => {
     const mutableList = [...list];
     const imageList = mutableList.map((single) => single.fields.file.url);
